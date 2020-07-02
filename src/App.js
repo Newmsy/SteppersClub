@@ -13,6 +13,22 @@ import { Layout } from './Layout'
 export default function App() {
   return (
     <div>
+    <Toolbar/>
+    <Layout>
+      <Router>
+          <Switch>
+            <Route path="/about">
+              <Home />
+            </Route>
+            <Route path="/users">
+              <Home />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+      </Router>
+    </Layout>
     </div>
   );
 }
