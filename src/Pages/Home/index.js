@@ -22,7 +22,7 @@ export function Home() {
         <Grid container className={styles.gridMainContentWrapper}>
             <HomepageCard>
                 <Grid item>
-                    <h1 className={styles.steppersToolbarHeader}>Steppers</h1>
+                    <h1 className={styles.steppersToolbarHeader}>Steppers SSL</h1>
                 </Grid>
             </HomepageCard>
         </Grid>
