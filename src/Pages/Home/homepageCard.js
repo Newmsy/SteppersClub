@@ -5,10 +5,13 @@ import Grid from '@material-ui/core/Grid';
 const useStyles = makeStyles({
     gridCardWrapper: {
         width: '100%',
-        backgroundColor: 'grey',
+        backgroundColor: 'rgb(190, 190, 190)',
         minHeight: 300,
+        alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 50
+        borderRadius: 50,
+        boxShadow: '0px 0px 10px 10px rgba(255, 255, 255, 0.5), 0px 0px 10px 10px rgba(255, 255, 255, 0.5)',
+        direction: 'column'
     }
 });
   

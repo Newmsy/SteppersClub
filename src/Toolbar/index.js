@@ -7,7 +7,8 @@ const useStyles = makeStyles({
         height: 100,
         width: '100%',
         backgroundColor: 'black',
-        alignItems: 'flex-end'
+        alignItems: 'flex-end',
+        //boxShadow: '0 4px 8px 0 rgba(255, 255, 0, 0.2), 0 6px 20px 0 rgba(255, 0, 0, 0.19)'
     },
     steppersToolbarHeaderLogo: {
         fontsize: 100,
@@ -16,6 +17,12 @@ const useStyles = makeStyles({
     steppersToolbarHeader: {
         fontsize: 30,
         color: 'white'
+    },
+    steppersToolbarLogo: {
+        width: 400
+    },
+    comingSoonText: {
+        textAlign: 'right'
     }
 });
   
@@ -23,11 +30,11 @@ export function Toolbar() {
     const styles = useStyles();
     return (
         <Grid container className={styles.gridToolbarWrapper}>
-            <Grid item xs={9}>
-                <h1 className={styles.steppersToolbarHeaderLogo}>Steppers Club</h1>
+            <Grid item xs={10}>
+                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
             </Grid>
-            <Grid item xs={3}>
-                <h2 className={styles.steppersToolbarHeader}>Home to all Garaj Paedophiles</h2>
+            <Grid item xs={2} className={styles.comingSoonText}>
+                <h2 className={styles.steppersToolbarHeader}>Coming Soon...</h2>
             </Grid>
         </Grid>
     )
