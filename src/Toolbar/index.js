@@ -21,7 +21,8 @@ const useStyles = makeStyles({
         color: 'white'
     },
     steppersToolbarLogo: {
-        width: '100%'
+        width: '100%',
+        maxWidth: 400
     },
     toolbarContentCenter: {
         textAlign: 'left'
