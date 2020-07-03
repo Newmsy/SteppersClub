@@ -18,7 +18,7 @@ const useStyles = makeStyles({
         height: '100vh'
     },
     comingSoonGifWrapper: {
-        boxShadow: '0px 0px 10px 10px rgba(255, 255, 255, 0.2), 0px 0px 10px 10px rgba(255, 255, 255, 0.2)',
+        //boxShadow: '0px 0px 10px 10px rgba(255, 255, 255, 0.2), 0px 0px 10px 10px rgba(255, 255, 255, 0.2)',
         height: '100vh',
         marginTop: 30,
     },
@@ -35,8 +35,7 @@ export const Layout = (props) => {
         <Grid container className={styles.gridContentWrapper}>
             <Fade in={true} timeout={10000}>
             <div className={styles.comingSoonGifWrapper}>
-                <img src='/Assets/Images/ComingSoonGif.gif' className={styles.comingSoonGif}/>
-               
+                <img src='/Assets/Images/websiteComingSoonGif.gif' className={styles.comingSoonGif}/>
             </div>
             </Fade>
         </Grid>
