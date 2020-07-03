@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import Hidden from '@material-ui/core/Hidden'
+import Fade from '@material-ui/core/Fade'
 
 const useStyles = makeStyles({
     gridToolbarWrapper: {
@@ -19,10 +21,13 @@ const useStyles = makeStyles({
         color: 'white'
     },
     steppersToolbarLogo: {
-        width: 400
+        width: '100%'
     },
-    comingSoonText: {
-        textAlign: 'right'
+    toolbarContentCenter: {
+        textAlign: 'left'
+    },
+    toolbarContentRight: {
+        textAlign: 'center'
     }
 });
   
@@ -30,12 +35,23 @@ export function Toolbar() {
     const styles = useStyles();
     return (
         <Grid container className={styles.gridToolbarWrapper}>
-            <Grid item xs={10}>
-                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
+            <Grid item xs={12} sm={5}>
+                <Fade in={true} timeout={2000}>
+                    <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
+                </Fade>
             </Grid>
-            <Grid item xs={2} className={styles.comingSoonText}>
-                <h2 className={styles.steppersToolbarHeader}>Coming Soon...</h2>
-            </Grid>
+            <Hidden xsDown>
+                <Fade in={true} timeout={2000}>
+                    <Grid item xs={5} className={styles.toolbarContentCenter}>
+                        <h1 className={styles.steppersToolbarHeader}>Coming Soon...</h1>
+                    </Grid>
+                </Fade>
+                <Fade in={true} timeout={2000}>
+                    <Grid item xs={2} className={styles.toolbarContentRight}>
+                        <h1 className={styles.steppersToolbarHeader}>Garaj</h1>
+                    </Grid>
+                </Fade>
+            </Hidden>
         </Grid>
     )
   }

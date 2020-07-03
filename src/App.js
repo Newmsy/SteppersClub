@@ -9,10 +9,18 @@ import {
 import { Home } from './Pages/Home'
 import { Toolbar } from './Toolbar'
 import { Layout } from './Layout'
+import { makeStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles({
+  appWrapper: {
+    backgroundColor: 'black'
+  }
+});
 
 export default function App() {
+  const styles = useStyles()
   return (
-    <div>
+    <div className={styles.appWrapper}>
     <Toolbar/>
     <Layout>
       <Router>
