@@ -6,7 +6,7 @@ import Fade from '@material-ui/core/Fade'
 
 const useStyles = makeStyles({
     gridToolbarWrapper: {
-        height: 75,
+        //height: 75,
         width: '100%',
         backgroundColor: 'rgb(255,209,76)',
         alignItems: 'flex-end',
@@ -22,7 +22,9 @@ const useStyles = makeStyles({
     },
     steppersToolbarLogo: {
         width: '100%',
-        maxWidth: 400
+        maxWidth: 400,
+        position: 'relative',
+        top: 0
     },
     toolbarContentCenter: {
         textAlign: 'left'
@@ -36,24 +38,26 @@ export function Toolbar() {
     const styles = useStyles();
     return (
         <Grid container className={styles.gridToolbarWrapper}>
-            <Grid item xs={2}>
+            <Grid item xs={4} sm={2}>
                 <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={4} sm={2}>
                 <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={4} sm={2}>
                 <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
             </Grid>
-            <Grid item xs={2}>
+            <Hidden xsDown>
+            <Grid item xs={4} sm={2}>
                 <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={4} sm={2}>
                 <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={4} sm={2}>
                 <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
             </Grid>
+            </Hidden>
         </Grid>
     )
   }

@@ -1,20 +1,18 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import { HomepageCard } from './homepageCard'
 
 const useStyles = makeStyles({
     gridMainContentWrapper: {
         width: '100%',
         //backgroundColor: 'white',
-        
+        marginTop: 50,
         direction: 'column',
         flexGrow: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         alignContent: 'center',
         justifyItems: 'center',
-        marginTop: -100
     },
     gridItemWrapper: {
        
@@ -52,7 +50,8 @@ const useStyles = makeStyles({
         }
     },
     socialMediaImage: {
-        width: '100%'
+        width: '100%',
+        minWidth: 40
     },
     gridSocialsWrapper: {
         justifyContent: 'center',
@@ -76,10 +75,10 @@ export function Home() {
                 </Grid>
             </Grid>
             <Grid item container xs={12} spacing={2} className={styles.gridSocialsWrapper}>
-                <Grid item xs={1}><a href='#'><img src='/Assets/Images/facebookIcon.png' className={styles.socialMediaImage}/></a></Grid>
-                <Grid item xs={1}><a href='#'><img src='/Assets/Images/twitterIcon.png' className={styles.socialMediaImage}/></a></Grid>
-                <Grid item xs={1}><a href='#'><img src='/Assets/Images/soundcloudIcon.png' className={styles.socialMediaImage}/></a></Grid>
-                <Grid item xs={1}><a href='#'><img src='/Assets/Images/instagramIcon.png' className={styles.socialMediaImage}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a href='#'><img src='/Assets/Images/facebookIcon.png' className={styles.socialMediaImage}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a href='#'><img src='/Assets/Images/twitterIcon.png' className={styles.socialMediaImage}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a href='#'><img src='/Assets/Images/soundcloudIcon.png' className={styles.socialMediaImage}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a href='#'><img src='/Assets/Images/instagramIcon.png' className={styles.socialMediaImage}/></a></Grid>
             </Grid>
         </Grid>
     )

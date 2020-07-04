@@ -5,7 +5,7 @@ import Fade from '@material-ui/core/Fade';
 
 const useStyles = makeStyles({
     gridContentWrapper: {
-        minHeight: 'calc(100vh - 150px)',
+        position:'relative',
         width: '100%',
         backgroundColor: 'rgb(255,209,76)',
         justifyContent: 'center',

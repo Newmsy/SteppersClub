@@ -14,7 +14,9 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles({
   appWrapper: {
-    backgroundColor: 'rgb(255,209,76)'
+    backgroundColor: 'rgb(255,209,76)',
+    position: 'relative',
+    minHeight: '100vh'
   }
 });
 
@@ -22,23 +24,11 @@ export default function App() {
   const styles = useStyles()
   return (
     <div className={styles.appWrapper}>
-    <Toolbar/>
-    <Layout>
-      <Router>
-          <Switch>
-            <Route path="/about">
-              <Home />
-            </Route>
-            <Route path="/users">
-              <Home />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-      </Router>
-    </Layout>
-    <Footer/>
+      <Toolbar/>
+        <Layout>
+          <Home/>
+        </Layout>
+      <Footer/>
     </div>
   );
 }
