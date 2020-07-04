@@ -5,10 +5,11 @@ import Fade from '@material-ui/core/Fade';
 
 const useStyles = makeStyles({
     gridContentWrapper: {
-        minHeight: 'Calc(100vh-100px)',
+        minHeight: 'calc(100vh - 150px)',
         width: '100%',
-        backgroundColor: 'black',
-        justifyContent: 'center'
+        backgroundColor: 'rgb(255,209,76)',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     steppersToolbarHeader: {
         fontsize: 30,
@@ -33,11 +34,9 @@ export const Layout = (props) => {
     const styles = useStyles();
     return (
         <Grid container className={styles.gridContentWrapper}>
-            <Fade in={true} timeout={10000}>
-            <div className={styles.comingSoonGifWrapper}>
-                <img src='/Assets/Images/websiteComingSoonGif.gif' className={styles.comingSoonGif}/>
-            </div>
-            </Fade>
+            <Grid item xs={8}>
+                { props.children }
+            </Grid>
         </Grid>
     )
   }

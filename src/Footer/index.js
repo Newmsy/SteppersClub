@@ -32,7 +32,7 @@ const useStyles = makeStyles({
     }
 });
   
-export function Toolbar() {
+export function Footer() {
     const styles = useStyles();
     return (
         <Grid container className={styles.gridToolbarWrapper}>
