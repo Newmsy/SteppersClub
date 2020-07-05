@@ -5,25 +5,24 @@ import Fade from '@material-ui/core/Fade';
 
 const useStyles = makeStyles({
     gridContentWrapper: {
-        minHeight: 'Calc(100vh-100px)',
+        height: '100vh',
+        minHeight: '100vh',
         width: '100%',
         backgroundColor: 'black',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     steppersToolbarHeader: {
         fontsize: 30,
         color: 'white'
     },
     comingSoonGif: {
-        height: '100vh'
+        maxHeight: '100vh',
+        maxWidth: '100vw',
     },
     comingSoonGifWrapper: {
-        //boxShadow: '0px 0px 10px 10px rgba(255, 255, 255, 0.2), 0px 0px 10px 10px rgba(255, 255, 255, 0.2)',
-        height: '100vh',
-        marginTop: 30,
-    },
-    soundcloudHidden: {
-        display: 'none'
+        maxHeight: '100vh',
+        maxWidth: '100vw',
     }
 });
   
