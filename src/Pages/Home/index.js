@@ -52,7 +52,7 @@ const useStyles = makeStyles({
         }
     },
     socialMediaImageFacebook: {
-        width: '100%',
+        width: '105%',
         minWidth: 40
     },
     socialMediaImageSoundcloud: {
@@ -66,7 +66,7 @@ const useStyles = makeStyles({
         position: 'relative',
         top: '4%',
         minWidth: 40,
-        left:'4%'
+        left:'6%'
     },
     gridSocialsWrapper: {
         justifyContent: 'center',
@@ -90,9 +90,9 @@ export function Home() {
                 </Grid>
             </Grid>
             <Grid item container xs={12} spacing={2} className={styles.gridSocialsWrapper}>
-                <Grid item xs={3} sm={2} md={1}><a href='#'><img src='/Assets/Images/facebookIcon.png' className={styles.socialMediaImageFacebook}/></a></Grid>
-                <Grid item xs={3} sm={2} md={1}><a href='#'><img src='/Assets/Images/instagramLogo.png' className={styles.socialMediaImageInstagram}/></a></Grid>
-                <Grid item xs={3} sm={2} md={1}><a href='#'><img src='/Assets/Images/soundcloudLogo.png' className={styles.socialMediaImageSoundcloud}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a href='https://www.facebook.com/steppersclub/?__tn__=%2Cd%2CP-R&eid=ARDXn9RqkkPteWYgjOKLRrpdacbClosDVzoLDJUeXfWFVqT96vg1kiHco-9zT0PJE-kVRxsXjQEhj_XO'><img src='/Assets/Images/facebookIcon.png' className={styles.socialMediaImageFacebook}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a href='https://www.instagram.com/steppersclub_/'><img src='/Assets/Images/instagramLogo.png' className={styles.socialMediaImageInstagram}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a href='https://soundcloud.com/steppersclub'><img src='/Assets/Images/soundcloudLogo.png' className={styles.socialMediaImageSoundcloud}/></a></Grid>
             </Grid>
         </Grid>
     )
