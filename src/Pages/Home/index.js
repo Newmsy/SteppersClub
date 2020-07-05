@@ -51,8 +51,20 @@ const useStyles = makeStyles({
             borderBottom: '4px solid black',
         }
     },
-    socialMediaImage: {
+    socialMediaImageFacebook: {
         width: '100%',
+        minWidth: 40
+    },
+    socialMediaImageSoundcloud: {
+        width: '96.5%',
+        position: 'relative',
+        top: '2.25%',
+        minWidth: 40
+    },
+    socialMediaImageInstagram: {
+        width: '90%',
+        position: 'relative',
+        top: '5%',
         minWidth: 40
     },
     gridSocialsWrapper: {
@@ -77,9 +89,9 @@ export function Home() {
                 </Grid>
             </Grid>
             <Grid item container xs={12} spacing={2} className={styles.gridSocialsWrapper}>
-                <Grid item xs={3} sm={2} md={1}><a href='#'><img src='/Assets/Images/facebookIcon.png' className={styles.socialMediaImage}/></a></Grid>
-                <Grid item xs={3} sm={2} md={1}><a href='#'><img src='/Assets/Images/soundcloudLogo.png' className={styles.socialMediaImage}/></a></Grid>
-                <Grid item xs={3} sm={2} md={1}><a href='#'><img src='/Assets/Images/instagramLogo.png' className={styles.socialMediaImage}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a href='#'><img src='/Assets/Images/facebookIcon.png' className={styles.socialMediaImageFacebook}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a href='#'><img src='/Assets/Images/instagramLogo.png' className={styles.socialMediaImageInstagram}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a href='#'><img src='/Assets/Images/soundcloudLogo.png' className={styles.socialMediaImageSoundcloud}/></a></Grid>
             </Grid>
         </Grid>
     )
