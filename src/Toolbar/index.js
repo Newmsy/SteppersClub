@@ -38,26 +38,44 @@ export function Toolbar() {
     const styles = useStyles();
     return (
         <Grid container className={styles.gridToolbarWrapper}>
-            <Grid item xs={4} sm={2}>
-                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
-            </Grid>
-            <Grid item xs={4} sm={2}>
-                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
-            </Grid>
-            <Grid item xs={4} sm={2}>
-                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
-            </Grid>
-            <Hidden xsDown>
-            <Grid item xs={4} sm={2}>
-                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
-            </Grid>
-            <Grid item xs={4} sm={2}>
-                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
-            </Grid>
-            <Grid item xs={4} sm={2}>
-                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
-            </Grid>
-            </Hidden>
+        <Grid item xs={4} sm={1}>
+            <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
         </Grid>
+        <Grid item xs={4} sm={1}>
+            <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
+        </Grid>
+        <Grid item xs={4} sm={1}>
+            <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
+        </Grid>
+        <Hidden xsDown>
+            <Grid item xs={4} sm={1}>
+                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
+            </Grid>
+            <Grid item xs={4} sm={1}>
+                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
+            </Grid>
+            <Grid item xs={4} sm={1}>
+                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
+            </Grid>
+            <Grid item xs={4} sm={1}>
+                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
+            </Grid>
+            <Grid item xs={4} sm={1}>
+                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
+            </Grid>
+            <Grid item xs={4} sm={1}>
+                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
+            </Grid>
+            <Grid item xs={4} sm={1}>
+                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
+            </Grid>
+            <Grid item xs={4} sm={1}>
+                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
+            </Grid>
+            <Grid item xs={4} sm={1}>
+                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
+            </Grid>
+        </Hidden>
+    </Grid>
     )
   }

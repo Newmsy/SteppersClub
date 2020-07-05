@@ -5,7 +5,6 @@ import Grid from '@material-ui/core/Grid';
 const useStyles = makeStyles({
     gridMainContentWrapper: {
         width: '100%',
-        //backgroundColor: 'white',
         marginTop: 50,
         direction: 'column',
         flexGrow: 'column',
@@ -24,11 +23,13 @@ const useStyles = makeStyles({
         justifyContent: 'center'
     },
     logoImage: {
-        width: '30%',
-        marginLeft: '35%'
+        width: '15%',
+        marginLeft: '42.5%'
     },
     homepageJoinMailing: {
-        
+        color: 'rgb(42, 0, 141)',
+        textShadow: '2px 2px #fff',
+        fontWeight: 700
     },
     signupTextBox: {
         width: '300px',
@@ -43,7 +44,8 @@ const useStyles = makeStyles({
         transition: 'border-color 0.2s',
         '&::placeholder': {
             color:'black',
-            textAlign: 'center'
+            textAlign: 'center',
+            fontFamily: 'PixelLove'
         },
         '&:focus': {
             borderBottom: '4px solid black',
@@ -67,7 +69,7 @@ export function Home() {
                 <img src='/Assets/Images/favicon.png' className={styles.logoImage}/>
             </Grid>
             <Grid item xs={12} className={styles.gridItemTextWrapper}>
-                <h2 className={styles.homepageJoinMailing}>Join the club</h2>
+                <h2 className={styles.homepageJoinMailing}>JOIN THE CLUB</h2>
             </Grid>
             <Grid item container={12} className={styles.gridEmailWrapper}>
                 <Grid item>
@@ -76,9 +78,8 @@ export function Home() {
             </Grid>
             <Grid item container xs={12} spacing={2} className={styles.gridSocialsWrapper}>
                 <Grid item xs={3} sm={2} md={1}><a href='#'><img src='/Assets/Images/facebookIcon.png' className={styles.socialMediaImage}/></a></Grid>
-                <Grid item xs={3} sm={2} md={1}><a href='#'><img src='/Assets/Images/twitterIcon.png' className={styles.socialMediaImage}/></a></Grid>
-                <Grid item xs={3} sm={2} md={1}><a href='#'><img src='/Assets/Images/soundcloudIcon.png' className={styles.socialMediaImage}/></a></Grid>
-                <Grid item xs={3} sm={2} md={1}><a href='#'><img src='/Assets/Images/instagramIcon.png' className={styles.socialMediaImage}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a href='#'><img src='/Assets/Images/soundcloudLogo.png' className={styles.socialMediaImage}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a href='#'><img src='/Assets/Images/instagramLogo.png' className={styles.socialMediaImage}/></a></Grid>
             </Grid>
         </Grid>
     )

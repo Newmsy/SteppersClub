@@ -6,13 +6,11 @@ import Fade from '@material-ui/core/Fade'
 
 const useStyles = makeStyles({
     gridToolbarWrapper: {
-        height: 75,
         width: '100%',
         backgroundColor: 'rgb(255,209,76)',
         alignItems: 'flex-end',
         position: 'absolute',
         bottom: '0'
-        //boxShadow: '0 4px 8px 0 rgba(255, 255, 0, 0.2), 0 6px 20px 0 rgba(255, 0, 0, 0.19)'
     },
     steppersToolbarHeaderLogo: {
         fontsize: 100,
@@ -38,23 +36,41 @@ export function Footer() {
     const styles = useStyles();
     return (
         <Grid container className={styles.gridToolbarWrapper}>
-        <Grid item xs={4} sm={2}>
+        <Grid item xs={4} sm={1}>
             <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
         </Grid>
-        <Grid item xs={4} sm={2}>
+        <Grid item xs={4} sm={1}>
             <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
         </Grid>
-        <Grid item xs={4} sm={2}>
+        <Grid item xs={4} sm={1}>
             <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
         </Grid>
         <Hidden xsDown>
-            <Grid item xs={4} sm={2}>
+            <Grid item xs={4} sm={1}>
                 <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
             </Grid>
-            <Grid item xs={4} sm={2}>
+            <Grid item xs={4} sm={1}>
                 <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
             </Grid>
-            <Grid item xs={4} sm={2}>
+            <Grid item xs={4} sm={1}>
+                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
+            </Grid>
+            <Grid item xs={4} sm={1}>
+                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
+            </Grid>
+            <Grid item xs={4} sm={1}>
+                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
+            </Grid>
+            <Grid item xs={4} sm={1}>
+                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
+            </Grid>
+            <Grid item xs={4} sm={1}>
+                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
+            </Grid>
+            <Grid item xs={4} sm={1}>
+                <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
+            </Grid>
+            <Grid item xs={4} sm={1}>
                 <img src='/Assets/Images/Logo.png' className={styles.steppersToolbarLogo}/>
             </Grid>
         </Hidden>
