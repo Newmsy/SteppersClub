@@ -62,10 +62,11 @@ const useStyles = makeStyles({
         minWidth: 40
     },
     socialMediaImageInstagram: {
-        width: '90%',
+        width: '92%',
         position: 'relative',
-        top: '5%',
-        minWidth: 40
+        top: '4%',
+        minWidth: 40,
+        left:'4%'
     },
     gridSocialsWrapper: {
         justifyContent: 'center',
