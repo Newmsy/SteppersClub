@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import EmailCapture from './emailCapture'
+import Theme from '@material-ui/core';
+import EmailCapture from './emailCapture';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     gridMainContentWrapper: {
         width: '100%',
         marginTop: 50,
@@ -23,13 +24,28 @@ const useStyles = makeStyles({
     },
     gridEmailWrapper: {
         justifyContent: 'center',
+        zIndex:0,
         marginTop: -100,
-        marginBottom: -70,
-        zIndex:0
+        marginBottom: -50,
+        [theme.breakpoints.down('sm')]: {
+            marginTop: '-5vh',
+            marginBottom: -30
+        }
     },
     logoImage: {
-        width: '15%',
-        marginLeft: '42.5%'
+        
+        [theme.breakpoints.down('sm')]: {
+            width: '50%',
+            marginLeft: '25%'
+        },
+        [theme.breakpoints.down('md')]: {
+            width: '40%',
+            marginLeft: '30%'
+        },
+        [theme.breakpoints.up('md')]: {
+            width: '15%',
+            marginLeft: '42.5%',
+        }
     },
     homepageJoinMailing: {
         color: 'rgb(42, 0, 141)',
@@ -69,17 +85,22 @@ const useStyles = makeStyles({
         textAlign: 'center'
     },
     gridLinksWrapper: {
-        marginTop: 0
+        marginTop: 0,
+        zIndex: 1
     },
-    homepageLinkToPage: {
+    homepageLink: {
+        textDecoration: 'none',
         color: 'rgb(42, 0, 141)',
         textShadow: '2px 2px #fff',
         fontWeight: 700,
-    },
-    homepageLink: {
-        textDecoration: 'none'
+        [theme.breakpoints.down('sm')]: {
+            fontSize: 20
+        },
+        [theme.breakpoints.up('sm')]: {
+            fontSize: 30
+        }
     }
-});
+}));
   
 export function Home() {
     const styles = useStyles();
@@ -89,30 +110,30 @@ export function Home() {
             <Grid item xs={12} className={styles.gridItemWrapper}>
                 <img src='/Assets/Images/favicon.png' className={styles.logoImage}/>
             </Grid>
-            <Grid item container xs={6} className={styles.gridLinksWrapper}>
-                <Grid item xs={4} className={styles.linkGridItem}>
-                    <a href='/releases' className={styles.homepageLink}><h1 className={styles.homepageLinkToPage}>Releases</h1></a>
+            <Grid item container xs={12} sm={8} md={6} className={styles.gridLinksWrapper}>
+                <Grid item xs={12} sm={6} md={4} className={styles.linkGridItem}>
+                    <a href='/releases' className={styles.homepageLink}>Releases</a>
                 </Grid>
-                <Grid item xs={4} className={styles.linkGridItem}>
-                    <a href='/press' className={styles.homepageLink}><h1 className={styles.homepageLinkToPage}>Press</h1></a>
+                <Grid item xs={12} sm={6} md={4} className={styles.linkGridItem}>
+                    <a href='/press' className={styles.homepageLink}>Press</a>
                 </Grid>
-                <Grid item xs={4} className={styles.linkGridItem}>
-                    <a href='/videos' className={styles.homepageLink}><h1 className={styles.homepageLinkToPage}>Videos</h1></a>
+                <Grid item xs={12} sm={6} md={4} className={styles.linkGridItem}>
+                    <a href='/videos' className={styles.homepageLink}>Videos</a>
                 </Grid>
-                <Grid item xs={4} className={styles.linkGridItem}>
-                    <a href='/events' className={styles.homepageLink}><h1 className={styles.homepageLinkToPage}>Events</h1></a>
+                <Grid item xs={12} sm={6} md={4} className={styles.linkGridItem}>
+                    <a href='/events' className={styles.homepageLink}>Events</a>
                 </Grid>
-                <Grid item xs={4} className={styles.linkGridItem}>
-                    <a href='/shop' className={styles.homepageLink}><h1 className={styles.homepageLinkToPage}>Shop</h1></a>
+                <Grid xs={12} sm={6} md={4} className={styles.linkGridItem}>
+                    <a href='/shop' className={styles.homepageLink}>Shop</a>
                 </Grid>
-                <Grid item xs={4} className={styles.linkGridItem}>
-                    <a href='/contact' className={styles.homepageLink}><h1 className={styles.homepageLinkToPage}>Contact</h1></a>
+                <Grid xs={12} sm={6} md={4} className={styles.linkGridItem}>
+                    <a href='/contact' className={styles.homepageLink}>Contact</a>
                 </Grid>
             </Grid>
             <Grid item xs={12} className={styles.gridItemTextWrapper}>
                 <h2 className={styles.homepageJoinMailing}>JOIN THE CLUB</h2>
             </Grid>
-            <Grid item container={12} className={styles.gridEmailWrapper}>
+            <Grid item container xs={12} className={styles.gridEmailWrapper}>
                 <Grid item>
                     <EmailCapture/>
                 </Grid>

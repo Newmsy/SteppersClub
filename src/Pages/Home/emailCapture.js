@@ -168,11 +168,28 @@ function emailHTMLContent() {
         .form-all {
         background-image: none;
         }
+
+        .emailtextinput {
+            max-width: 90%;
+        }
+        ::placeholder {
+            color: rgb(42, 0, 141);
+            opacity: 1; 
+            text-align: center;
+        }
+        @media (max-width:629px) {
+            button{
+              display: none;
+            }
+        }
+        .submitbutton {
+
+        }
     
     .ie-8 .form-all:before { display: none; }
     .ie-8 {
-        margin-top: auto;
-        margin-top: initial;
+        
+        
     }
     
     
@@ -183,25 +200,21 @@ function emailHTMLContent() {
     <input type="hidden" id="JWTContainer" value="" />
     <input type="hidden" id="cardinalOrderNumber" value="" />
     <div role="main" class="form-all">
-        <ul class="form-section page-section">
-        <li class="form-line jf-required" data-type="control_email" id="id_3">
+        
+        <div class="form-line jf-required" data-type="control_email" id="id_3">
             <label class="form-label form-label-top form-label-auto" id="label_3" for="input_3">
-            <span class="form-required">
-            </span>
+                <span class="form-required">
+                </span>
             </label>
             <div id="cid_3" class="form-input-wide jf-required">
-            <input type="text" id="input_3" name="q3_input3" class="form-textbox validate[required, Email]" size="30"  placeholder="Email" data-component="email" aria-labelledby="label_3"  />
-            <button id="input_2" type="submit" class="form-submit-button submit-button jf-form-buttons jsTest-submitField" data-component="button" data-content="">
-            Submit
-            </button>
+                <input type="text" id="input_3" name="q3_input3" class="emailtextinput validate[required, Email]" style="color: rgb(42, 0, 141); outline: none; font-size: 20px; height: 50px; border-style:solid; background-color: rgb(255, 209, 76); border-width: 0 0 2px; border-color: rgb(42, 0, 141);" size="30"  placeholder="Email" data-component="email" aria-labelledby="label_3"  />
+                <button id="input_2" class="submitbutton" type="submit" style="font-size: 25px; color: rgb(42, 0, 141); font-weight: 900; background-color: rgb(255, 209, 76); border: none;" data-component="button" data-content="">
+                    >
+                </button>
             </div>
-            <div id="cid_2" class="form-input-wide">
-            <div style="margin-left:156px" data-align="auto" class="form-buttons-wrapper form-buttons-auto   jsTest-button-wrapperField">
-               
-            </div>
-            </div>
-        </li>
-        </ul>
+            
+        </div>
+       
     </div>
     <script>
     `

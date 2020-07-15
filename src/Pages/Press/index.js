@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     gridMainContentWrapper: {
         width: '100%',
         marginTop: 50,
@@ -18,8 +18,19 @@ const useStyles = makeStyles({
        
     },
     logoImage: {
-        width: '15%',
-        marginLeft: '42.5%'
+        
+        [theme.breakpoints.down('sm')]: {
+            width: '50%',
+            marginLeft: '25%'
+        },
+        [theme.breakpoints.down('md')]: {
+            width: '40%',
+            marginLeft: '30%'
+        },
+        [theme.breakpoints.up('md')]: {
+            width: '15%',
+            marginLeft: '42.5%',
+        }
     },
     releaseItemGrid: {
         backgroundColor: 'black',
@@ -30,7 +41,7 @@ const useStyles = makeStyles({
     soundcloudItem: {
         marginTop: 20
     }
-});
+}));
   
 export function Press() {
     const styles = useStyles();

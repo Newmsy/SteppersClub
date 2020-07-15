@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     gridMainContentWrapper: {
         width: '100%',
         marginTop: 50,
@@ -29,7 +29,7 @@ const useStyles = makeStyles({
         width: '15%',
         marginLeft: '42.5%'
     }
-});
+}));
   
 export function Events() {
     const styles = useStyles();
@@ -37,7 +37,7 @@ export function Events() {
     return (
         <Grid container className={styles.gridMainContentWrapper}>
             <Grid item xs={12} className={styles.gridItemWrapper}>
-                <img src='/Assets/Images/favicon.png' className={styles.logoImage}/>
+            <a href='/'><img src='/Assets/Images/favicon.png' className={styles.logoImage}/></a>
             </Grid>
             <Grid item container xs={12} className={styles.gridItemWrapper}>
                 <Grid item xs={12} className={styles.eventsComingSoonWrapper}>
