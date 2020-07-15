@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import EmailCapture from './emailCapture'
 
 const useStyles = makeStyles({
     gridMainContentWrapper: {
@@ -17,10 +18,14 @@ const useStyles = makeStyles({
        
     },
     gridItemTextWrapper: {
-        textAlign: 'center'
+        textAlign: 'center',
+        zIndex:1
     },
     gridEmailWrapper: {
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginTop: -100,
+        marginBottom: -70,
+        zIndex:0
     },
     logoImage: {
         width: '15%',
@@ -31,25 +36,12 @@ const useStyles = makeStyles({
         textShadow: '2px 2px #fff',
         fontWeight: 700
     },
-    signupTextBox: {
-        width: '300px',
-        height: '30px',
-        border: 0,
-        borderBottom: '2px solid black',
-        outline: 0,
-        fontSize: '1.3rem',
-        color: 'black',
-        padding: '7px 0',
-        background: 'transparent',
-        transition: 'border-color 0.2s',
-        '&::placeholder': {
-            color:'black',
-            textAlign: 'center',
-            fontFamily: 'PixelLove'
-        },
-        '&:focus': {
-            borderBottom: '4px solid black',
-        }
+    joinMailingText:{
+        fontSize: 20,
+        fontFamily: 'PixelLove',
+        color:'black',
+        textAlign: 'center',
+        textDecoration: 'none'
     },
     socialMediaImageFacebook: {
         width: '105%',
@@ -70,23 +62,59 @@ const useStyles = makeStyles({
     },
     gridSocialsWrapper: {
         justifyContent: 'center',
-        marginTop: 10
+        marginTop: 10,
+        zIndex:1
+    },
+    linkGridItem: {
+        textAlign: 'center'
+    },
+    gridLinksWrapper: {
+        marginTop: 0
+    },
+    homepageLinkToPage: {
+        color: 'rgb(42, 0, 141)',
+        textShadow: '2px 2px #fff',
+        fontWeight: 700,
+    },
+    homepageLink: {
+        textDecoration: 'none'
     }
 });
   
 export function Home() {
     const styles = useStyles();
+    
     return (
         <Grid container className={styles.gridMainContentWrapper}>
             <Grid item xs={12} className={styles.gridItemWrapper}>
                 <img src='/Assets/Images/favicon.png' className={styles.logoImage}/>
+            </Grid>
+            <Grid item container xs={6} className={styles.gridLinksWrapper}>
+                <Grid item xs={4} className={styles.linkGridItem}>
+                    <a href='/releases' className={styles.homepageLink}><h1 className={styles.homepageLinkToPage}>Releases</h1></a>
+                </Grid>
+                <Grid item xs={4} className={styles.linkGridItem}>
+                    <a href='/press' className={styles.homepageLink}><h1 className={styles.homepageLinkToPage}>Press</h1></a>
+                </Grid>
+                <Grid item xs={4} className={styles.linkGridItem}>
+                    <a href='/videos' className={styles.homepageLink}><h1 className={styles.homepageLinkToPage}>Videos</h1></a>
+                </Grid>
+                <Grid item xs={4} className={styles.linkGridItem}>
+                    <a href='/events' className={styles.homepageLink}><h1 className={styles.homepageLinkToPage}>Events</h1></a>
+                </Grid>
+                <Grid item xs={4} className={styles.linkGridItem}>
+                    <a href='/shop' className={styles.homepageLink}><h1 className={styles.homepageLinkToPage}>Shop</h1></a>
+                </Grid>
+                <Grid item xs={4} className={styles.linkGridItem}>
+                    <a href='/contact' className={styles.homepageLink}><h1 className={styles.homepageLinkToPage}>Contact</h1></a>
+                </Grid>
             </Grid>
             <Grid item xs={12} className={styles.gridItemTextWrapper}>
                 <h2 className={styles.homepageJoinMailing}>JOIN THE CLUB</h2>
             </Grid>
             <Grid item container={12} className={styles.gridEmailWrapper}>
                 <Grid item>
-                <input type="text" id="email_signup" name="email_signup" placeholder="email" className={styles.signupTextBox}/>
+                    <EmailCapture/>
                 </Grid>
             </Grid>
             <Grid item container xs={12} spacing={2} className={styles.gridSocialsWrapper}>
@@ -95,6 +123,7 @@ export function Home() {
                 <Grid item xs={3} sm={2} md={1}><a href='https://soundcloud.com/steppersclub'><img src='/Assets/Images/soundcloudLogo.png' className={styles.socialMediaImageSoundcloud}/></a></Grid>
             </Grid>
         </Grid>
+        
     )
   }
 
