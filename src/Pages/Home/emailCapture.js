@@ -171,11 +171,15 @@ function emailHTMLContent() {
 
         .emailtextinput {
             max-width: 90%;
+            font-weight: 600;
         }
         ::placeholder {
             color: rgb(42, 0, 141);
             opacity: 1; 
             text-align: center;
+            text-shadow: 2px 2px #fff;
+            font-size: 20;
+            font-weight: 600;
         }
         @media (max-width:629px) {
             button{
@@ -183,8 +187,13 @@ function emailHTMLContent() {
             }
         }
         .submitbutton {
-
+            position: relative;
+            right: 30px;
         }
+        ::selection {
+            background: rgba(42, 0, 141, 0.9); /* WebKit/Blink Browsers */
+            color: rgb(255, 209, 76);
+          }
     
     .ie-8 .form-all:before { display: none; }
     .ie-8 {
