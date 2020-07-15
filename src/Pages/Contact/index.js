@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
         textShadow: '2px 2px #fff',
         fontWeight: 700,
     },
-    shopComingSoonWrapper: {
+    contactComingSoonWrapper: {
         textAlign: 'center'
     },
     logoImage: {
@@ -41,7 +41,14 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     contactEmailLink: {
-        color: 'rgb(42, 0, 141)'
+        color: 'rgb(42, 0, 141)',
+        color: 'rgb(42, 0, 141)',
+        textShadow: '2px 2px #fff',
+        fontWeight: 700,
+        fontSize: 30,
+        [theme.breakpoints.down('xs')]: {
+           fontSize: 20
+        }
     }
 }));
   
@@ -54,11 +61,11 @@ export function Contact() {
             <a href='/'><img src='/Assets/Images/favicon.png' className={styles.logoImage}/></a>
             </Grid>
             <Grid item container xs={12} className={styles.gridItemWrapper}>
-                <Grid item xs={12} className={styles.shopComingSoonWrapper}>
+                <Grid item xs={12} className={styles.contactComingSoonWrapper}>
                     <h1 className={styles.shopComingSoonText}>FOR ALL ENQUIRIES AND SUBMISSIONS</h1>
                 </Grid>
-                <Grid item xs={12} className={styles.shopComingSoonWrapper}>
-                    <a href="mailto:steppersclubuk@gmail.com" className={styles.contactEmailLink}><h1 className={styles.shopComingSoonText}>steppersclubuk@gmail.com</h1></a>
+                <Grid item xs={12} className={styles.contactComingSoonWrapper}>
+                    <a href="mailto:steppersclubuk@gmail.com" className={styles.contactEmailLink}>steppersclubuk@gmail.com</a>
                 </Grid>
             </Grid>            
         </Grid>
