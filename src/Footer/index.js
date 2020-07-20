@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden'
@@ -19,24 +19,28 @@ const useStyles = makeStyles((theme) => ({
             width: '50vw',
         },
     },
-    toolbarLogoDiv: {
+    toolbarLogoDivLR: {
         width: '100vw',
         backgroundImage: 'url(/Assets/Images/logoLeftToRight.gif)',
         backgroundRepeat: 'repeat-x',
         backgroundSize: 'contain',
-        height: 40,
-        backgroundPosition: 'bottom',
-        '&:hover': {
-            backgroundImage: 'url(/Assets/Images/logoRightToLeft.gif)',
-        },
+        height: 40
+    },
+    toolbarLogoDivRL: {
+        width: '100vw',
+        backgroundImage: 'url(/Assets/Images/logoRightToLeft.gif)',
+        backgroundRepeat: 'repeat-x',
+        backgroundSize: 'contain',
+        height: 40
     }
 }));
   
 export function Footer() {
     const styles = useStyles();
+    const [directionLR, setDirectionLR] = useState(true)
     return (
         <Grid container className={styles.gridToolbarWrapper}>
-            <div className={styles.toolbarLogoDiv}>
+            <div className={directionLR? styles.toolbarLogoDivLR : styles.toolbarLogoDivRL} onMouseEnter={() => setDirectionLR(!directionLR)}>
 
             </div>
         </Grid>

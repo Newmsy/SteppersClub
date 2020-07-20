@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
        
     },
     logoImage: {
-        display: 'block',
         [theme.breakpoints.down('sm')]: {
             width: '50%',
             marginLeft: '25%'
