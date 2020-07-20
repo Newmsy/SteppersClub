@@ -25,7 +25,11 @@ const useStyles = makeStyles((theme) => ({
         backgroundRepeat: 'repeat-x',
         backgroundSize: 'contain',
         backgroundPosition: 'bottom',
-        height: 40
+        height: 40,
+        [theme.breakpoints.down('md')]: {
+            backgroundSize: 'auto 100%',
+            height: 25,
+        }
     },
     toolbarLogoDivRL: {
         width: '100vw',
@@ -33,7 +37,11 @@ const useStyles = makeStyles((theme) => ({
         backgroundRepeat: 'repeat-x',
         backgroundSize: 'contain',
         backgroundPosition: 'bottom',
-        height: 40
+        height: 40,
+        [theme.breakpoints.down('md')]: {
+            backgroundSize: 'auto 100%',
+            height: 25,
+        }
     }
 }));
   

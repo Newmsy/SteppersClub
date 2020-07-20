@@ -23,14 +23,22 @@ const useStyles = makeStyles((theme) => ({
         backgroundImage: 'url(/Assets/Images/logoLeftToRight.gif)',
         backgroundRepeat: 'repeat-x',
         backgroundSize: 'contain',
-        height: 40
+        height: 40,
+        [theme.breakpoints.down('md')]: {
+            backgroundSize: 'auto 100%',
+            height: 25,
+        }
     },
     toolbarLogoDivRL: {
         width: '100vw',
         backgroundImage: 'url(/Assets/Images/logoRightToLeft.gif)',
         backgroundRepeat: 'repeat-x',
         backgroundSize: 'contain',
-        height: 40
+        height: 40,
+        [theme.breakpoints.down('md')]: {
+            backgroundSize: 'auto 100%',
+            height: 25,
+        }
     }
 }));
   
