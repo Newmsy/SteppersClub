@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Theme from '@material-ui/core';
 import EmailCapture from './emailCapture';
+import { LogoMain } from '../LogoMain';
 
 const useStyles = makeStyles((theme) => ({
     gridMainContentWrapper: {
@@ -27,24 +28,12 @@ const useStyles = makeStyles((theme) => ({
         zIndex:0,
         marginTop: -100,
         marginBottom: -50,
+        position: 'relative',
         [theme.breakpoints.down('sm')]: {
             marginTop: '-5vh',
-            marginBottom: -30
-        }
-    },
-    logoImage: {
-        
-        [theme.breakpoints.down('sm')]: {
-            width: '50%',
-            marginLeft: '25%'
-        },
-        [theme.breakpoints.down('md')]: {
-            width: '40%',
-            marginLeft: '30%'
-        },
-        [theme.breakpoints.up('md')]: {
-            width: '15%',
-            marginLeft: '42.5%',
+            marginBottom: -10,
+            marginTop: -50,
+            right: 16
         }
     },
     homepageJoinMailing: {
@@ -102,7 +91,20 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     homepageLinkImage: {
-        width: '100%'
+        
+    },
+    homepageImageButton: {
+        '&:active': {
+            width: '95%',
+            marginTop: '2%'
+        },
+        [theme.breakpoints.down('sm')]: {
+            width: '60%',
+            '&:active': {
+                width: '85%',
+                marginTop: '2%'
+            },
+        },
     }
 }));
   
@@ -111,27 +113,25 @@ export function Home() {
     
     return (
         <Grid container className={styles.gridMainContentWrapper}>
-            <Grid item xs={12} className={styles.gridItemWrapper}>
-                <img src='/Assets/Images/favicon.png' className={styles.logoImage}/>
-            </Grid>
+            <LogoMain/>
             <Grid item container xs={12} lg={8}  className={styles.gridLinksWrapper}>
                 <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
-                    <a href='/releases' className={styles.homepageLinkText}><img src='/Assets/Images/releases.png'/></a>
+                    <a href='/releases' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/releases.png'/></a>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
-                    <a href='/press' className={styles.homepageLinkText}><img src='/Assets/Images/press.png'/></a>
+                    <a href='/press' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/press.png'/></a>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
-                    <a href='/videos' className={styles.homepageLinkText}><img src='/Assets/Images/videos.png'/></a>
+                    <a href='/videos' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/videos.png'/></a>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
-                    <a href='/events' className={styles.homepageLinkText}><img classname={styles.homepageLinkImage} src='/Assets/Images/events.png'/></a>
+                    <a href='/events' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/events.png'/></a>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
-                    <a href='/shop' className={styles.homepageLinkText}><img src='/Assets/Images/shop.png'/></a>
+                    <a href='/shop' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/shop.png'/></a>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
-                    <a href='/contact' className={styles.homepageLinkText}><img src='/Assets/Images/contact.png'/></a>
+                    <a href='/contact' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/contact.png'/></a>
                 </Grid>
             </Grid>
             <Grid item xs={12} className={styles.gridItemTextWrapper}>

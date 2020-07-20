@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-
+import { LogoMain } from '../LogoMain';
 
 const useStyles = makeStyles((theme) => ({
     gridMainContentWrapper: {
@@ -16,21 +16,6 @@ const useStyles = makeStyles((theme) => ({
     },
     gridItemWrapper: {
        
-    },
-    logoImage: {
-        
-        [theme.breakpoints.down('sm')]: {
-            width: '50%',
-            marginLeft: '25%'
-        },
-        [theme.breakpoints.down('md')]: {
-            width: '40%',
-            marginLeft: '30%'
-        },
-        [theme.breakpoints.up('md')]: {
-            width: '15%',
-            marginLeft: '42.5%',
-        }
     },
     releaseItemGrid: {
         backgroundColor: 'black',
@@ -48,6 +33,7 @@ export function Press() {
     
     return (
         <Grid container className={styles.gridMainContentWrapper}>
+            <LogoMain/>
             Someone please interview me
         </Grid>
         
