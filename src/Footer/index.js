@@ -18,6 +18,17 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('md')]: {
             width: '50vw',
         },
+    },
+    toolbarLogoDiv: {
+        width: '100vw',
+        backgroundImage: 'url(/Assets/Images/logoLeftToRight.gif)',
+        backgroundRepeat: 'repeat-x',
+        backgroundSize: 'contain',
+        height: 40,
+        backgroundPosition: 'bottom',
+        '&:hover': {
+            backgroundImage: 'url(/Assets/Images/logoRightToLeft.gif)',
+        },
     }
 }));
   
@@ -25,10 +36,9 @@ export function Footer() {
     const styles = useStyles();
     return (
         <Grid container className={styles.gridToolbarWrapper}>
-            <img src='/Assets/Images/logoLeftToRight.gif' className={styles.steppersToolbarLogo}/>
-            <Hidden smDown>
-                <img src='/Assets/Images/logoLeftToRight.gif' className={styles.steppersToolbarLogo}/>
-            </Hidden>
+            <div className={styles.toolbarLogoDiv}>
+
+            </div>
         </Grid>
     )
-}
+  }

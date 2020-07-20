@@ -135,14 +135,14 @@ export function Home() {
                 </Grid>
             </Grid>
             <Grid item xs={12} className={styles.gridItemTextWrapper}>
-                <h2 className={styles.homepageJoinMailing}>JOIN THE CLUB</h2>
+                <h2 className={styles.homepageJoinMailing}>JOIN THE CLUB:</h2>
             </Grid>
             <Grid item container xs={12} className={styles.gridEmailWrapper}>
                 <Grid item>
                     <EmailCapture/>
                 </Grid>
             </Grid>
-            <Grid item container xs={12} spacing={2} className={styles.gridSocialsWrapper}>
+            <Grid item container xs={12} sm={8} spacing={2} className={styles.gridSocialsWrapper}>
                 <Grid item xs={3} sm={2} md={1}><a href='https://www.facebook.com/steppersclub/?__tn__=%2Cd%2CP-R&eid=ARDXn9RqkkPteWYgjOKLRrpdacbClosDVzoLDJUeXfWFVqT96vg1kiHco-9zT0PJE-kVRxsXjQEhj_XO'><img src='/Assets/Images/facebookIcon.png' className={styles.socialMediaImageFacebook}/></a></Grid>
                 <Grid item xs={3} sm={2} md={1}><a href='https://www.instagram.com/steppersclub_/'><img src='/Assets/Images/instagramLogo.png' className={styles.socialMediaImageInstagram}/></a></Grid>
                 <Grid item xs={3} sm={2} md={1}><a href='https://soundcloud.com/steppersclub'><img src='/Assets/Images/soundcloudLogo.png' className={styles.socialMediaImageSoundcloud}/></a></Grid>
