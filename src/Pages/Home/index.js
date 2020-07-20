@@ -79,7 +79,8 @@ const useStyles = makeStyles((theme) => ({
     gridSocialsWrapper: {
         justifyContent: 'center',
         marginTop: 10,
-        zIndex:1
+        zIndex:1,
+        marginBottom: 50
     },
     linkGridItem: {
         textAlign: 'center'
@@ -88,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: 0,
         zIndex: 1
     },
-    homepageLink: {
+    homepageLinkText: {
         textDecoration: 'none',
         color: 'rgb(42, 0, 141)',
         textShadow: '2px 2px #fff',
@@ -99,6 +100,9 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('sm')]: {
             fontSize: 30
         }
+    },
+    homepageLinkImage: {
+        width: '100%'
     }
 }));
   
@@ -110,24 +114,24 @@ export function Home() {
             <Grid item xs={12} className={styles.gridItemWrapper}>
                 <img src='/Assets/Images/favicon.png' className={styles.logoImage}/>
             </Grid>
-            <Grid item container xs={12} sm={8} md={6} className={styles.gridLinksWrapper}>
-                <Grid item xs={12} sm={6} md={4} className={styles.linkGridItem}>
-                    <a href='/releases' className={styles.homepageLink}>Releases</a>
+            <Grid item container xs={12} lg={8}  className={styles.gridLinksWrapper}>
+                <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
+                    <a href='/releases' className={styles.homepageLinkText}><img src='/Assets/Images/releases.png'/></a>
                 </Grid>
-                <Grid item xs={12} sm={6} md={4} className={styles.linkGridItem}>
-                    <a href='/press' className={styles.homepageLink}>Press</a>
+                <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
+                    <a href='/press' className={styles.homepageLinkText}><img src='/Assets/Images/press.png'/></a>
                 </Grid>
-                <Grid item xs={12} sm={6} md={4} className={styles.linkGridItem}>
-                    <a href='/videos' className={styles.homepageLink}>Videos</a>
+                <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
+                    <a href='/videos' className={styles.homepageLinkText}><img src='/Assets/Images/videos.png'/></a>
                 </Grid>
-                <Grid item xs={12} sm={6} md={4} className={styles.linkGridItem}>
-                    <a href='/events' className={styles.homepageLink}>Events</a>
+                <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
+                    <a href='/events' className={styles.homepageLinkText}><img classname={styles.homepageLinkImage} src='/Assets/Images/events.png'/></a>
                 </Grid>
-                <Grid xs={12} sm={6} md={4} className={styles.linkGridItem}>
-                    <a href='/shop' className={styles.homepageLink}>Shop</a>
+                <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
+                    <a href='/shop' className={styles.homepageLinkText}><img src='/Assets/Images/shop.png'/></a>
                 </Grid>
-                <Grid xs={12} sm={6} md={4} className={styles.linkGridItem}>
-                    <a href='/contact' className={styles.homepageLink}>Contact</a>
+                <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
+                    <a href='/contact' className={styles.homepageLinkText}><img src='/Assets/Images/contact.png'/></a>
                 </Grid>
             </Grid>
             <Grid item xs={12} className={styles.gridItemTextWrapper}>
