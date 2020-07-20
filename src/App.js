@@ -13,6 +13,7 @@ import { Shop } from './Pages/Shop'
 import { Events } from './Pages/Events'
 import { Press } from './Pages/Press'
 import { Contact } from './Pages/Contact'
+import { Roster } from './Pages/Roster'
 import { Toolbar } from './Toolbar'
 import { Footer } from './Footer'
 import { Layout } from './Layout'
@@ -36,6 +37,9 @@ export default function App() {
             <Switch>
               <Route path="/releases">
                 <Releases />
+              </Route>
+              <Route path="/roster">
+                <Roster />
               </Route>
               <Route path="/press">
                 <Press />

@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
         width: '100vw',
         backgroundColor: 'rgb(255,209,76)',
         position: 'absolute',
-        bottom: '0'
+        bottom: 0,
     },
     steppersToolbarLogo: {
         [theme.breakpoints.down('md')]: {
@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundImage: 'url(/Assets/Images/logoLeftToRight.gif)',
         backgroundRepeat: 'repeat-x',
         backgroundSize: 'contain',
+        backgroundPosition: 'bottom',
         height: 40
     },
     toolbarLogoDivRL: {
@@ -31,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundImage: 'url(/Assets/Images/logoRightToLeft.gif)',
         backgroundRepeat: 'repeat-x',
         backgroundSize: 'contain',
+        backgroundPosition: 'bottom',
         height: 40
     }
 }));

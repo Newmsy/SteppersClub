@@ -29,12 +29,18 @@ const useStyles = makeStyles((theme) => ({
         marginTop: -100,
         marginBottom: -50,
         position: 'relative',
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('xs')]: {
             marginTop: '-5vh',
             marginBottom: -10,
             marginTop: -50,
+        },
+        [theme.breakpoints.down(481)]: {
             right: 16
-        }
+        },
+        [theme.breakpoints.down(768)]: {
+            marginTop: -50,
+            marginBottom: 10
+        },
     },
     homepageJoinMailing: {
         color: 'rgb(42, 0, 141)',
@@ -49,17 +55,17 @@ const useStyles = makeStyles((theme) => ({
         textDecoration: 'none'
     },
     socialMediaImageFacebook: {
-        width: '105%',
+        width: '95%',
         minWidth: 40
     },
     socialMediaImageSoundcloud: {
-        width: '96.5%',
+        width: '90%',
         position: 'relative',
         top: '2.25%',
         minWidth: 40
     },
     socialMediaImageInstagram: {
-        width: '92%',
+        width: '86%',
         position: 'relative',
         top: '4%',
         minWidth: 40,
@@ -78,6 +84,12 @@ const useStyles = makeStyles((theme) => ({
         marginTop: 0,
         zIndex: 1
     },
+    gridContactWrapper: {
+        justifyContent: 'center',
+        zIndex: 1,
+        textAlign: 'center',
+        marginBottom: 30    
+    },
     homepageLinkText: {
         textDecoration: 'none',
         color: 'rgb(42, 0, 141)',
@@ -94,6 +106,19 @@ const useStyles = makeStyles((theme) => ({
         
     },
     homepageImageButton: {
+        '&:active': {
+            width: '75%',
+        },
+        [theme.breakpoints.down('sm')]: {
+            width: '60%',
+            '&:active': {
+                width: '55%',
+                marginTop: '2%'
+            },
+        },
+    },
+    homepageImageButtonSmall: {
+        width: '100%',
         '&:active': {
             width: '95%',
             marginTop: '2%'
@@ -131,7 +156,7 @@ export function Home() {
                     <a href='/shop' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/shop.png'/></a>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
-                    <a href='/contact' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/contact.png'/></a>
+                    <a href='/roster' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/roster.png'/></a>
                 </Grid>
             </Grid>
             <Grid item xs={12} className={styles.gridItemTextWrapper}>
@@ -146,6 +171,11 @@ export function Home() {
                 <Grid item xs={3} sm={2} md={1}><a href='https://www.facebook.com/steppersclub/?__tn__=%2Cd%2CP-R&eid=ARDXn9RqkkPteWYgjOKLRrpdacbClosDVzoLDJUeXfWFVqT96vg1kiHco-9zT0PJE-kVRxsXjQEhj_XO'><img src='/Assets/Images/facebookIcon.png' className={styles.socialMediaImageFacebook}/></a></Grid>
                 <Grid item xs={3} sm={2} md={1}><a href='https://www.instagram.com/steppersclub_/'><img src='/Assets/Images/instagramLogo.png' className={styles.socialMediaImageInstagram}/></a></Grid>
                 <Grid item xs={3} sm={2} md={1}><a href='https://soundcloud.com/steppersclub'><img src='/Assets/Images/soundcloudLogo.png' className={styles.socialMediaImageSoundcloud}/></a></Grid>
+            </Grid>
+            <Grid item xs={12} container className={styles.gridContactWrapper}>
+                <Grid item xs={8} sm={4} md={2} lg={1} className={styles.gridContactWrapper}>
+                    <a href='/contact' className={styles.homepageLinkImage}><img className={styles.homepageImageButtonSmall} src='/Assets/Images/contact.png'/></a>
+                </Grid>
             </Grid>
         </Grid>
         

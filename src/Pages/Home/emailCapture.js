@@ -181,7 +181,7 @@ function emailHTMLContent() {
             font-size: 20;
             font-weight: 600;
         }
-        @media (max-width:629px) {
+        @media (max-width:600px) {
             button{
               display: none;
             };
