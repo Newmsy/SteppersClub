@@ -35,26 +35,8 @@ export default function App() {
         <Layout>
           <Router>
             <Switch>
-              <Route path="/releases">
-                <Releases />
-              </Route>
-              <Route path="/roster">
-                <Roster />
-              </Route>
-              <Route path="/press">
-                <Press />
-              </Route>
               <Route path="/contact">
                 <Contact />
-              </Route>
-              <Route path="/shop">
-                <Shop />
-              </Route>
-              <Route path="/videos">
-                <Videos />
-              </Route>
-              <Route path="/events">
-                <Events />
               </Route>
               <Route path="/">
                 <Home />

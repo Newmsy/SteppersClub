@@ -139,26 +139,6 @@ export function Home() {
     return (
         <Grid container className={styles.gridMainContentWrapper}>
             <LogoMain/>
-            <Grid item container xs={12} lg={8}  className={styles.gridLinksWrapper}>
-                <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
-                    <a href='/releases' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/releases.png'/></a>
-                </Grid>
-                <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
-                    <a href='/press' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/press.png'/></a>
-                </Grid>
-                <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
-                    <a href='/videos' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/videos.png'/></a>
-                </Grid>
-                <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
-                    <a href='/events' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/events.png'/></a>
-                </Grid>
-                <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
-                    <a href='/shop' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/shop.png'/></a>
-                </Grid>
-                <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
-                    <a href='/roster' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/roster.png'/></a>
-                </Grid>
-            </Grid>
             <Grid item xs={12} className={styles.gridItemTextWrapper}>
                 <h2 className={styles.homepageJoinMailing}>JOIN THE CLUB:</h2>
             </Grid>
