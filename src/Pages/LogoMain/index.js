@@ -7,7 +7,8 @@ import Theme from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     gridMainContentWrapper: {
         width: '100%',
-        marginTop: 50,
+        marginTop: 0,
+        marginBottom: 30,
         direction: 'column',
         flexGrow: 'column',
         justifyContent: 'center',
