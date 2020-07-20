@@ -101,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('sm')]: {
             width: '60%',
             '&:active': {
-                width: '85%',
+                width: '55%',
                 marginTop: '2%'
             },
         },
