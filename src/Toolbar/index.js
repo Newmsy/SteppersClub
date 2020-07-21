@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundRepeat: 'repeat-x',
         backgroundSize: 'contain',
         height: 40,
+        transition: '1s',
         [theme.breakpoints.down('md')]: {
             backgroundSize: 'auto 100%',
             height: 25,
@@ -35,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundRepeat: 'repeat-x',
         backgroundSize: 'contain',
         height: 40,
+        transition: '1s',
         [theme.breakpoints.down('md')]: {
             backgroundSize: 'auto 100%',
             height: 25,

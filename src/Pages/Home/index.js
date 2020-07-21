@@ -122,6 +122,7 @@ const useStyles = makeStyles((theme) => ({
     },
     homepageImageButtonSmall: {
         width: '100%',
+        transition: '0.3s',
         '&:active': {
             width: '95%',
             marginTop: '2%'
@@ -129,13 +130,14 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             width: '110%',
             marginTop: '-1%',
-            marginLeft: '-2%'
+            marginLeft: '-2%',
+            
         },
         [theme.breakpoints.down('sm')]: {
             width: '60%',
             '&:active': {
                 width: '55%',
-                marginTop: '2%'
+                marginTop: '2%',
             }
         },
     },
