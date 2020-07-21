@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Theme from '@material-ui/core';
 import EmailCapture from './emailCapture';
 import { LogoMain } from '../LogoMain';
 import Fade from '@material-ui/core/Fade';
@@ -144,22 +143,22 @@ export function Home() {
             <LogoMain/>
             <Grid item container xs={12} lg={8}  className={styles.gridLinksWrapper}>
                 <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
-                    <a href='/releases' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/releases.png'/></a>
+                    <a href='/releases' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} alt="RELEASES" src='/Assets/Images/releases.png'/></a>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
-                    <a href='/press' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/press.png'/></a>
+                    <a href='/press' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} alt="PRESS" src='/Assets/Images/press.png'/></a>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
-                    <a href='/videos' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/videos.png'/></a>
+                    <a href='/videos' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} alt="VIDEOS" src='/Assets/Images/videos.png'/></a>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
-                    <a href='/events' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/events.png'/></a>
+                    <a href='/events' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} alt="EVENTS" src='/Assets/Images/events.png'/></a>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
-                    <a href='/shop' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/shop.png'/></a>
+                    <a href='/shop' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} alt="SHOP" src='/Assets/Images/shop.png'/></a>
                 </Grid>
                 <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
-                    <a href='/roster' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} src='/Assets/Images/roster.png'/></a>
+                    <a href='/roster' className={styles.homepageLinkImage}><img className={styles.homepageImageButton} alt="ROSTER" src='/Assets/Images/roster.png'/></a>
                 </Grid>
             </Grid>
             <Grid item xs={12} className={styles.gridItemTextWrapper}>
@@ -175,13 +174,13 @@ export function Home() {
                 </Fade>
             </Grid>
             <Grid item container xs={12} sm={8} spacing={2} className={styles.gridSocialsWrapper}>
-                <Grid item xs={3} sm={2} md={1}><a href='https://www.facebook.com/steppersclub/?__tn__=%2Cd%2CP-R&eid=ARDXn9RqkkPteWYgjOKLRrpdacbClosDVzoLDJUeXfWFVqT96vg1kiHco-9zT0PJE-kVRxsXjQEhj_XO'><img src='/Assets/Images/facebookIcon.png' className={styles.socialMediaImageFacebook}/></a></Grid>
-                <Grid item xs={3} sm={2} md={1}><a href='https://www.instagram.com/steppersclub_/'><img src='/Assets/Images/instagramLogo.png' className={styles.socialMediaImageInstagram}/></a></Grid>
-                <Grid item xs={3} sm={2} md={1}><a href='https://soundcloud.com/steppersclub'><img src='/Assets/Images/soundcloudLogo.png' className={styles.socialMediaImageSoundcloud}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a href='https://www.facebook.com/steppersclub/?__tn__=%2Cd%2CP-R&eid=ARDXn9RqkkPteWYgjOKLRrpdacbClosDVzoLDJUeXfWFVqT96vg1kiHco-9zT0PJE-kVRxsXjQEhj_XO'><img src='/Assets/Images/facebookIcon.png' alt="FACEBOOK" className={styles.socialMediaImageFacebook}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a href='https://www.instagram.com/steppersclub_/'><img src='/Assets/Images/instagramLogo.png' alt="INSTAGRAM" className={styles.socialMediaImageInstagram}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a href='https://soundcloud.com/steppersclub'><img src='/Assets/Images/soundcloudLogo.png' alt="SOUNDCLOUD" className={styles.socialMediaImageSoundcloud}/></a></Grid>
             </Grid>
             <Grid item xs={12} container className={styles.gridContactWrapper}>
                 <Grid item xs={8} sm={4} md={2} lg={1} className={styles.gridContactWrapper}>
-                    <a href='/contact' className={styles.homepageLinkImage}><img className={styles.homepageImageButtonSmall} src='/Assets/Images/contact.png'/></a>
+                    <a href='/contact' className={styles.homepageLinkImage}><img className={styles.homepageImageButtonSmall} alt="CONTACT" src='/Assets/Images/contact.png'/></a>
                 </Grid>
             </Grid>
         </Grid>

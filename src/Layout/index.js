@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Fade from '@material-ui/core/Fade';
 
 const useStyles = makeStyles({
     gridContentWrapper: {

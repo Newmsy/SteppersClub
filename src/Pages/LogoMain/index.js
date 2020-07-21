@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState }  from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Theme from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -17,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
         justifyItems: 'center',
     },
     gridItemWrapper: {
-       
+       zIndex: 1
     },
     logoImage: {
         [theme.breakpoints.down('sm')]: {
@@ -32,18 +31,30 @@ const useStyles = makeStyles((theme) => ({
             width: '15%',
             marginLeft: '42.5%',
         }
+    },
+    goHomeGridHidden: {
+        position: 'relative',
+        bottom: 50,
+        transition: '2s'
+    },
+    goHomeGridShow: {
+        position: 'relative',
+        bottom: 50,
+        left: 200,
+        transition: '2s'
     }
 }));
   
 export function LogoMain() {
     const styles = useStyles();
+    const [showText, setShowText] = useState(false)
     
     return (
         <Grid item container className={styles.gridMainContentWrapper}>
             <Grid item xs={12} className={styles.gridItemWrapper}>
-                <a href='/'><img src='/Assets/Images/favicon.png' className={styles.logoImage}/></a>
+                <a href='/'><img src='/Assets/Images/favicon.png' alt="Steppers Club" className={styles.logoImage} onMouseEnter={() => setShowText(true)} onMouseLeave={() => setShowText(false)}/></a>
             </Grid>
-            <Grid item className={styles.goHome}>
+            <Grid item className={showText? styles.goHomeGridShow: styles.goHomeGridHidden}>
                 Go Home    
             </Grid>            
         </Grid>

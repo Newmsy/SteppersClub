@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import { LogoMain } from '../LogoMain';
@@ -26,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center'
     },
     contactEmailLink: {
-        color: 'rgb(42, 0, 141)',
         color: 'rgb(42, 0, 141)',
         textShadow: '2px 2px #fff',
         fontWeight: 700,
