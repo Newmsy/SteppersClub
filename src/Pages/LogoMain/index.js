@@ -41,7 +41,7 @@ export function LogoMain() {
     return (
         <Grid item container className={styles.gridMainContentWrapper}>
             <Grid item xs={12} className={styles.gridItemWrapper}>
-                <a href='/'><img src='/Assets/Images/favicon.png' className={styles.logoImage}/></a>
+                <a href='/home'><img src='/Assets/Images/favicon.png' className={styles.logoImage}/></a>
             </Grid>            
         </Grid>
     )

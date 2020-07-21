@@ -4,6 +4,9 @@ import Grid from '@material-ui/core/Grid';
 import Theme from '@material-ui/core';
 import EmailCapture from './emailCapture';
 import { LogoMain } from '../LogoMain';
+import LinearProgress from '@material-ui/core/LinearProgress'
+import Fade from '@material-ui/core/Fade';
+
 
 const useStyles = makeStyles((theme) => ({
     gridMainContentWrapper: {
@@ -123,20 +126,47 @@ const useStyles = makeStyles((theme) => ({
             width: '95%',
             marginTop: '2%'
         },
+        '&:hover': {
+            width: '110%',
+            marginTop: '-1%',
+            marginLeft: '-2%'
+        },
         [theme.breakpoints.down('sm')]: {
             width: '60%',
             '&:active': {
                 width: '55%',
                 marginTop: '2%'
-            },
+            }
         },
+    },
+    root: {
+        width: '100%',
+        zIndex: 5
+    },
+    bar: {
+        width: 1000,
+        height: 5
     }
 }));
   
 export function Home() {
     const styles = useStyles();
-    
+    const [progress, setProgress] = React.useState(0);
+
+    React.useEffect(() => {
+        const timer = setInterval(() => {
+        setProgress((oldProgress) => {
+            const diff = 1;
+            return Math.min(oldProgress + diff, 100);
+        });
+        }, 50);
+
+        return () => {
+        clearInterval(timer);
+        };
+    }, []);
     return (
+        <Fade timeout={2000} in={true}>
         <Grid container className={styles.gridMainContentWrapper}>
             <LogoMain/>
             <Grid item xs={12} className={styles.gridItemTextWrapper}>
@@ -157,7 +187,9 @@ export function Home() {
                     <a href='/contact' className={styles.homepageLinkImage}><img className={styles.homepageImageButtonSmall} src='/Assets/Images/contact.png'/></a>
                 </Grid>
             </Grid>
+            
         </Grid>
+        </Fade>
         
     )
   }

@@ -7,6 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import { Home } from './Pages/Home'
+import { LoadingScreen } from './Pages/LoadingScreen'
 import { Releases } from './Pages/Releases'
 import { Videos } from './Pages/Videos'
 import { Shop } from './Pages/Shop'
@@ -18,6 +19,7 @@ import { Toolbar } from './Toolbar'
 import { Footer } from './Footer'
 import { Layout } from './Layout'
 import { makeStyles } from '@material-ui/core/styles'
+
 
 const useStyles = makeStyles({
   appWrapper: {
@@ -31,20 +33,27 @@ export default function App() {
   const styles = useStyles()
   return (
     <div className={styles.appWrapper}>
-      <Toolbar/>
-        <Layout>
           <Router>
             <Switch>
               <Route path="/contact">
-                <Contact />
+                <Toolbar/>
+                <Layout>
+                  <Contact />
+                </Layout>
+                <Footer/>
+              </Route>
+              <Route path="/home">
+                  <Toolbar/>
+                  <Layout>
+                    <Home />
+                  </Layout>
+                  <Footer/>
               </Route>
               <Route path="/">
-                <Home />
+                <LoadingScreen />
               </Route>
             </Switch>
           </Router>
-        </Layout>
-      <Footer/>
     </div>
   );
 }
