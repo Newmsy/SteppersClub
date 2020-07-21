@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import Theme from '@material-ui/core';
 import EmailCapture from './emailCapture';
 import { LogoMain } from '../LogoMain';
+import Fade from '@material-ui/core/Fade';
+
 
 const useStyles = makeStyles((theme) => ({
     gridMainContentWrapper: {
@@ -137,6 +139,7 @@ export function Home() {
     const styles = useStyles();
     
     return (
+        <Fade in={true} timeout={500}>
         <Grid container className={styles.gridMainContentWrapper}>
             <LogoMain/>
             <Grid item container xs={12} lg={8}  className={styles.gridLinksWrapper}>
@@ -160,12 +163,16 @@ export function Home() {
                 </Grid>
             </Grid>
             <Grid item xs={12} className={styles.gridItemTextWrapper}>
-                <h2 className={styles.homepageJoinMailing}>JOIN THE CLUB:</h2>
+                <Fade in={true} timeout={2000}>
+                    <h2 className={styles.homepageJoinMailing}>JOIN THE CLUB:</h2>
+                </Fade>
             </Grid>
             <Grid item container xs={12} className={styles.gridEmailWrapper}>
-                <Grid item>
-                    <EmailCapture/>
-                </Grid>
+                <Fade in={true} timeout={3000}>
+                    <Grid item>
+                        <EmailCapture/>
+                    </Grid>
+                </Fade>
             </Grid>
             <Grid item container xs={12} sm={8} spacing={2} className={styles.gridSocialsWrapper}>
                 <Grid item xs={3} sm={2} md={1}><a href='https://www.facebook.com/steppersclub/?__tn__=%2Cd%2CP-R&eid=ARDXn9RqkkPteWYgjOKLRrpdacbClosDVzoLDJUeXfWFVqT96vg1kiHco-9zT0PJE-kVRxsXjQEhj_XO'><img src='/Assets/Images/facebookIcon.png' className={styles.socialMediaImageFacebook}/></a></Grid>
@@ -178,6 +185,7 @@ export function Home() {
                 </Grid>
             </Grid>
         </Grid>
+        </Fade>
         
     )
   }

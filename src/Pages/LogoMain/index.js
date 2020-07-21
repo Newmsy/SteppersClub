@@ -42,6 +42,9 @@ export function LogoMain() {
         <Grid item container className={styles.gridMainContentWrapper}>
             <Grid item xs={12} className={styles.gridItemWrapper}>
                 <a href='/'><img src='/Assets/Images/favicon.png' className={styles.logoImage}/></a>
+            </Grid>
+            <Grid item className={styles.goHome}>
+                Go Home    
             </Grid>            
         </Grid>
     )
