@@ -16,32 +16,65 @@ const useStyles = makeStyles((theme) => ({
         justifyItems: 'center',
     },
     gridItemWrapper: {
-       zIndex: 1
+       
     },
     logoImage: {
+        zIndex: 5,
+        position: 'relative',
         [theme.breakpoints.down('sm')]: {
             width: '50%',
-            marginLeft: '25%'
         },
         [theme.breakpoints.down('md')]: {
-            width: '35%',
-            marginLeft: '32.5%'
+            width: '25%',
         },
         [theme.breakpoints.up('md')]: {
             width: '15%',
-            marginLeft: '42.5%',
+            
         }
     },
-    goHomeGridHidden: {
+    goHomeGrid: {
         position: 'relative',
-        bottom: 50,
-        transition: '2s'
+        bottom: 100,
+        transition: '0.3s',
+        textDecoration: 'none',
+        marginLeft: '47%',
+        backgroundColor: 'white',
+        color: 'rgb(42, 0, 141)',
+        borderWidth: 2,
+        borderRadius: 25,
+        width: 80,
+        height: 40,
+        borderStyle: 'solid',
+        borderColor: 'rgb(42, 0, 141)',
+        textAlign: 'center',
+        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+        zIndex: 0,
+        [theme.breakpoints.down('md')]: {
+            visibility: 'hidden'
+        },
     },
-    goHomeGridShow: {
+    goHomeText: {
+        textDecoration: 'none',
+        fontWeight: 800,
         position: 'relative',
-        bottom: 50,
-        left: 200,
-        transition: '2s'
+        bottom: 8
+    },
+    goHomeLink: {
+        "&:hover ~ $goHomeGrid": {
+            transform: 'translate(90px,0px)',
+        },
+        width:0,
+        height: 0,
+        position: 'relative',
+        [theme.breakpoints.down('sm')]: {
+            left: '25%'
+        },
+        [theme.breakpoints.down('md')]: {
+            left: '37.5%'
+        },
+        [theme.breakpoints.up('md')]: {
+            left: '42.5%',
+        }
     }
 }));
   
@@ -52,11 +85,14 @@ export function LogoMain() {
     return (
         <Grid item container className={styles.gridMainContentWrapper}>
             <Grid item xs={12} className={styles.gridItemWrapper}>
-                <a href='/'><img src='/Assets/Images/favicon.png' alt="Steppers Club" className={styles.logoImage} onMouseEnter={() => setShowText(true)} onMouseLeave={() => setShowText(false)}/></a>
+                <a href='/'  className={styles.goHomeLink} onMouseEnter={() => setShowText(true)} onMouseLeave={() => setShowText(false)}>
+                    <img src='/Assets/Images/favicon.png' alt="Steppers Club" className={styles.logoImage} />
+                </a>
+                <div className={styles.goHomeGrid} style={showText? {}: {visibility:'hidden'}}>
+                        <p className={styles.goHomeText}>Home</p> 
+                </div>
             </Grid>
-            <Grid item className={showText? styles.goHomeGridShow: styles.goHomeGridHidden}>
-                Go Home    
-            </Grid>            
+                        
         </Grid>
     )
   }

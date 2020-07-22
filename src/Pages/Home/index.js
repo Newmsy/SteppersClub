@@ -29,10 +29,12 @@ const useStyles = makeStyles((theme) => ({
         zIndex:0,
         marginTop: -100,
         marginBottom: -50,
+        [theme.breakpoints.up('md')]: {
+            minHeight: 250
+        },
         position: 'relative',
         [theme.breakpoints.down('xs')]: {
-            marginTop: '-5vh',
-            marginBottom: -10,
+            marginBottom: -20,
             marginTop: -50,
         },
         [theme.breakpoints.down(481)]: {
@@ -40,7 +42,6 @@ const useStyles = makeStyles((theme) => ({
         },
         [theme.breakpoints.down(768)]: {
             marginTop: -50,
-            marginBottom: 10
         },
     },
     homepageJoinMailing: {
@@ -107,8 +108,16 @@ const useStyles = makeStyles((theme) => ({
         
     },
     homepageImageButton: {
+        transition: '0.3s',
+        [theme.breakpoints.up('md')]: {
+            '&:hover': {
+                transform: 'scale(1.05)',
+                transition: '0.5s'
+            },
+        },
         '&:active': {
-            width: '75%',
+            transition: '0.1s',
+            transform: 'scale(0.90)',
         },
         [theme.breakpoints.down('sm')]: {
             width: '60%',
@@ -131,6 +140,12 @@ const useStyles = makeStyles((theme) => ({
                 marginTop: '2%'
             },
         },
+        [theme.breakpoints.up('md')]: {
+            '&:hover': {
+                transform: 'scale(1.05)',
+                transition: '0.5s'
+            },
+        },
     }
 }));
   
@@ -138,7 +153,6 @@ export function Home() {
     const styles = useStyles();
     
     return (
-        <Fade in={true} timeout={500}>
         <Grid container className={styles.gridMainContentWrapper}>
             <LogoMain/>
             <Grid item container xs={12} lg={8}  className={styles.gridLinksWrapper}>
@@ -162,12 +176,12 @@ export function Home() {
                 </Grid>
             </Grid>
             <Grid item xs={12} className={styles.gridItemTextWrapper}>
-                <Fade in={true} timeout={2000}>
+                <Fade in={true} timeout={1000}>
                     <h2 className={styles.homepageJoinMailing}>JOIN THE CLUB:</h2>
                 </Fade>
             </Grid>
             <Grid item container xs={12} className={styles.gridEmailWrapper}>
-                <Fade in={true} timeout={3000}>
+                <Fade in={true} timeout={1500}>
                     <Grid item>
                         <EmailCapture/>
                     </Grid>
@@ -184,8 +198,6 @@ export function Home() {
                 </Grid>
             </Grid>
         </Grid>
-        </Fade>
-        
     )
   }
 
