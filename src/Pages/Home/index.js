@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     },
     homepageJoinMailing: {
         color: 'rgb(42, 0, 141)',
-        textShadow: '2px 2px #fff',
+        textShadow: '2px 2px rgb(255,209,76)',
         fontWeight: 700
     },
     joinMailingText:{
@@ -95,7 +95,7 @@ const useStyles = makeStyles((theme) => ({
     homepageLinkText: {
         textDecoration: 'none',
         color: 'rgb(42, 0, 141)',
-        textShadow: '2px 2px #fff',
+        textShadow: '2px 2px rgb(255,209,76)',
         fontWeight: 700,
         [theme.breakpoints.down('sm')]: {
             fontSize: 20

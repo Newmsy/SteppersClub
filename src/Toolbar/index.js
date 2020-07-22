@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid';
 const useStyles = makeStyles((theme) => ({
     gridToolbarWrapper: {
         width: '100vw',
-        backgroundColor: 'rgb(255,209,76)',
+        backgroundColor: 'white',
         flexDirection: 'row',
         zIndex: 1,
         overflow: 'auto'

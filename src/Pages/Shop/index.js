@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     },
     shopComingSoonText: {
         color: 'rgb(42, 0, 141)',
-        textShadow: '2px 2px #fff',
+        textShadow: '2px 2px rgb(255,209,76)',
         fontWeight: 700,
     },
     shopComingSoonWrapper: {
