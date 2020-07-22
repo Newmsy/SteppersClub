@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import { LogoMain } from '../LogoMain';
+import Hidden from '@material-ui/core/Hidden';
 
 const useStyles = makeStyles((theme) => ({
     gridMainContentWrapper: {
@@ -48,11 +49,12 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative'
     },
     viewBasketGrid: {
-        height: 110,
+        //height: 110,
         justifyContent: 'center',
     },
     viewBasketItemImage: {
-        height: 100
+        height: 100,
+        marginBottom: 10
     },
     viewBasketWrapper: {
         justifyContent: 'center',
@@ -135,12 +137,12 @@ export function Shop() {
     }
 
     var basketItemsGrid = basket.map((IDSize, i) => 
-        <Grid item container xs={8} className={styles.viewBasketGrid}>            
-            <Grid item xs={3}>{getShopItemInfo(IDSize.toString().charAt(0)).desc}</Grid>
+        <Grid item container xs={12} md={8} className={styles.viewBasketGrid}>            
+            <Grid item xs={6} md={3}>{getShopItemInfo(IDSize.toString().charAt(0)).desc}</Grid>
             <Grid item xs={3}>{IDSize.toString().substring(1)}</Grid>
-            <Grid item xs={3}><img src={getShopItemInfo(IDSize.toString().charAt(0)).imageFrontURL} className={styles.viewBasketItemImage} alt="Shop Item"/></Grid>
-            <Grid item xs={1}>£{getShopItemInfo(IDSize.toString().charAt(0)).cost}</Grid>
-            <Grid item xs={2}><button onClick={()=>RemoveItem(i,getShopItemInfo(IDSize.toString().charAt(0)).cost)}>REMOVE</button></Grid>
+            <Hidden smDown><Grid item xs={6} md={3}><img src={getShopItemInfo(IDSize.toString().charAt(0)).imageFrontURL} className={styles.viewBasketItemImage} alt="Shop Item"/></Grid></Hidden>
+            <Grid item xs={3} md={1}>£{getShopItemInfo(IDSize.toString().charAt(0)).cost}</Grid>
+            <Grid item xs={12} md={2}><button onClick={()=>RemoveItem(i,getShopItemInfo(IDSize.toString().charAt(0)).cost)}>REMOVE</button></Grid>
             <Grid item xs={12} className={styles.basketBreakLine}></Grid>
         </Grid>
     )
@@ -161,15 +163,15 @@ export function Shop() {
             {isViewingBasket && <button onClick={() => setIsViewingBasket(!isViewingBasket)}>Back to store</button>}
             {isViewingBasket && 
                 <Grid item container xs={12} className={styles.viewBasketWrapper}>
-                    <Grid item container xs={8} className={styles.viewBasketTitlesGrid}>            
-                        <Grid item xs={3}>ITEM</Grid>
+                    <Grid item container xs={12} md={8} className={styles.viewBasketTitlesGrid}>            
+                        <Grid item xs={6} md={3}>ITEM</Grid>
                         <Grid item xs={3}>SIZE</Grid>
-                        <Grid item xs={3}></Grid>
+                        <Hidden smDown><Grid item xs={3}></Grid></Hidden>
                         <Grid item xs={1}>PRICE</Grid>
                         <Grid item xs={12} className={styles.basketBreakLine}></Grid>
                     </Grid>
                     {basketItemsGrid}
-                    <Grid item container xs={8} className={styles.viewBasketTotalGrid}>            
+                    <Grid item container xs={12} md={8} className={styles.viewBasketTotalGrid}>            
                         <Grid item xs={3}></Grid>
                         <Grid item xs={3}></Grid>
                         <Grid item xs={3}>TOTAL: </Grid>
