@@ -46,8 +46,8 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     homepageJoinMailing: {
-        color: 'rgb(42, 0, 141)',
-        textShadow: '2px 2px rgb(255, 209, 76)',
+        color: 'rgb(255, 209, 76)',
+        textShadow: '2px 2px rgb(42, 0, 141)',
         fontWeight: 700
     },
     joinMailingText:{
@@ -180,9 +180,9 @@ export function Home() {
                 </Grid>
             </Grid>
             <Grid item container xs={12} sm={8} spacing={2} className={styles.gridSocialsWrapper}>
-                <Grid item xs={3} sm={2} md={1}><a href='https://www.facebook.com/steppersclub/?__tn__=%2Cd%2CP-R&eid=ARDXn9RqkkPteWYgjOKLRrpdacbClosDVzoLDJUeXfWFVqT96vg1kiHco-9zT0PJE-kVRxsXjQEhj_XO'><img src='/Assets/Images/facebookIcon.png' className={styles.socialMediaImageFacebook}/></a></Grid>
-                <Grid item xs={3} sm={2} md={1}><a href='https://www.instagram.com/steppersclub_/'><img src='/Assets/Images/instagramLogo.png' className={styles.socialMediaImageInstagram}/></a></Grid>
-                <Grid item xs={3} sm={2} md={1}><a href='https://soundcloud.com/steppersclub'><img src='/Assets/Images/soundcloudLogo.png' className={styles.socialMediaImageSoundcloud}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a target="_blank" href='https://www.facebook.com/steppersclub/?__tn__=%2Cd%2CP-R&eid=ARDXn9RqkkPteWYgjOKLRrpdacbClosDVzoLDJUeXfWFVqT96vg1kiHco-9zT0PJE-kVRxsXjQEhj_XO'><img src='/Assets/Images/facebookIcon.png' className={styles.socialMediaImageFacebook}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a target="_blank" href='https://www.instagram.com/steppersclub_/'><img src='/Assets/Images/instagramLogo.png' className={styles.socialMediaImageInstagram}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a target="_blank" href='https://soundcloud.com/steppersclub'><img src='/Assets/Images/soundcloudLogo.png' className={styles.socialMediaImageSoundcloud}/></a></Grid>
             </Grid>
             <Grid item xs={12} container className={styles.gridContactWrapper}>
                 <Grid item xs={8} sm={4} md={2} lg={1} className={styles.gridContactWrapper}>
