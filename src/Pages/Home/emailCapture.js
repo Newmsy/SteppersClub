@@ -174,10 +174,10 @@ function emailHTMLContent() {
             font-weight: 600;
         }
         ::placeholder {
-            color: rgb(255, 209, 76);
+            color: rgb(42, 0, 141);
             opacity: 1; 
             text-align: center;
-            text-shadow: 2px 2px rgb(42, 0, 141);
+            text-shadow: 1px 1px rgb(255, 209, 76), 2px 2px rgb(42, 0, 141);
             font-size: 20;
             font-weight: 600;
         }

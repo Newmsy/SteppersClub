@@ -18,16 +18,17 @@ const useStyles = makeStyles((theme) => ({
        
     },
     shopComingSoonText: {
-        color: 'rgb(255, 209, 76)',
-        textShadow: '2px 2px rgb(42, 0, 141)',
+        color: 'rgb(42, 0, 141)',
+        textShadow: '1px 1px rgb(255, 209, 76), 2px 2px rgb(42, 0, 141)',
         fontWeight: 700,
     },
     contactComingSoonWrapper: {
         textAlign: 'center'
     },
     contactEmailLink: {
-        color: 'rgb(255, 209, 76)',
-        textShadow: '2px 2px rgb(42, 0, 141)',
+        color: 'rgb(42, 0, 141)',
+        textShadow: '1px 1px rgb(255, 209, 76), 2px 2px rgb(42, 0, 141)',
+        fontStyle: 'italic',
         fontWeight: 700,
         fontSize: 30,
         [theme.breakpoints.down('xs')]: {
@@ -44,7 +45,7 @@ export function Contact() {
             <LogoMain/>
             <Grid item container xs={12} className={styles.gridItemWrapper}>
                 <Grid item xs={12} className={styles.contactComingSoonWrapper}>
-                    <h1 className={styles.shopComingSoonText}>FOR ALL ENQUIRIES AND SUBMISSIONS</h1>
+                    <h1 className={styles.shopComingSoonText}>FOR ALL ENQUIRIES AND SUBMISSIONS:</h1>
                 </Grid>
                 <Grid item xs={12} className={styles.contactComingSoonWrapper}>
                     <a href="mailto:steppersclubuk@gmail.com" className={styles.contactEmailLink}>steppersclubuk@gmail.com</a>

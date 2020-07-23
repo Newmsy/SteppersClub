@@ -46,8 +46,8 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     homepageJoinMailing: {
-        color: 'rgb(255, 209, 76)',
-        textShadow: '2px 2px rgb(42, 0, 141)',
+        color: 'rgb(42, 0, 141)',
+        textShadow: '1px 1px rgb(255, 209, 76), 2px 2px rgb(42, 0, 141)',
         fontWeight: 700
     },
     joinMailingText:{
