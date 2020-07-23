@@ -7,7 +7,7 @@ const useStyles = makeStyles({
     gridContentWrapper: {
         position:'relative',
         width: '100%',
-        backgroundColor: 'rgb(255,209,76)',
+        backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center'
     },

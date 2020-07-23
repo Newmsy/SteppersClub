@@ -23,7 +23,7 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles({
   appWrapper: {
-    backgroundColor: 'rgb(255,209,76)',
+    backgroundColor: 'white',
     position: 'relative',
     minHeight: '100vh'
   }
