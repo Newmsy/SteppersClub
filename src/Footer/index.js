@@ -7,7 +7,7 @@ import Fade from '@material-ui/core/Fade'
 const useStyles = makeStyles((theme) => ({
     gridToolbarWrapper: {
         width: '100vw',
-        backgroundColor: 'rgb(255,209,76)',
+        backgroundColor: 'rgb(42, 0, 141)',
         position: 'absolute',
         bottom: 0,
     },
