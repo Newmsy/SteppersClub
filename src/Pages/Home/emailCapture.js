@@ -177,7 +177,7 @@ function emailHTMLContent() {
             color: rgb(42, 0, 141);
             opacity: 1; 
             text-align: center;
-            text-shadow: 2px 2px #fff;
+            text-shadow: 1px 1px rgb(255, 209, 76), 2px 2px rgb(42, 0, 141);
             font-size: 20;
             font-weight: 600;
         }
@@ -195,7 +195,7 @@ function emailHTMLContent() {
         }
         ::selection {
             background: rgba(42, 0, 141, 0.9); /* WebKit/Blink Browsers */
-            color: white;
+            color: rgb(255, 209, 76);
         }
         .emailtextinput {
             position: relative;
