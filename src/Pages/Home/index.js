@@ -27,14 +27,14 @@ const useStyles = makeStyles((theme) => ({
     gridEmailWrapper: {
         justifyContent: 'center',
         zIndex:0,
-        marginTop: -50,
-        marginBottom: -100,
+        marginTop: -100,
+        marginBottom: -200,
         [theme.breakpoints.up('sm')]: {
             minHeight: 250
         },
         position: 'relative',
         [theme.breakpoints.down('xs')]: {
-            marginBottom: -20,
+            marginBottom: -120,
             marginTop: -50,
         },
         [theme.breakpoints.down(481)]: {
@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
         },
         [theme.breakpoints.down(768)]: {
             marginTop: -50,
+            marginBottom: -150
         },
     },
     homepageJoinMailing: {
@@ -188,9 +189,9 @@ export function Home() {
                 </Fade>
             </Grid>
             <Grid item container xs={12} sm={8} spacing={2} className={styles.gridSocialsWrapper}>
-                <Grid item xs={3} sm={2} md={1}><a href='https://www.facebook.com/steppersclub/?__tn__=%2Cd%2CP-R&eid=ARDXn9RqkkPteWYgjOKLRrpdacbClosDVzoLDJUeXfWFVqT96vg1kiHco-9zT0PJE-kVRxsXjQEhj_XO'><img src='/Assets/Images/facebookIcon.png' alt="FACEBOOK" className={styles.socialMediaImageFacebook}/></a></Grid>
-                <Grid item xs={3} sm={2} md={1}><a href='https://www.instagram.com/steppersclub_/'><img src='/Assets/Images/instagramLogo.png' alt="INSTAGRAM" className={styles.socialMediaImageInstagram}/></a></Grid>
-                <Grid item xs={3} sm={2} md={1}><a href='https://soundcloud.com/steppersclub'><img src='/Assets/Images/soundcloudLogo.png' alt="SOUNDCLOUD" className={styles.socialMediaImageSoundcloud}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a target="_blank" href='https://www.facebook.com/steppersclub/?__tn__=%2Cd%2CP-R&eid=ARDXn9RqkkPteWYgjOKLRrpdacbClosDVzoLDJUeXfWFVqT96vg1kiHco-9zT0PJE-kVRxsXjQEhj_XO'><img src='/Assets/Images/facebookIcon.png' alt="FACEBOOK" className={styles.socialMediaImageFacebook}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a target="_blank" href='https://www.instagram.com/steppersclub_/'><img src='/Assets/Images/instagramLogo.png' alt="INSTAGRAM" className={styles.socialMediaImageInstagram}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a target="_blank" href='https://soundcloud.com/steppersclub'><img src='/Assets/Images/soundcloudLogo.png' alt="SOUNDCLOUD" className={styles.socialMediaImageSoundcloud}/></a></Grid>
             </Grid>
             <Grid item xs={12} container className={styles.gridContactWrapper}>
                 <Grid item xs={8} sm={4} md={2} lg={1} className={styles.gridContactWrapper}>

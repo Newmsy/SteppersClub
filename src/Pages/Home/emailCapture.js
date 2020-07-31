@@ -123,6 +123,7 @@ function emailHTMLContent() {
     
         .form-all {
         color: #555;
+        min-height: 250px;
         }
         .form-header-group .form-header {
         color: #555;
