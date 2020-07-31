@@ -27,9 +27,9 @@ const useStyles = makeStyles((theme) => ({
     gridEmailWrapper: {
         justifyContent: 'center',
         zIndex:0,
-        marginTop: -100,
-        marginBottom: -50,
-        [theme.breakpoints.up('md')]: {
+        marginTop: -50,
+        marginBottom: -100,
+        [theme.breakpoints.up('sm')]: {
             minHeight: 250
         },
         position: 'relative',

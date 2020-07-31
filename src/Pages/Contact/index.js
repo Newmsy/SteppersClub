@@ -19,15 +19,15 @@ const useStyles = makeStyles((theme) => ({
     },
     shopComingSoonText: {
         color: 'rgb(42, 0, 141)',
-        textShadow: '2px 2px #fff',
-        fontWeight: 700,
+        textShadow: '1px 1px rgb(255, 209, 76), 2px 2px rgb(42, 0, 141)',
+        fontWeight: 700
     },
     contactComingSoonWrapper: {
         textAlign: 'center'
     },
     contactEmailLink: {
         color: 'rgb(42, 0, 141)',
-        textShadow: '2px 2px #fff',
+        textShadow: '1px 1px rgb(255, 209, 76)',
         fontWeight: 700,
         fontSize: 30,
         [theme.breakpoints.down('xs')]: {
