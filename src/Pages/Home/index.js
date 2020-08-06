@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: -100,
         marginBottom: -200,
         [theme.breakpoints.up('sm')]: {
-            minHeight: 250
+            minHeight: 400
         },
         position: 'relative',
         [theme.breakpoints.down('xs')]: {
@@ -42,7 +42,8 @@ const useStyles = makeStyles((theme) => ({
         },
         [theme.breakpoints.down(768)]: {
             marginTop: -50,
-            marginBottom: -150
+            marginBottom: -150,
+            minHeight: 250
         },
     },
     homepageJoinMailing: {

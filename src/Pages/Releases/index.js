@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
        
     },
     releaseItemGrid: {
-        backgroundColor: 'black',
         textAlign: 'center',
         color: '#fff',
         marginBottom: 0
@@ -30,7 +29,9 @@ const useStyles = makeStyles((theme) => ({
     },
     firstStepsAlbumCover: {
         width: '100%',
-        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'
+        height: '100%',
+        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+        position: 'relative',
     },
     subCoverTitle: {
         justifyContent: 'center',

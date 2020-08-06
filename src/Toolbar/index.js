@@ -44,6 +44,10 @@ const useStyles = makeStyles((theme) => ({
             backgroundSize: 'auto 100%',
             height: 25,
         }
+    },
+    InvisibleRL: {
+        backgroundImage: 'url(/Assets/Images/logoRightToLeft.gif)',
+        visibility: 'none'
     }
 }));
   
@@ -54,6 +58,8 @@ export function Toolbar() {
         <Grid container className={styles.gridToolbarWrapper}>
             <div className={directionLR? styles.toolbarLogoDivLR : styles.toolbarLogoDivRL} onMouseEnter={() => setDirectionLR(!directionLR)}>
 
+            </div>
+            <div className={styles.InvisibleRL}>
             </div>
         </Grid>
     )
