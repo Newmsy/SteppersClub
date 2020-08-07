@@ -25,7 +25,20 @@ const useStyles = makeStyles((theme) => ({
     },
     soundcloudItem: {
         marginTop: 20
-    }
+    },
+    pressHeader: {
+        color: 'rgb(42, 0, 141)',
+        textShadow: '1px 1px rgb(255, 209, 76), 2px 2px rgb(42, 0, 141)',
+        fontWeight: 700
+    },
+    eventsComingSoonText: {
+        color: 'rgb(42, 0, 141)',
+        textShadow: '1px 1px rgb(255, 209, 76), 2px 2px rgb(42, 0, 141)',
+        fontWeight: 700
+    },
+    eventsComingSoonWrapper: {
+        textAlign: 'center'
+    },
 }));
   
 export function Press() {
@@ -34,7 +47,14 @@ export function Press() {
     return (
         <Grid container className={styles.gridMainContentWrapper}>
             <LogoMain/>
-            Someone please interview me
+            <Grid item xs={12} style={{textAlign:'center'}}>
+                <h1 className={styles.pressHeader}>Press</h1>
+            </Grid>
+            <Grid item container xs={12} className={styles.gridItemWrapper}>
+                <Grid item xs={12} className={styles.eventsComingSoonWrapper}>
+                    <h1 className={styles.eventsComingSoonText}>COMING SOON</h1>
+                </Grid>
+            </Grid> 
         </Grid>
         
     )

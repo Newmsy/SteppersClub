@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
     gridMainContentWrapper: {
         width: '100%',
         marginTop: 0,
-        marginBottom: 30,
+        marginBottom: -20,
         direction: 'column',
         flexGrow: 'column',
         justifyContent: 'center',

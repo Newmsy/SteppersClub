@@ -42,6 +42,11 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 30,
         marginTop: 10
     },
+    releasesHeader: {
+        color: 'rgb(42, 0, 141)',
+        textShadow: '1px 1px rgb(255, 209, 76), 2px 2px rgb(42, 0, 141)',
+        fontWeight: 700
+    },
 
 }));
   
@@ -49,18 +54,19 @@ export function Releases() {
     const styles = useStyles();
     
     return (
-        
-            <Grid container className={styles.gridMainContentWrapper}>
-                <LogoMain/>
-                
-                <Grid item  container xs={8} className={styles.releaseItemGrid}>
-                       <img className={styles.firstStepsAlbumCover} src="/Assets/Images/first_steps_cover.jpg" alt="First Steps"/>
-                </Grid>
-                <Grid item container xs={8} className={styles.subCoverTitle}>
-                    OUT ON ALL PLATFORMS AUGUST 21
-                </Grid>
-                
+        <Grid container className={styles.gridMainContentWrapper}>
+            <LogoMain/>
+            <Grid item xs={12} style={{textAlign:'center'}}>
+            <h1 className={styles.releasesHeader}>Releases</h1>
             </Grid>
+            <Grid item  container xs={8} className={styles.releaseItemGrid}>
+                    <img className={styles.firstStepsAlbumCover} src="/Assets/Images/first_steps_cover.jpg" alt="First Steps"/>
+            </Grid>
+            <Grid item container xs={8} className={styles.subCoverTitle}>
+                OUT ON ALL PLATFORMS AUGUST 21
+            </Grid>
+            
+        </Grid>
         
     )
   }

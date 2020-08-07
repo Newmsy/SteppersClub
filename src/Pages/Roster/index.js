@@ -20,6 +20,11 @@ const useStyles = makeStyles((theme) => ({
     gridItemWrapper: {
        
     },
+    rosterHeader: {
+        color: 'rgb(42, 0, 141)',
+        textShadow: '1px 1px rgb(255, 209, 76), 2px 2px rgb(42, 0, 141)',
+        fontWeight: 700
+    },
     eventsComingSoonText: {
         color: 'rgb(42, 0, 141)',
         textShadow: '1px 1px rgb(255, 209, 76), 2px 2px rgb(42, 0, 141)',
@@ -63,7 +68,6 @@ const useStyles = makeStyles((theme) => ({
   
 export function Roster() {
     const styles = useStyles();
-    var checked = false
     const [oneIn, setOneIn] = useState(false)
     const [twoIn, setTwoIn] = useState(false)
     const [threeIn, setThreeIn] = useState(false)
@@ -72,6 +76,9 @@ export function Roster() {
     return (
         <Grid container className={styles.gridMainContentWrapper}>
             <LogoMain/> 
+            <Grid item xs={12} style={{textAlign:'center'}}>
+                <h1 className={styles.rosterHeader}>Roster</h1>
+            </Grid>
             <Grid item container xs={12} className={styles.gridContentWrapper}>
                 <Slide direction="right" in={true}  unmountOnExit timeout={250} onEntered={()=>setOneIn(true)}><div></div></Slide>
                 <Slide direction="right" in={true}  unmountOnExit timeout={500} onEntered={()=>setTwoIn(true)}><div></div></Slide>
