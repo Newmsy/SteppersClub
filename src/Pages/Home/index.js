@@ -62,6 +62,10 @@ const useStyles = makeStyles((theme) => ({
         width: '95%',
         minWidth: 40
     },
+    socialMediaImageYoutube: {
+        width: '100%',
+        minWidth: 40
+    },
     socialMediaImageSoundcloud: {
         width: '90%',
         position: 'relative',
@@ -193,6 +197,7 @@ export function Home() {
                 <Grid item xs={3} sm={2} md={1}><a target="_blank" rel="noopener noreferrer" href='https://www.facebook.com/steppersclub/?__tn__=%2Cd%2CP-R&eid=ARDXn9RqkkPteWYgjOKLRrpdacbClosDVzoLDJUeXfWFVqT96vg1kiHco-9zT0PJE-kVRxsXjQEhj_XO'><img src='/Assets/Images/facebookIcon.png' alt="FACEBOOK" className={styles.socialMediaImageFacebook}/></a></Grid>
                 <Grid item xs={3} sm={2} md={1}><a target="_blank" rel="noopener noreferrer" href='https://www.instagram.com/steppersclub_/'><img src='/Assets/Images/instagramLogo.png' alt="INSTAGRAM" className={styles.socialMediaImageInstagram}/></a></Grid>
                 <Grid item xs={3} sm={2} md={1}><a target="_blank" rel="noopener noreferrer" href='https://soundcloud.com/steppersclub'><img src='/Assets/Images/soundcloudLogo.png' alt="SOUNDCLOUD" className={styles.socialMediaImageSoundcloud}/></a></Grid>
+                <Grid item xs={3} sm={2} md={1}><a target="_blank" rel="noopener noreferrer" href='https://www.youtube.com/channel/UCmmzif8Hf1zQ6AhPbeJv86w?fbclid=IwAR2944u6hogl83Jv0Kg2GwZgXb7S5SniTogcLqKSDwqrYtSTllQJ2a-nl0s'><img src='/Assets/Images/youtubeIcon.png' alt="YOUTUBE" className={styles.socialMediaImageYoutube}/></a></Grid>
             </Grid>
             <Grid item xs={12} container className={styles.gridContactWrapper}>
                 <Grid item xs={8} sm={4} md={2} lg={1} className={styles.gridContactWrapper}>

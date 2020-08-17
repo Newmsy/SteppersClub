@@ -33,7 +33,7 @@ export const Layout = (props) => {
     const styles = useStyles();
     return (
         <Grid container className={styles.gridContentWrapper}>
-            <Grid item xs={12} sm={8}>
+            <Grid item xs={11} sm={8}>
                 { props.children }
             </Grid>
         </Grid>

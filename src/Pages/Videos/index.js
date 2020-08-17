@@ -13,32 +13,24 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         alignContent: 'center',
         justifyItems: 'center',
-    },
-    gridItemWrapper: {
-       
-    },
-    releaseItemGrid: {
-        backgroundColor: 'black',
-        height: 300,
-        textAlign: 'center',
-        color: '#fff'
-    },
-    soundcloudItem: {
-        marginTop: 20
+        marginBottom: 100
     },
     videosHeader: {
         color: 'rgb(42, 0, 141)',
         textShadow: '1px 1px rgb(255, 209, 76), 2px 2px rgb(42, 0, 141)',
         fontWeight: 700
     },
-    eventsComingSoonText: {
-        color: 'rgb(42, 0, 141)',
-        textShadow: '1px 1px rgb(255, 209, 76), 2px 2px rgb(42, 0, 141)',
-        fontWeight: 700
+    gridVideoContainer: {
+        justifyContent: 'center',
     },
-    eventsComingSoonWrapper: {
-        textAlign: 'center'
-    },
+    gridVideoWrapper: {
+        [theme.breakpoints.up('sm')]: {
+            height: 600
+        },
+        [theme.breakpoints.down('sm')]: {
+            height: 400
+        },
+    }
 }));
   
 export function Videos() {
@@ -50,9 +42,9 @@ export function Videos() {
             <Grid item xs={12} style={{textAlign:'center'}}>
                 <h1 className={styles.videosHeader}>Videos</h1>
             </Grid>
-            <Grid item container xs={12} className={styles.gridItemWrapper}>
-                <Grid item xs={12} className={styles.eventsComingSoonWrapper}>
-                    <h1 className={styles.eventsComingSoonText}>COMING SOON</h1>
+            <Grid item container xs={12} className={styles.gridVideoContainer}>
+                <Grid item container xs={12} sm={8} className={styles.gridVideoWrapper}>
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/30IfE91Ujbc" allowfullscreen title="Youtube Welcome to Steppers"></iframe>
                 </Grid>
             </Grid>     
         </Grid>
