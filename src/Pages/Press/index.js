@@ -143,6 +143,20 @@ export function Press() {
             </Grid>
             <Grid xs={12} sm={8}  item container className={styles.subCoverCardsSolo}>
                 <Grid xs={12} md={2}>
+                    <a href="https://www.bbc.co.uk/sounds/play/p08lyr79" target="_blank" rel="noopener noreferrer" className={styles.imageHyperlink}>
+                        <img className={styles.pressImageCover} src="/Assets/Images/BBCPressImage.png" alt="BBC Introducing"/>
+                    </a>
+                </Grid>
+                <Grid xs={12} md={10} item>
+                    <Grid item container xs={12} className={styles.subCoverTitle}>
+                        <a href="https://www.bbc.co.uk/sounds/play/p08lyr79" target="_blank" rel="noopener noreferrer" className={styles.imageHyperlink}>
+                            BBC INTRODUCING FEATURE: SAM DEELEY - 2094 / 08.08.20
+                        </a>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid xs={12} sm={8}  item container className={styles.subCoverCardsSolo}>
+                <Grid xs={12} md={2}>
                     <a href="https://soundcloud.com/steppersclub/reprezent-fm-steppers-club-guest-mix-and-interview-080820-zefer-w-meltout-crew" target="_blank" rel="noopener noreferrer" className={styles.imageHyperlink}>
                         <img className={styles.pressImageCover} src="/Assets/Images/ReprezentIcon.jpeg" alt="Reprezent Radio"/>
                     </a>
