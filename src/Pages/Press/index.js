@@ -92,7 +92,6 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: '2px 2px 2px 2px rgb(42, 0, 141)',
         marginBottom: 70,
         justifyContent: 'center',
-        alignItems: 'center',
         position: 'relative',
         height: '100%',
         [theme.breakpoints.down('sm')]: {
@@ -123,9 +122,6 @@ export function Press() {
                         <a href="https://soundcloud.com/steppersclub/reprezent-fm-steppers-club-guest-mix-and-interview-080820-zefer-w-meltout-crew" target="_blank" rel="noopener noreferrer" className={styles.imageHyperlink}>
                             REPREZENT FM GUEST APPEARANCE
                         </a>
-                    </Grid>
-                    <Grid item xs={10} className={styles.soundcloudItem}>
-                        <iframe title="Reprezent Soundcloud Player" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/873339163&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
                     </Grid>
                 </Grid>
             </Grid>
