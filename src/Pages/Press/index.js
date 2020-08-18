@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         alignContent: 'center',
         justifyItems: 'center',
+        marginBottom: 50
     },
     gridItemWrapper: {
        
@@ -90,8 +91,9 @@ const useStyles = makeStyles((theme) => ({
         borderBottomRightRadius: 30,
         borderTopRightRadius: 30,
         boxShadow: '2px 2px 2px 2px rgb(42, 0, 141)',
-        marginBottom: 70,
+        marginBottom: 30,
         justifyContent: 'center',
+        alignItems: 'center',
         position: 'relative',
         height: '100%',
         [theme.breakpoints.down('sm')]: {
@@ -111,30 +113,58 @@ export function Press() {
             <Grid item xs={12} style={{textAlign:'center'}}>
                 <h1 className={styles.pressHeader}>Press</h1>
             </Grid>
-            <Grid xs={12} sm={10}  item container className={styles.subCoverCardsSolo}>
-                <Grid xs={12} md={3}>
-                    <a href="https://soundcloud.com/steppersclub/reprezent-fm-steppers-club-guest-mix-and-interview-080820-zefer-w-meltout-crew" target="_blank" rel="noopener noreferrer" className={styles.imageHyperlink}>
-                        <img className={styles.pressImageCover} src="/Assets/Images/ReprezentIcon.jpeg" alt="Reprezent Radio"/>
+            <Grid xs={12} sm={8} item container className={styles.subCoverCardsSolo}>
+                <Grid xs={12} md={2}>
+                    <a href="https://l.messenger.com/l.php?u=https%3A%2F%2Fsoundcloud.com%2Fonthewax%2Fminista-dopamine-steppers-club-otw-premiere&h=AT1lkpM-c88aUschqnYTJwM_NABZFQanrtv2B5oZc6JdXEggOu5cjQjCxz28thoeLUG7JQNKAC1Rmlvb3jJcISCVSYuM_uaVf5PeWmJf3fXChxj2rpgqy9lsLf4hA5-0SG7c-ueFABM8aAjEyz4" target="_blank" rel="noopener noreferrer" className={styles.imageHyperlink}>
+                        <img className={styles.pressImageCover} src="/Assets/Images/WaxPressImage.png" alt="On the Wax"/>
                     </a>
                 </Grid>
-                <Grid xs={12} md={9} item>
+                <Grid xs={12} md={10} item>
                     <Grid item container xs={12} className={styles.subCoverTitle}>
-                        <a href="https://soundcloud.com/steppersclub/reprezent-fm-steppers-club-guest-mix-and-interview-080820-zefer-w-meltout-crew" target="_blank" rel="noopener noreferrer" className={styles.imageHyperlink}>
-                            REPREZENT FM GUEST APPEARANCE
+                        <a href="https://l.messenger.com/l.php?u=https%3A%2F%2Fsoundcloud.com%2Fonthewax%2Fminista-dopamine-steppers-club-otw-premiere&h=AT1lkpM-c88aUschqnYTJwM_NABZFQanrtv2B5oZc6JdXEggOu5cjQjCxz28thoeLUG7JQNKAC1Rmlvb3jJcISCVSYuM_uaVf5PeWmJf3fXChxj2rpgqy9lsLf4hA5-0SG7c-ueFABM8aAjEyz4" target="_blank" rel="noopener noreferrer" className={styles.imageHyperlink}>
+                            ON THE WAX PREMIERE: MINISTA - DOPAMINE / 18.08.20
                         </a>
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid xs={12} sm={10} item container className={styles.subCoverCardsSolo}>
-                <Grid xs={12} md={3}>
+            <Grid xs={12} sm={8} item container className={styles.subCoverCardsSolo}>
+                <Grid xs={12} md={2}>
                     <a href="https://www.cygnetmagazine.co.uk/cygnet-durham/steppers-club-the-new-face-of-the-uk-garage-scene" target="_blank" rel="noopener noreferrer" className={styles.imageHyperlink}>
                         <img className={styles.pressImageCover} src="/Assets/Images/CygnetPressIcon.png" alt="Cygnet Magazine"/>
                     </a>
                 </Grid>
-                <Grid xs={12} md={9} item>
+                <Grid xs={12} md={10} item>
                     <Grid item container xs={12} className={styles.subCoverTitle}>
                         <a href="https://www.cygnetmagazine.co.uk/cygnet-durham/steppers-club-the-new-face-of-the-uk-garage-scene" target="_blank" rel="noopener noreferrer" className={styles.imageHyperlink}>
-                            CYGNET MAGAZINE FEATURE
+                            CYGNET MAGAZINE FEATURE / 08.10.20
+                        </a>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid xs={12} sm={8}  item container className={styles.subCoverCardsSolo}>
+                <Grid xs={12} md={2}>
+                    <a href="https://soundcloud.com/steppersclub/reprezent-fm-steppers-club-guest-mix-and-interview-080820-zefer-w-meltout-crew" target="_blank" rel="noopener noreferrer" className={styles.imageHyperlink}>
+                        <img className={styles.pressImageCover} src="/Assets/Images/ReprezentIcon.jpeg" alt="Reprezent Radio"/>
+                    </a>
+                </Grid>
+                <Grid xs={12} md={10} item>
+                    <Grid item container xs={12} className={styles.subCoverTitle}>
+                        <a href="https://soundcloud.com/steppersclub/reprezent-fm-steppers-club-guest-mix-and-interview-080820-zefer-w-meltout-crew" target="_blank" rel="noopener noreferrer" className={styles.imageHyperlink}>
+                            REPREZENT FM GUEST APPEARANCE / 08.08.20
+                        </a>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid xs={12} sm={8}  item container className={styles.subCoverCardsSolo}>
+                <Grid xs={12} md={2}>
+                    <a href="https://www.bbc.co.uk/programmes/p08kqbxv" target="_blank" rel="noopener noreferrer" className={styles.imageHyperlink}>
+                        <img className={styles.pressImageCover} src="/Assets/Images/BBCPressImage.png" alt="BBC Introducing"/>
+                    </a>
+                </Grid>
+                <Grid xs={12} md={10} item>
+                    <Grid item container xs={12} className={styles.subCoverTitle}>
+                        <a href="https://www.bbc.co.uk/programmes/p08kqbxv" target="_blank" rel="noopener noreferrer" className={styles.imageHyperlink}>
+                            BBC INTRODUCING FEATURE: ZEFER - STEPPIN’ (FEAT. T-AY-O) / 25.07.20
                         </a>
                     </Grid>
                 </Grid>
