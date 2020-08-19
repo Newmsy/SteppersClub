@@ -122,7 +122,7 @@ export function Press() {
                 <Grid xs={12} md={10} item>
                     <Grid item container xs={12} className={styles.subCoverTitle}>
                         <a href="https://threethousand.co.uk/steppers-club-launch-their-label-officially-with-a-top-quality-new-compilation/?fbclid=IwAR2fke-kouwUnp8DXafq7MOyTd9oVTBIEJqb7MxJXOxiTvSDlGggij9ZqgA" target="_blank" rel="noopener noreferrer" className={styles.imageHyperlink}>
-                        3000 BASS FEATURE AND PREMIERE: OPPIDAN - REWIND / 19.08.20
+                        3000 BLOG FEATURE AND PREMIERE: OPPIDAN - REWIND / 19.08.20
                         </a>
                     </Grid>
                 </Grid>
