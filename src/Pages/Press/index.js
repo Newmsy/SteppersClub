@@ -115,6 +115,20 @@ export function Press() {
             </Grid>
             <Grid xs={12} sm={8} item container className={styles.subCoverCardsSolo}>
                 <Grid xs={12} md={2}>
+                    <a href="https://threethousand.co.uk/steppers-club-launch-their-label-officially-with-a-top-quality-new-compilation/?fbclid=IwAR2fke-kouwUnp8DXafq7MOyTd9oVTBIEJqb7MxJXOxiTvSDlGggij9ZqgA" target="_blank" rel="noopener noreferrer" className={styles.imageHyperlink}>
+                        <img className={styles.pressImageCover} src="/Assets/Images/3080PressImage.png" alt="3080"/>
+                    </a>
+                </Grid>
+                <Grid xs={12} md={10} item>
+                    <Grid item container xs={12} className={styles.subCoverTitle}>
+                        <a href="https://threethousand.co.uk/steppers-club-launch-their-label-officially-with-a-top-quality-new-compilation/?fbclid=IwAR2fke-kouwUnp8DXafq7MOyTd9oVTBIEJqb7MxJXOxiTvSDlGggij9ZqgA" target="_blank" rel="noopener noreferrer" className={styles.imageHyperlink}>
+                        3000 BASS FEATURE AND PREMIERE: OPPIDAN - REWIND / 19.08.20
+                        </a>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid xs={12} sm={8} item container className={styles.subCoverCardsSolo}>
+                <Grid xs={12} md={2}>
                     <a href="https://l.messenger.com/l.php?u=https%3A%2F%2Fsoundcloud.com%2Fonthewax%2Fminista-dopamine-steppers-club-otw-premiere&h=AT1lkpM-c88aUschqnYTJwM_NABZFQanrtv2B5oZc6JdXEggOu5cjQjCxz28thoeLUG7JQNKAC1Rmlvb3jJcISCVSYuM_uaVf5PeWmJf3fXChxj2rpgqy9lsLf4hA5-0SG7c-ueFABM8aAjEyz4" target="_blank" rel="noopener noreferrer" className={styles.imageHyperlink}>
                         <img className={styles.pressImageCover} src="/Assets/Images/WaxPressImage.png" alt="On the Wax"/>
                     </a>
