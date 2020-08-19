@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
         width: '100vw',
         backgroundColor: 'white',
         flexDirection: 'row',
-        zIndex: 1,
+        zIndex: 20,
         overflow: 'auto'
     },
     steppersToolbarLogo: {

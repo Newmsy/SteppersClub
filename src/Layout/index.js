@@ -6,24 +6,21 @@ const useStyles = makeStyles({
     gridContentWrapper: {
         position:'relative',
         width: '100%',
-        backgroundColor: 'white',
+        backgroundColor: 'black',
         justifyContent: 'center',
-        alignItems: 'center'
+        //alignItems: 'center',
+        backgroundAttachment: 'fixed',
+        backgroundRepeat: 'no-repeat',
+        backgroundImage: 'url(/Assets/Images/testBackgroundImage.jpg)',
+        backgroundSize: '100% 100%',
+        minHeight: 'calc(100vh - 80px)'
     },
-    steppersToolbarHeader: {
-        fontsize: 30,
-        color: 'white'
-    },
-    comingSoonGif: {
-        height: '100vh'
-    },
-    comingSoonGifWrapper: {
-        //boxShadow: '0px 0px 10px 10px rgba(255, 255, 255, 0.2), 0px 0px 10px 10px rgba(255, 255, 255, 0.2)',
-        height: '100vh',
+    gridLayoutWrapper: {
+        borderRadius: 30,
         marginTop: 30,
-    },
-    soundcloudHidden: {
-        display: 'none'
+        marginBottom: 70,
+        //background: 'linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(36,36,36,1) 100%)',
+        //boxShadow: '0px 0px 10px 10px rgba(255, 209, 76 ,0.5)'
     }
 });
   
@@ -33,7 +30,7 @@ export const Layout = (props) => {
     const styles = useStyles();
     return (
         <Grid container className={styles.gridContentWrapper}>
-            <Grid item xs={11} sm={8}>
+            <Grid item xs={11} sm={6} className={styles.gridLayoutWrapper}>
                 { props.children }
             </Grid>
         </Grid>

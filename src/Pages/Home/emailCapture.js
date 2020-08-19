@@ -117,7 +117,7 @@ function emailHTMLContent() {
         }
     
         .supernova .form-all, .form-all {
-        background-color: white;
+        background-color: transparent;
         border: 1px solid transparent;
         }
     
@@ -224,8 +224,8 @@ function emailHTMLContent() {
                 </span>
             </label>
             <div id="cid_3" class="form-input-wide jf-required">
-                <input type="text" id="input_3" name="q3_input3" class="emailtextinput validate[required, Email]" style="color: rgb(42, 0, 141); outline: none; font-size: 20px; height: 50px; border-style:solid; background-color: white; border-width: 0 0 2px; border-color: rgb(42, 0, 141);" size="30"  placeholder="EMAIL" data-component="email" aria-labelledby="label_3"  />
-                <button id="input_2" class="submitbutton" type="submit" style="font-size: 25px; color: rgb(42, 0, 141); font-weight: 900; background-color: white; border: none;" data-component="button" data-content="">
+                <input type="text" id="input_3" name="q3_input3" class="emailtextinput validate[required, Email]" style="color: rgb(42, 0, 141); outline: none; font-size: 20px; height: 50px; border-style:solid; background-color: transparent; border-width: 0 0 2px; border-color: rgb(42, 0, 141);" size="30"  placeholder="EMAIL" data-component="email" aria-labelledby="label_3"  />
+                <button id="input_2" class="submitbutton" type="submit" style="font-size: 25px; color: rgb(42, 0, 141); font-weight: 900; border: none; background-color: transparent;" data-component="button" data-content="">
                     >
                 </button>
             </div>
