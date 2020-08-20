@@ -110,7 +110,7 @@ export function Releases() {
         STREAM/PURCHASE:
       </Grid>
       <Grid item container xs={7} className={styles.subCoverIcons}>
-        <Grid item xs={2}>
+        <Grid item xs={3} sm={2}>
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -118,12 +118,12 @@ export function Releases() {
           >
             <img
               src="/Assets/Images/soundcloudLogo.png"
-              alt="Soundcloud"
+              alt="SOUNDCLOUD"
               className={styles.socialMediaImageSoundcloud}
             />
           </a>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={3} sm={2}>
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -131,7 +131,7 @@ export function Releases() {
           >
             <img
               src="/Assets/Images/spotifyLogo.png"
-              alt="Spotify"
+              alt="SPOTIFY"
               className={styles.socialMediaImageSpotify}
             />
           </a>
@@ -145,7 +145,7 @@ export function Releases() {
             />
           </a>
         </Grid> */}
-        <Grid item xs={2}>
+        <Grid item xs={3} sm={2}>
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -153,12 +153,12 @@ export function Releases() {
           >
             <img
               src="/Assets/Images/beatportLogo.png"
-              alt="YOUTUBE"
+              alt="BEATPORT"
               className={styles.socialMediaImageBeatport}
             />
           </a>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={3} sm={2}>
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -166,7 +166,7 @@ export function Releases() {
           >
             <img
               src="/Assets/Images/junoReleaseLogo.png"
-              alt="YOUTUBE"
+              alt="JUNO"
               className={styles.socialMediaImageBeatport}
             />
           </a>
