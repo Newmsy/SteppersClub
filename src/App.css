@@ -10,9 +10,7 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(42,0,140);
+  background: rgb(42, 0, 140);
   box-shadow: inset 0 0 2px grey;
   border-radius: 15px;
 }
-
-

@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import renderHTML from 'react-render-html';
-
+import renderHTML from "react-render-html";
 
 function emailHTMLContent() {
-    
-    var htmlString = `
+  var htmlString = `
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.min.js"></script>
     <script src="https://cdn.jotfor.ms/static/prototype.forms.js" type="text/javascript"></script>
@@ -234,18 +232,13 @@ function emailHTMLContent() {
        
     </div>
     <script>
-    `
-    
-    return (htmlString)
+    `;
+
+  return htmlString;
 }
 
 export default class EmailCapture extends Component {
- 
   render() {
-    return (
-        <div>
-              {renderHTML(emailHTMLContent())}
-        </div>
-    );
+    return <div>{renderHTML(emailHTMLContent())}</div>;
   }
 }
