@@ -87,9 +87,9 @@ const useStyles = makeStyles((theme) => ({
   stickerImage: {
     width: "55%",
     transform: "rotate(20deg)",
+    transition: "0.5s",
     "&:hover": {
       transform: "scale(1.05) rotate(20deg)",
-      transition: "0.5s",
     },
   },
 }));
