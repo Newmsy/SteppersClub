@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, Hidden, Slide } from "@material-ui/core";
+import { makeStyles, Hidden, Slide, Fade } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 import { LogoMain } from "../LogoMain";
 
@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
   },
   soundcloudItem: {
     marginTop: 20,
+    boxShadow:
+      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+    marginBottom: 20,
   },
   firstStepsAlbumCover: {
     width: "100%",
@@ -172,6 +175,47 @@ export function Releases() {
           </a>
         </Grid>
       </Grid>
+      <Grid item xs={12} sm={8} className={styles.soundcloudItem}>
+        <iframe
+          width="100%"
+          height="350"
+          scrolling="no"
+          frameborder="no"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1113687451&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+        ></iframe>
+        <div
+          style={{
+            fontSize: "10px",
+            color: "#cccccc",
+            lineBreak: "anywhere",
+            wordBreak: "normal",
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            textOverflow: "ellipsis",
+            fontFamily:
+              " Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
+            fontWeight: 100,
+          }}
+        >
+          <a
+            href="https://soundcloud.com/steppersclub"
+            title="Steppers Club"
+            target="_blank"
+            style={{ color: " #cccccc", textDecoration: "none" }}
+          >
+            Steppers Club
+          </a>{" "}
+          ·{" "}
+          <a
+            href="https://soundcloud.com/steppersclub/sets/first-steps"
+            title="First Steps"
+            target="_blank"
+            style={{ color: " #cccccc", textDecoration: "none" }}
+          >
+            First Steps
+          </a>
+        </div>
+      </Grid>
       <Hidden mdDown>
         <Slide direction="left" in={true} timeout={700}>
           <Grid item xs={12} container className={styles.gridRightSticker}>
@@ -191,10 +235,3 @@ export function Releases() {
     </Grid>
   );
 }
-
-//   <Grid item xs={12} sm={8} className={styles.soundcloudItem}>
-//                     <Fade in={true} timeout={2000}>
-//                         <iframe title="SoundcloudExample" width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/848565127&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
-//                         </iframe>
-//                     </Fade>
-//                 </Grid>
