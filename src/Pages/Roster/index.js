@@ -32,11 +32,11 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   rosterWrapper: {
-    backgroundColor: "rgb(255,255,255)",
+    backgroundColor: "rgba(4,44,159,0.1)",
     minHeight: 200,
     borderRadius: 30,
     boxShadow: "2px 2px 2px 2px rgb(4,44,159)",
-    marginBottom: 20,
+    marginBottom: 40,
     justifyContent: "center",
     alignItems: "center",
     position: "relative",
@@ -114,21 +114,18 @@ export function Roster() {
             container
             xs={12}
             sm={10}
-            md={8}
+            md={10}
             spacing={2}
             className={styles.rosterWrapper}
           >
-            <Grid item xs={12} md={2} className={styles.rosterNameWrapper}>
-              Sensa
-            </Grid>
-            <Grid item xs={12} md={4} className={styles.rosterImageWrapper}>
+            <Grid item xs={10} md={4} className={styles.rosterImageWrapper}>
               <img
-                src="/Assets/Images/sensaRosterImage.jpg"
+                src="/Assets/Images/sensaroster.png"
                 alt="sensa roster"
                 className={styles.rosterImage}
               />
             </Grid>
-            <Grid item xs={10} md={6} className={styles.rosterBioWrapper}>
+            <Grid item xs={10} md={8} className={styles.rosterBioWrapper}>
               Sensa has emerged as one of the brightest talents in UK Garage
               since his breakout Nao - Bad Blood edit in 2019. Having firmly
               established his signature production style early on in his
@@ -154,21 +151,18 @@ export function Roster() {
             container
             xs={12}
             sm={10}
-            md={8}
+            md={10}
             spacing={2}
             className={styles.rosterWrapper}
           >
-            <Grid item xs={12} md={2} className={styles.rosterNameWrapper}>
-              Zefer
-            </Grid>
-            <Grid item xs={12} md={4} className={styles.rosterImageWrapper}>
+            <Grid item xs={10} md={4} className={styles.rosterImageWrapper}>
               <img
-                src="/Assets/Images/zeferRosterImage.jpg"
+                src="/Assets/Images/zeferroster.png"
                 alt="zefer roster"
                 className={styles.rosterImage}
               />
             </Grid>
-            <Grid item xs={10} md={6} className={styles.rosterBioWrapper}>
+            <Grid item xs={10} md={8} className={styles.rosterBioWrapper}>
               {" "}
               Zefer has experienced a fast rise in the UK Garage scene over the
               past 12 months, with support across both mainstream and niche
@@ -193,21 +187,18 @@ export function Roster() {
             container
             xs={12}
             sm={10}
-            md={8}
+            md={10}
             spacing={2}
             className={styles.rosterWrapper}
           >
-            <Grid item xs={12} md={2} className={styles.rosterNameWrapper}>
-              Oppidan
-            </Grid>
-            <Grid item xs={12} md={4} className={styles.rosterImageWrapper}>
+            <Grid item xs={10} md={4} className={styles.rosterImageWrapper}>
               <img
-                src="/Assets/Images/oppidanRosterImage.jpg"
+                src="/Assets/Images/oppidanroster.png"
                 alt="oppidan roster"
                 className={styles.rosterImage}
               />
             </Grid>
-            <Grid item xs={10} md={6} className={styles.rosterBioWrapper}>
+            <Grid item xs={10} md={8} className={styles.rosterBioWrapper}>
               Oppidan’s affiliation with Steppers Club came off the back of a
               breakout 6 month run of releases in 2020, where the Bristol based
               UKG and Bass artist firmly established herself in the wider UK
@@ -232,21 +223,18 @@ export function Roster() {
             container
             xs={12}
             sm={10}
-            md={8}
+            md={10}
             spacing={2}
             className={styles.rosterWrapper}
           >
-            <Grid item xs={12} md={2} className={styles.rosterNameWrapper}>
-              Minista
-            </Grid>
-            <Grid item xs={12} md={4} className={styles.rosterImageWrapper}>
+            <Grid item xs={10} md={4} className={styles.rosterImageWrapper}>
               <img
-                src="/Assets/Images/ministaRosterImage.jpg"
+                src="/Assets/Images/ministaroster.png"
                 alt="minista roster"
                 className={styles.rosterImage}
               />
             </Grid>
-            <Grid item xs={10} md={6} className={styles.rosterBioWrapper}>
+            <Grid item xs={10} md={8} className={styles.rosterBioWrapper}>
               Hailing from the capital, Minista has shown a level of consistency
               unmatched by most in UK Garage and House music. As one of the
               strongest producers in the genre at a technical and creative
@@ -271,21 +259,18 @@ export function Roster() {
             container
             xs={12}
             sm={10}
-            md={8}
+            md={10}
             spacing={2}
             className={styles.rosterWrapper}
           >
-            <Grid item xs={12} md={2} className={styles.rosterNameWrapper}>
-              Sam Deeley
-            </Grid>
-            <Grid item xs={12} md={4} className={styles.rosterImageWrapper}>
+            <Grid item xs={10} md={4} className={styles.rosterImageWrapper}>
               <img
-                src="/Assets/Images/samRosterImage.jpg"
+                src="/Assets/Images/samroster.png"
                 alt="sam deeley roster"
                 className={styles.rosterImage}
               />
             </Grid>
-            <Grid item xs={10} md={6} className={styles.rosterBioWrapper}>
+            <Grid item xs={10} md={8} className={styles.rosterBioWrapper}>
               Oxford based producer Sam Deeley has marked his place as a bright
               spark in UK Garage over the past year, with tracks such as ‘Rinse
               Sound’ gaining support from some of the heavy weights in the
