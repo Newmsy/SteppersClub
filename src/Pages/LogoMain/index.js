@@ -13,10 +13,11 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     alignContent: "center",
     justifyItems: "center",
-    marginLeft: "-5%",
-    marginTop: 80,
+    marginTop: 10,
   },
-  gridItemWrapper: {},
+  gridItemWrapper: {
+    marginLeft: "-25%",
+  },
   logoImage: {
     zIndex: 5,
     position: "relative",
@@ -37,16 +38,16 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: "none",
     marginLeft: "10%",
     backgroundColor: "white",
-    color: "rgb(42, 0, 141)",
+    color: "rgb(4,44,159)",
     borderWidth: 2,
     borderRadius: 25,
     width: 80,
     height: 40,
     borderStyle: "solid",
-    borderColor: "rgb(42, 0, 141)",
+    borderColor: "rgb(4,44,159)",
     textAlign: "center",
     boxShadow:
-      "0 4px 8px 0 rgba(42, 0, 141, 0.2), 0 6px 20px 0 rgba(42, 0, 141, 0.19)",
+      "0 4px 8px 0 rgba(4,44,159, 0.2), 0 6px 20px 0 rgba(4,44,159, 0.19)",
     zIndex: 0,
     [theme.breakpoints.down("md")]: {
       visibility: "hidden",
@@ -86,6 +87,15 @@ export function LogoMain() {
 
   return (
     <Grid item container className={styles.gridMainContentWrapper}>
+      <Grid item xs={6}>
+        <a href="/">
+          <img
+            src="/Assets/Images/Logo.png"
+            alt="Steppers Club Logo"
+            className={styles.logoNameImage}
+          />
+        </a>
+      </Grid>
       <Grid item xs={4} className={styles.gridItemWrapper}>
         <a
           href="/"
@@ -94,7 +104,7 @@ export function LogoMain() {
           onMouseLeave={() => setShowText(false)}
         >
           <img
-            src="/Assets/Images/favicon.png"
+            src="/Assets/Images/logophone.png"
             alt="Steppers Club"
             className={styles.logoImage}
           />
@@ -105,15 +115,6 @@ export function LogoMain() {
         >
           <p className={styles.goHomeText}>Home</p>
         </div>
-      </Grid>
-      <Grid item xs={6}>
-        <a href="/">
-          <img
-            src="/Assets/Images/Logo.png"
-            alt="Steppers Club Logo"
-            className={styles.logoNameImage}
-          />
-        </a>
       </Grid>
     </Grid>
   );

@@ -21,18 +21,19 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     zIndex: 1,
     marginTop: 20,
+    marginBottom: -5,
   },
   gridEmailWrapper: {
     justifyContent: "center",
     zIndex: 0,
-    marginTop: -100,
+    marginTop: -110,
     marginBottom: -200,
     [theme.breakpoints.up("sm")]: {
       minHeight: 400,
     },
     position: "relative",
     [theme.breakpoints.down("xs")]: {
-      marginBottom: -120,
+      marginBottom: -200,
       marginTop: -50,
     },
     [theme.breakpoints.down(481)]: {
@@ -45,8 +46,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   homepageJoinMailing: {
-    color: "rgb(42, 0, 141)",
-    textShadow: "1px 1px rgb(255, 209, 76), 2px 2px rgb(42, 0, 141)",
+    color: "rgb(4,44,159)",
+    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(4,44,159)",
     fontWeight: 700,
   },
   joinMailingText: {
@@ -83,12 +84,13 @@ const useStyles = makeStyles((theme) => ({
   },
   gridSocialsWrapper: {
     justifyContent: "center",
-    marginTop: 10,
+    marginTop: 0,
     zIndex: 1,
-    marginBottom: 50,
+    marginBottom: 10,
   },
   linkGridItem: {
     textAlign: "center",
+
     marginTop: 10,
   },
   gridLinksWrapper: {
@@ -103,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
   },
   homepageLinkText: {
     textDecoration: "none",
-    color: "rgb(42, 0, 141)",
+    color: "rgb(4,44,159)",
     textShadow: "2px 2px rgb(255,209,76)",
     fontWeight: 700,
     [theme.breakpoints.down("sm")]: {
@@ -114,58 +116,39 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   homepageLinkImage: {},
-  homepageImageButton: {
-    transition: "0.3s",
-    [theme.breakpoints.up("md")]: {
-      "&:hover": {
-        transform: "scale(1.05)",
-        transition: "0.5s",
-      },
-    },
-    "&:active": {
-      transition: "0.1s",
-      transform: "scale(0.90)",
-    },
+  homepageImageButton: {},
+  seasonOneImage: {
+    width: "60%",
+    marginLeft: "20%",
+  },
+  seasonOneWrapper: {
+    marginTop: -50,
+    marginBottom: 20,
     [theme.breakpoints.down("sm")]: {
-      width: "60%",
-      "&:active": {
-        width: "55%",
-        marginTop: "2%",
-      },
+      marginTop: 10,
     },
   },
-  homepageImageButtonSmall: {
-    width: "100%",
-    "&:active": {
-      width: "95%",
-      marginTop: "2%",
-    },
-    [theme.breakpoints.down("sm")]: {
-      width: "60%",
-      "&:active": {
-        width: "55%",
-        marginTop: "2%",
-      },
-    },
-    [theme.breakpoints.up("md")]: {
-      "&:hover": {
-        transform: "scale(1.05)",
-        transition: "0.5s",
-      },
-    },
-  },
+  homepageImageButtonSmall: {},
   gridRightSticker: {
     position: "absolute",
     left: "83%",
     top: "60%",
   },
-  stickerImage: {
-    width: "55%",
-    transform: "rotate(20deg)",
-    transition: "0.5s",
-    "&:hover": {
-      transform: "scale(1.05) rotate(20deg)",
-    },
+
+  homepageSlash: {
+    position: "relative",
+    left: 20,
+
+    height: 20,
+  },
+  zeferVN: { width: "83%" },
+  chooseStepperWrapper: {
+    justifyContent: "center",
+    alignItems: "flex-end",
+    marginBottom: 10,
+  },
+  characterUnlock: {
+    width: "100%",
   },
 }));
 
@@ -175,7 +158,30 @@ export function Home() {
   return (
     <Grid container className={styles.gridMainContentWrapper}>
       <Grid item container xs={10} className={styles.gridLinksWrapper}>
-        <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
+        <Grid item container xs={12} className={styles.seasonOneWrapper}>
+          <img
+            className={styles.seasonOneImage}
+            alt="Season One"
+            src="/Assets/Images/seasonOne.png"
+          />
+        </Grid>
+        <Grid item container xs={12} className={styles.chooseStepperWrapper}>
+          <Grid item xs={2} style={{ marginRight: "2%" }}>
+            <img
+              className={styles.zeferVN}
+              alt="Zefer"
+              src="/Assets/Images/vnZefer.png"
+            />
+          </Grid>
+          <Grid item xs={8}>
+            <img
+              className={styles.characterUnlock}
+              alt="Zefer"
+              src="/Assets/Images/characterUnlock.png"
+            />
+          </Grid>
+        </Grid>
+        <Grid item xs={12} sm={6} md={2} lg={2} className={styles.linkGridItem}>
           <a href="/releases" className={styles.homepageLinkImage}>
             <img
               className={styles.homepageImageButton}
@@ -184,7 +190,7 @@ export function Home() {
             />
           </a>
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
+        <Grid item xs={12} sm={6} md={2} lg={2} className={styles.linkGridItem}>
           <a href="/press" className={styles.homepageLinkImage}>
             <img
               className={styles.homepageImageButton}
@@ -193,7 +199,7 @@ export function Home() {
             />
           </a>
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
+        <Grid item xs={12} sm={6} md={2} lg={2} className={styles.linkGridItem}>
           <a href="/videos" className={styles.homepageLinkImage}>
             <img
               className={styles.homepageImageButton}
@@ -202,7 +208,7 @@ export function Home() {
             />
           </a>
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
+        <Grid item xs={12} sm={6} md={2} lg={2} className={styles.linkGridItem}>
           <a href="/events" className={styles.homepageLinkImage}>
             <img
               className={styles.homepageImageButton}
@@ -211,7 +217,7 @@ export function Home() {
             />
           </a>
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
+        <Grid item xs={12} sm={6} md={2} lg={2} className={styles.linkGridItem}>
           <a href="/shop" className={styles.homepageLinkImage}>
             <img
               className={styles.homepageImageButton}
@@ -220,7 +226,7 @@ export function Home() {
             />
           </a>
         </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={4} className={styles.linkGridItem}>
+        <Grid item xs={12} sm={6} md={2} lg={2} className={styles.linkGridItem}>
           <a href="/roster" className={styles.homepageLinkImage}>
             <img
               className={styles.homepageImageButton}
@@ -230,6 +236,7 @@ export function Home() {
           </a>
         </Grid>
       </Grid>
+
       <Grid item xs={12} className={styles.gridItemTextWrapper}>
         <Fade in={true} timeout={1000}>
           <h2 className={styles.homepageJoinMailing}>JOIN THE CLUB:</h2>
@@ -257,7 +264,7 @@ export function Home() {
             href="https://www.facebook.com/steppersclub/?__tn__=%2Cd%2CP-R&eid=ARDXn9RqkkPteWYgjOKLRrpdacbClosDVzoLDJUeXfWFVqT96vg1kiHco-9zT0PJE-kVRxsXjQEhj_XO"
           >
             <img
-              src="/Assets/Images/facebookIcon.png"
+              src="/Assets/Images/facebook.png"
               alt="FACEBOOK"
               className={styles.socialMediaImageFacebook}
             />
@@ -270,7 +277,7 @@ export function Home() {
             href="https://www.instagram.com/steppersclub_/"
           >
             <img
-              src="/Assets/Images/instagramLogo.png"
+              src="/Assets/Images/instagram.png"
               alt="INSTAGRAM"
               className={styles.socialMediaImageInstagram}
             />
@@ -321,22 +328,6 @@ export function Home() {
           </a>
         </Grid>
       </Grid>
-      <Hidden mdDown>
-        <Slide direction="left" in={true} timeout={700}>
-          <Grid item xs={12} container className={styles.gridRightSticker}>
-            <a
-              href="https://ampl.ink/N99ZM"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="/Assets/Images/artworkSticker.png"
-                className={styles.stickerImage}
-              />
-            </a>
-          </Grid>
-        </Slide>
-      </Hidden>
     </Grid>
   );
 }

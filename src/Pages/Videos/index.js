@@ -16,8 +16,8 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 100,
   },
   videosHeader: {
-    color: "rgb(42, 0, 141)",
-    textShadow: "1px 1px rgb(255, 209, 76), 2px 2px rgb(42, 0, 141)",
+    color: "rgb(4,44,159)",
+    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(4,44,159)",
     fontWeight: 700,
   },
   gridVideoContainer: {

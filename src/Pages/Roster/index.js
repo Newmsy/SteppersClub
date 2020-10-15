@@ -19,23 +19,23 @@ const useStyles = makeStyles((theme) => ({
   },
   gridItemWrapper: {},
   rosterHeader: {
-    color: "rgb(42, 0, 141)",
-    textShadow: "1px 1px rgb(255, 209, 76), 2px 2px rgb(42, 0, 141)",
+    color: "rgb(4,44,159)",
+    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(4,44,159)",
     fontWeight: 700,
   },
   eventsComingSoonText: {
-    color: "rgb(42, 0, 141)",
-    textShadow: "1px 1px rgb(255, 209, 76), 2px 2px rgb(42, 0, 141)",
+    color: "rgb(4,44,159)",
+    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(4,44,159)",
     fontWeight: 700,
   },
   eventsComingSoonWrapper: {
     textAlign: "center",
   },
   rosterWrapper: {
-    backgroundColor: "rgb(255, 209, 76)",
+    backgroundColor: "rgb(255,255,255)",
     minHeight: 200,
     borderRadius: 30,
-    boxShadow: "2px 2px 2px 2px rgb(42, 0, 141)",
+    boxShadow: "2px 2px 2px 2px rgb(4,44,159)",
     marginBottom: 20,
     justifyContent: "center",
     alignItems: "center",
@@ -43,8 +43,8 @@ const useStyles = makeStyles((theme) => ({
   },
   rosterNameWrapper: {
     textAlign: "center",
-    color: "rgb(42, 0, 141)",
-    textShadow: "1px 1px rgb(255, 209, 76), 2px 2px rgb(42, 0, 141)",
+    color: "rgb(4,44,159)",
+    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(4,44,159)",
     fontWeight: 700,
     fontSize: 30,
   },
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
   rosterBioWrapper: {
     marginBottom: 30,
     fontFamily: "Kingthings",
-    color: "rgb(42, 0, 141)",
+    color: "rgb(4,44,159)",
     fontSize: 20,
   },
 }));

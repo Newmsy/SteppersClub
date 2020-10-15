@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100vw",
     position: "absolute",
     bottom: 0,
+    zIndex: 3,
   },
   steppersToolbarLogo: {
     [theme.breakpoints.down("md")]: {
