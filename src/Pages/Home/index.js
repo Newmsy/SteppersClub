@@ -119,6 +119,7 @@ const useStyles = makeStyles((theme) => ({
   homepageImageButton: {},
   seasonOneImage: {
     width: "60%",
+    height: "100%",
     marginLeft: "20%",
   },
   seasonOneWrapper: {
