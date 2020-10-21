@@ -5,7 +5,6 @@ import Grid from "@material-ui/core/Grid";
 const useStyles = makeStyles((theme) => ({
   gridMainContentWrapper: {
     width: "100%",
-    marginTop: 0,
     marginBottom: -50,
     direction: "column",
     flexGrow: "column",

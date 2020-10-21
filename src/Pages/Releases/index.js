@@ -1,7 +1,6 @@
 import React from "react";
-import { makeStyles, Hidden, Slide, Fade } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
-import { LogoMain } from "../LogoMain";
 
 const useStyles = makeStyles((theme) => ({
   gridMainContentWrapper: {
@@ -37,9 +36,7 @@ const useStyles = makeStyles((theme) => ({
   subCoverTitle: {
     justifyContent: "center",
     textAlign: "center",
-    fontWeight: 700,
     fontSize: 30,
-    marginTop: 10,
     color: "rgb(4,44,159)",
     textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(4,44,159)",
     fontWeight: 700,
@@ -177,6 +174,7 @@ export function Releases() {
       </Grid>
       <Grid item xs={12} sm={8} className={styles.soundcloudItem}>
         <iframe
+          title="soundcloudPlayer"
           width="100%"
           height="350"
           scrolling="no"
@@ -201,6 +199,7 @@ export function Releases() {
             href="https://soundcloud.com/steppersclub"
             title="Steppers Club"
             target="_blank"
+            rel="noopener noreferrer"
             style={{ color: " #cccccc", textDecoration: "none" }}
           >
             Steppers Club
@@ -210,28 +209,13 @@ export function Releases() {
             href="https://soundcloud.com/steppersclub/sets/first-steps"
             title="First Steps"
             target="_blank"
+            rel="noopener noreferrer"
             style={{ color: " #cccccc", textDecoration: "none" }}
           >
             First Steps
           </a>
         </div>
       </Grid>
-      <Hidden mdDown>
-        <Slide direction="left" in={true} timeout={700}>
-          <Grid item xs={12} container className={styles.gridRightSticker}>
-            <a
-              href="https://ampl.ink/N99ZM"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="/Assets/Images/artworkSticker.png"
-                className={styles.stickerImage}
-              />
-            </a>
-          </Grid>
-        </Slide>
-      </Hidden>
     </Grid>
   );
 }

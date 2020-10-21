@@ -1,8 +1,8 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Hidden, Slide } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import EmailCapture from "./emailCapture";
-import { LogoMain } from "../LogoMain";
+
 import Fade from "@material-ui/core/Fade";
 
 const useStyles = makeStyles((theme) => ({
