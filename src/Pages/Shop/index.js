@@ -282,7 +282,7 @@ export function Shop() {
     </Grid>
   ));
 
-  if (new Date() < new Date(2020, 9, 23, 0, 0, 0, 0))
+  if (new Date() < new Date(2020, 9, 22, 0, 0, 0, 0))
     return (
       <div style={{ width: "100%", textAlign: "center" }}>
         <h1 className={styles.shopComingSoonText}>Coming Soon</h1>
@@ -444,7 +444,7 @@ export function Shop() {
                 </Grid>
                 <Grid item xs={3}></Grid>
                 <Grid item xs={1} sm={3}></Grid>
-                <Grid itemxs={6} sm={4}>
+                <Grid item xs={6} sm={4}>
                   <h2 className={styles.shopComingSoonText}>TOTAL: </h2>
                 </Grid>
                 <Grid item xs={2}>
