@@ -137,7 +137,9 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "rgba(4,44,159, 0.7)",
     },
-    discountCodeInput: {},
+    discountCodeInput: {
+      padding: 3,
+    },
   },
   discountButton: {
     marginTop: 20,
@@ -375,8 +377,19 @@ export function Shop() {
               <>
                 <Grid item xs={1} sm={3}></Grid>
 
-                <Grid item xs={4} sm={3}>
-                  <h2 className={styles.shopComingSoonText}>Discount Code: </h2>
+                <Grid item xs={3} sm={3}>
+                  {discountApplied === false && (
+                    <h2
+                      className={styles.shopComingSoonText}
+                      style={{
+                        textAlign: "center",
+                        position: "relative",
+                        right: 20,
+                      }}
+                    >
+                      Discount Code:
+                    </h2>
+                  )}
                 </Grid>
                 <Grid item container xs={4} alignItems="center">
                   {discountApplied === false && (
@@ -423,7 +436,7 @@ export function Shop() {
                 )}
                 <Grid item xs={3}></Grid>
                 <Grid item xs={1} sm={3}></Grid>
-                <Grid item xs={4}>
+                <Grid item xs={6} sm={4}>
                   <h2 className={styles.shopComingSoonText}>Shipping: </h2>
                 </Grid>
                 <Grid item xs={2}>
@@ -431,7 +444,7 @@ export function Shop() {
                 </Grid>
                 <Grid item xs={3}></Grid>
                 <Grid item xs={1} sm={3}></Grid>
-                <Grid item xs={4}>
+                <Grid itemxs={6} sm={4}>
                   <h2 className={styles.shopComingSoonText}>TOTAL: </h2>
                 </Grid>
                 <Grid item xs={2}>
