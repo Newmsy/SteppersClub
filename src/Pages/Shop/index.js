@@ -282,7 +282,7 @@ export function Shop() {
     </Grid>
   ));
 
-  if (new Date() < new Date(2020, 9, 22, 0, 0, 0, 0))
+  if (new Date() < new Date(2020, 9, 23, 0, 0, 0, 0))
     return (
       <div style={{ width: "100%", textAlign: "center" }}>
         <h1 className={styles.shopComingSoonText}>Coming Soon</h1>
