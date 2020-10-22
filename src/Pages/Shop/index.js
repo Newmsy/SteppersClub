@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import { Button, Select, MenuItem, Modal, Paper } from "@material-ui/core";
+import {
+  Button,
+  Select,
+  MenuItem,
+  Modal,
+  Paper,
+  Input,
+} from "@material-ui/core";
 import Hidden from "@material-ui/core/Hidden";
 import PaypalButton from "./paypalbutton";
 
@@ -28,6 +35,11 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 700,
     marginTop: 15,
     marginLeft: 5,
+  },
+  shopComingSoonText3: {
+    color: "rgb(4,44,159)",
+    textShadow: "2px 2px rgba(255,42,44, 0.5)",
+    fontWeight: 700,
   },
   shopComingSoonWrapper: {
     textAlign: "center",
@@ -57,10 +69,14 @@ const useStyles = makeStyles((theme) => ({
     height: 100,
     marginBottom: 10,
   },
+  mobileViewBasketItemImage: {
+    width: "100%",
+    marginBottom: 10,
+  },
   viewBasketWrapper: {
     justifyContent: "center",
     marginTop: 50,
-    marginBottom: 200,
+    marginBottom: 100,
   },
   basketBreakLine: {
     width: "100%",
@@ -100,11 +116,14 @@ const useStyles = makeStyles((theme) => ({
   checkoutWrapper: {
     position: "absolute",
     width: 400,
+    maxWidth: "100vw",
     top: "5%",
-    left: "calc(50vw - 250px)",
+    left: "calc(50vw - 220px)",
+    [theme.breakpoints.down("sm")]: {
+      left: "2%",
+      width: "80vw",
+    },
     backgroundColor: "white",
-    border: "2px solid #000",
-    boxShadow: theme.shadows[5],
     overflow: "scroll",
     maxHeight: "80vh",
     padding: theme.spacing(2, 4, 3),
@@ -112,6 +131,17 @@ const useStyles = makeStyles((theme) => ({
   checkoutButton: {
     backgroundColor: "rgb(4,44,159)",
     marginTop: "10%",
+    marginRight: 50,
+    color: "white",
+    fontWeight: "bold",
+    "&:hover": {
+      backgroundColor: "rgba(4,44,159, 0.7)",
+    },
+    discountCodeInput: {},
+  },
+  discountButton: {
+    marginTop: 20,
+    backgroundColor: "rgb(4,44,159)",
     color: "white",
     fontWeight: "bold",
     "&:hover": {
@@ -124,13 +154,13 @@ export function Shop() {
   const item1 = {
     cost: 20.0,
     id: "steppersTee1",
-    desc: "Yellow Steppers Tee",
+    desc: "OG",
     imageURL: "/Assets/Images/yellowshoptee.jpg",
   };
   const item2 = {
     cost: 20.0,
     id: "steppersTee2",
-    desc: "Red Steppers Tee",
+    desc: "VOICENOTES",
     imageURL: "/Assets/Images/redshoptee.jpg",
   };
 
@@ -141,6 +171,9 @@ export function Shop() {
   const [shopItem1Size, setShopItem1Size] = useState("");
   const [shopItem2Size, setShopItem2Size] = useState("");
   const [isCheckingOut, setIsCheckingOut] = useState(false);
+  const [discountApplied, setDiscountApplied] = useState(false);
+  const [discountCode, setDiscountCode] = useState("");
+  const [discountError, setDiscountError] = useState(false);
 
   function handleAddToBasket(item, cost) {
     var currentBasket = basket;
@@ -171,6 +204,17 @@ export function Shop() {
     }
   }
 
+  function applyDiscountCode() {
+    if (discountCode === "steppersfam6") {
+      if (discountApplied === false) {
+        setDiscountApplied(true);
+        setTotal(total - 5);
+      }
+    } else {
+      setDiscountError(true);
+    }
+  }
+
   function RemoveItem(index, cost) {
     var currentBasket = basket;
     currentBasket.splice(index, 1);
@@ -180,7 +224,7 @@ export function Shop() {
 
   var basketItemsGrid = basket.map((IDSize, i) => (
     <Grid item container xs={12} md={10} className={styles.viewBasketGrid}>
-      <Grid item xs={6} md={3}>
+      <Grid item xs={3} md={3}>
         <h3 className={styles.shopComingSoonText}>
           {getShopItemInfo(IDSize.toString().charAt(0)).desc}
         </h3>
@@ -204,21 +248,39 @@ export function Shop() {
           £{getShopItemInfo(IDSize.toString().charAt(0)).cost}
         </h3>
       </Grid>
-      <Grid item xs={12} md={2}>
-        <Button
-          onClick={() =>
-            RemoveItem(i, getShopItemInfo(IDSize.toString().charAt(0)).cost)
-          }
-          className={styles.removeButton}
-        >
-          REMOVE
-        </Button>
+      <Grid
+        item
+        container
+        xs={3}
+        md={2}
+        justify="flex-end"
+        style={{ marginBottom: 30 }}
+      >
+        <Grid item>
+          <Button
+            onClick={() =>
+              RemoveItem(i, getShopItemInfo(IDSize.toString().charAt(0)).cost)
+            }
+            className={styles.removeButton}
+          >
+            REMOVE
+          </Button>
+        </Grid>
       </Grid>
+      <Hidden smUp>
+        <Grid item xs={12} justify="flex-start">
+          <img
+            src={getShopItemInfo(IDSize.toString().charAt(0)).imageURL}
+            className={styles.mobileViewBasketItemImage}
+            alt="Shop Item"
+          />
+        </Grid>
+      </Hidden>
       <Grid item xs={12} className={styles.basketBreakLine}></Grid>
     </Grid>
   ));
 
-  if (new Date() < new Date(2020, 8, 23, 12, 0, 0, 0))
+  if (new Date() < new Date(2020, 9, 22, 0, 0, 0, 0))
     return (
       <div style={{ width: "100%", textAlign: "center" }}>
         <h1 className={styles.shopComingSoonText}>Coming Soon</h1>
@@ -241,17 +303,40 @@ export function Shop() {
         <Grid item xs={12} className={styles.shopComingSoonWrapper}>
           <h1 className={styles.shopComingSoonText}>THE CLUB SHOP</h1>
         </Grid>
+        <Grid
+          item
+          xs={12}
+          justify="center"
+          className={styles.shopComingSoonWrapper}
+        >
+          <h1 className={styles.shopComingSoonText}>
+            Available Oct 23 - Oct 30
+          </h1>
+        </Grid>
       </Grid>
 
       {isViewingBasket && (
         <Grid item container xs={12} justify="space-around">
-          <Grid item style={{ marginLeft: 20 }}>
-            <h1 className={styles.shopComingSoonText}>Total: £{total}</h1>
+          <Grid
+            item
+            container
+            style={{ marginLeft: 20 }}
+            xs={12}
+            sm={4}
+            justify="center"
+          >
+            <Grid item>
+              <h1 className={styles.shopComingSoonText}>
+                Total: £{total >= 0 ? total : 0}
+              </h1>
+            </Grid>
           </Grid>
-          <Grid item>
-            <Button onClick={() => setIsViewingBasket(!isViewingBasket)}>
-              <h1 className={styles.shopComingSoonText}>Back to store</h1>
-            </Button>
+          <Grid item xs={12} sm={4} container justify="center">
+            <Grid item>
+              <Button onClick={() => setIsViewingBasket(!isViewingBasket)}>
+                <h1 className={styles.shopComingSoonText}>Back to store</h1>
+              </Button>
+            </Grid>
           </Grid>
         </Grid>
       )}
@@ -264,10 +349,10 @@ export function Shop() {
             md={10}
             className={styles.viewBasketTitlesGrid}
           >
-            <Grid item xs={6} md={3}>
+            <Grid item xs={3} md={3}>
               <h3 className={styles.shopComingSoonText}>ITEM</h3>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item xs={2} sm={3}>
               <h3 className={styles.shopComingSoonText}>SIZE</h3>
             </Grid>
             <Hidden smDown>
@@ -286,22 +371,71 @@ export function Shop() {
             md={12}
             className={styles.viewBasketTotalGrid}
           >
-            <Grid item xs={3}></Grid>
-            <Grid item xs={3}></Grid>
-            <Grid item xs={3}>
-              <h2 className={styles.shopComingSoonText}>Shipping: </h2>
-            </Grid>
-            <Grid item xs={3}>
-              <h2 className={styles.shopComingSoonText}>£3</h2>
-            </Grid>
-            <Grid item xs={3}></Grid>
-            <Grid item xs={3}></Grid>
-            <Grid item xs={3}>
-              <h2 className={styles.shopComingSoonText}>TOTAL: </h2>
-            </Grid>
-            <Grid item xs={3}>
-              <h2 className={styles.shopComingSoonText}>£{total + 3}</h2>
-            </Grid>
+            {total > 0 && (
+              <>
+                <Grid item xs={1} sm={3}></Grid>
+
+                <Grid item xs={4} sm={3}>
+                  <h2 className={styles.shopComingSoonText}>Discount Code: </h2>
+                </Grid>
+                <Grid item container xs={4} alignItems="center">
+                  {discountApplied === false && (
+                    <div className={styles.discountCodeInput}>
+                      <Input
+                        onChange={(e) => {
+                          setDiscountCode(e.target.value);
+                          setDiscountError(false);
+                        }}
+                        value={discountCode}
+                      ></Input>
+                    </div>
+                  )}
+                  {discountApplied === true && (
+                    <h2 className={styles.shopComingSoonText}>
+                      Discount Applied
+                    </h2>
+                  )}
+                </Grid>
+                <Grid item xs={3} sm={2}>
+                  {discountApplied === false && (
+                    <Button
+                      onClick={() => applyDiscountCode(discountCode)}
+                      className={styles.discountButton}
+                    >
+                      Apply
+                    </Button>
+                  )}
+                </Grid>
+                {discountError && (
+                  <Grid item container xs={12}>
+                    <Grid item xs={3}></Grid>
+
+                    <Grid item xs={7}>
+                      <h2 className={styles.shopComingSoonText}>
+                        Discount code not recognised!
+                      </h2>
+                    </Grid>
+                    <Grid item xs={2}></Grid>
+                  </Grid>
+                )}
+                <Grid item xs={3}></Grid>
+                <Grid item xs={1} sm={3}></Grid>
+                <Grid item xs={4}>
+                  <h2 className={styles.shopComingSoonText}>Shipping: </h2>
+                </Grid>
+                <Grid item xs={2}>
+                  <h2 className={styles.shopComingSoonText}>£3.50</h2>
+                </Grid>
+                <Grid item xs={3}></Grid>
+                <Grid item xs={1} sm={3}></Grid>
+                <Grid item xs={4}>
+                  <h2 className={styles.shopComingSoonText}>TOTAL: </h2>
+                </Grid>
+                <Grid item xs={2}>
+                  <h2 className={styles.shopComingSoonText}>£{total + 3.5}</h2>
+                </Grid>
+              </>
+            )}
           </Grid>
           <Grid
             item
@@ -311,7 +445,7 @@ export function Shop() {
             style={{ height: 100, backgroundColor: "white" }}
           >
             {total > 0 && total < 100 && (
-              <Grid item xs={3}>
+              <Grid item xs={3} style={{ marginRight: 50 }}>
                 <Button
                   onClick={() => setIsCheckingOut(true)}
                   className={styles.checkoutButton}
@@ -325,13 +459,26 @@ export function Shop() {
       )}
       {!isViewingBasket && (
         <Grid item container xs={12} justify="space-around">
-          <Grid item style={{ marginLeft: 20 }}>
-            <h1 className={styles.shopComingSoonText}>Total: £{total}</h1>
+          <Grid
+            item
+            container
+            style={{ marginLeft: 20 }}
+            xs={12}
+            sm={4}
+            justify="center"
+          >
+            <Grid item>
+              <h1 className={styles.shopComingSoonText}>
+                Total: £{total >= 0 ? total : 0}
+              </h1>
+            </Grid>
           </Grid>
-          <Grid item>
-            <Button onClick={() => setIsViewingBasket(!isViewingBasket)}>
-              <h1 className={styles.shopComingSoonText}>Basket</h1>
-            </Button>
+          <Grid item xs={12} sm={4} container justify="center">
+            <Grid item>
+              <Button onClick={() => setIsViewingBasket(!isViewingBasket)}>
+                <h1 className={styles.shopComingSoonText}>View Basket</h1>
+              </Button>
+            </Grid>
           </Grid>
         </Grid>
       )}
@@ -397,7 +544,7 @@ export function Shop() {
               alt={item2.desc}
               className={styles.shopItemImage}
             ></img>
-            <h1 className={styles.shopComingSoonText}>
+            <h1 className={styles.shopComingSoonText3}>
               {item2.desc} £{item2.cost}
             </h1>
             <div className={styles.shopAddToBasketButtons}>
