@@ -405,6 +405,9 @@ export function Shop() {
                       Apply
                     </Button>
                   )}
+                  {discountApplied === true && (
+                    <h2 className={styles.shopComingSoonText}>- £5</h2>
+                  )}
                 </Grid>
                 {discountError && (
                   <Grid item container xs={12}>
