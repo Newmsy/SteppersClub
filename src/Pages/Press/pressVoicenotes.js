@@ -16,90 +16,11 @@ const useStyles = makeStyles((theme) => ({
     justifyItems: "center",
     marginBottom: 50,
   },
-  gridItemWrapper: {},
-  releaseItemGrid: {
-    textAlign: "center",
-    color: "#fff",
-  },
+
   pressHeader: {
     color: "rgb(4,44,159)",
     textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(4,44,159)",
     fontWeight: 700,
-  },
-  eventsComingSoonText: {
-    color: "rgb(4,44,159)",
-    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(4,44,159)",
-    fontWeight: 700,
-  },
-  eventsComingSoonWrapper: {
-    textAlign: "center",
-  },
-  pressImageCover: {
-    width: "100%",
-    boxShadow:
-      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-    position: "relative",
-    marginBottom: -5,
-  },
-  pressIconGrid: {
-    textAlign: "center",
-    color: "#fff",
-    marginBottom: 0,
-    width: "100%",
-    zIndex: 500,
-  },
-  subCoverTitle: {
-    justifyContent: "center",
-    textAlign: "center",
-    color: "rgb(4,44,159)",
-    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(4,44,159)",
-    fontWeight: 700,
-    fontSize: 30,
-    marginTop: 10,
-    marginBottom: 30,
-  },
-  subCoverCardsBack: {
-    backgroundColor: "rgba(255, 220, 120, 0.6)",
-    minHeight: 200,
-    borderBottomRightRadius: 30,
-    borderBottomLeftRadius: 30,
-    boxShadow: "2px 2px 2px 2px rgb(4,44,159)",
-    marginBottom: 70,
-    justifyContent: "center",
-    alignItems: "center",
-    position: "relative",
-  },
-  subCoverCardsFront: {
-    backgroundColor: "rgb(255,255,255)",
-    borderRadius: 30,
-    justifyContent: "center",
-    alignItems: "center",
-    position: "relative",
-  },
-  soundcloudItem: {
-    marginTop: 30,
-    marginLeft: "7.5%",
-  },
-  imageHyperlink: {
-    width: "95%",
-    marginBottom: -10,
-    color: "rgb(4,44,159)",
-    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(4,44,159)",
-  },
-  subCoverCardsSolo: {
-    backgroundColor: "rgb(255,255,255)",
-    borderBottomRightRadius: 30,
-    borderTopRightRadius: 30,
-    boxShadow: "2px 2px 2px 2px rgb(4,44,159)",
-    marginBottom: 30,
-    justifyContent: "center",
-    alignItems: "center",
-    position: "relative",
-    height: "100%",
-    [theme.breakpoints.down("sm")]: {
-      borderBottomLeftRadius: 30,
-      borderTopRightRadius: 0,
-    },
   },
 }));
 
@@ -108,8 +29,29 @@ export function PressVoicenotes() {
 
   return (
     <Grid container className={styles.gridMainContentWrapper} xs={12}>
-      <Grid item xs={12} style={{ textAlign: "center" }}>
+      <Grid
+        item
+        container
+        xs={12}
+        style={{ textAlign: "center" }}
+        justify="center"
+      >
         <h1 className={styles.pressHeader}>Press - Voicenotes</h1>
+        {PressCard(
+          "https://www.onthewax.com/sounds/exclusive-label-boss-zefer-presents-his-magical-debut-2-tracker-on-innovative-ukg-startup-steppers-club-otw-premiere",
+          "ON THE WAX PREMIERE / 21.10.20",
+          "WaxPressImage.png"
+        )}
+        {PressCard(
+          "https://threethousand.co.uk/we-premiere-the-latest-zefer-magic-via-steppers-club/",
+          "3000 BLOG PREMIERE / 21.10.20",
+          "3080PressImage.png"
+        )}
+        {PressCard(
+          "https://www.youtube.com/watch?v=nWAv7m-i0Q8&feature=youtu.be&fbclid=IwAR1rwuNkd4tyM9pnvzmIis5rtWkJJ7Pr75h5tnnnbtuwygOB2vtF_0NmX-Q",
+          "HIVECAST INTERVIEW / 20.10.20",
+          "BassHivePressIcon.jpg"
+        )}
       </Grid>
     </Grid>
   );

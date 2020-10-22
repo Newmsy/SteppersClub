@@ -117,7 +117,7 @@ export function Releases() {
             href="https://soundcloud.com/steppersclub/sets/first-steps"
           >
             <img
-              src="/Assets/Images/soundcloudLogo.png"
+              src="/Assets/Images/soundcloudIcon.png"
               alt="SOUNDCLOUD"
               className={styles.socialMediaImageSoundcloud}
             />
