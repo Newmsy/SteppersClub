@@ -284,7 +284,7 @@ export function Shop() {
 
   if (new Date() < new Date(2020, 9, 23, 0, 0, 0, 0))
     return (
-      <div style={{ width: "100%", textAlign: "center" }}>
+      <div style={{ width: "100%", textAlign: "center", marginTop: 100 }}>
         <h1 className={styles.shopComingSoonText}>Coming Soon</h1>
       </div>
     );
