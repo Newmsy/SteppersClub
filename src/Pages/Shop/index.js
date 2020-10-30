@@ -282,10 +282,12 @@ export function Shop() {
     </Grid>
   ));
 
-  if (new Date() < new Date(2020, 9, 23, 0, 0, 0, 0))
+  if (new Date() > new Date(2020, 9, 31, 0, 0, 0, 0))
     return (
       <div style={{ width: "100%", textAlign: "center", marginTop: 100 }}>
-        <h1 className={styles.shopComingSoonText}>Coming Soon</h1>
+        <h1 className={styles.shopComingSoonText}>
+          Shop closed - next release coming soon
+        </h1>
       </div>
     );
 
