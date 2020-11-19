@@ -167,18 +167,11 @@ export function Home() {
           />
         </Grid>
         <Grid item container xs={12} className={styles.chooseStepperWrapper}>
-          <Grid item xs={2} style={{ marginRight: "1%" }}>
-            <img
-              className={styles.zeferVN}
-              alt="Zefer"
-              src="/Assets/Images/vnZefer.png"
-            />
-          </Grid>
           <Grid item xs={8}>
             <img
               className={styles.characterUnlock}
-              alt="Unlock next"
-              src="/Assets/Images/characterUnlock.png"
+              alt="Season One"
+              src="/Assets/Images/characterUnlock2.png"
             />
           </Grid>
         </Grid>
