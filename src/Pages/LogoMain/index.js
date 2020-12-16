@@ -20,15 +20,17 @@ const useStyles = makeStyles((theme) => ({
   logoImage: {
     zIndex: 5,
     position: "relative",
-    [theme.breakpoints.down("sm")]: {
-      width: "100%",
-    },
-    [theme.breakpoints.down("md")]: {
-      width: "75%",
-    },
-    [theme.breakpoints.up("md")]: {
-      width: "50%",
-    },
+    width: "100%",
+    marginLeft: "-20%",
+    // [theme.breakpoints.down("sm")]: {
+    //   width: "100%",
+    // },
+    // [theme.breakpoints.down("md")]: {
+    //   width: "75%",
+    // },
+    // [theme.breakpoints.up("md")]: {
+    //   width: "50%",
+    // },
   },
   goHomeGrid: {
     position: "absolute",
@@ -77,6 +79,7 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     marginLeft: "-5%",
     marginTop: "-5%",
+    zIndex: 100,
   },
 }));
 
@@ -103,7 +106,7 @@ export function LogoMain() {
           onMouseLeave={() => setShowText(false)}
         >
           <img
-            src="/Assets/Images/logophone.png"
+            src="/Assets/Images/steppers-logo-blue.png"
             alt="Steppers Club"
             className={styles.logoImage}
           />

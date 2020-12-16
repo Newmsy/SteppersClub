@@ -31,11 +31,20 @@ export function PressMain() {
   return (
     <Grid container className={styles.gridMainContentWrapper} xs={12}>
       <Grid item xs={12} sm={6} className={styles.gridItem}>
+        <a href="/press/0117">
+          <img
+            className={styles.firstStepsAlbumCover}
+            src="/Assets/Images/oppidan-release.jpg"
+            alt="0117"
+          />
+        </a>
+      </Grid>
+      <Grid item xs={12} sm={6} className={styles.gridItem}>
         <a href="/press/voicenotes">
           <img
             className={styles.firstStepsAlbumCover}
             src="/Assets/Images/voicenotes.jpg"
-            alt="First Steps"
+            alt="Voicenotes"
           />
         </a>
       </Grid>
