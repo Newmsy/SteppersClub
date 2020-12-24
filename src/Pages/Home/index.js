@@ -2,6 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid } from "@material-ui/core";
 import EmailCapture from "./emailCapture";
+import Dialog from "@material-ui/core/Dialog";
+import Hidden from "@material-ui/core/Hidden";
 
 import Fade from "@material-ui/core/Fade";
 
@@ -151,10 +153,24 @@ const useStyles = makeStyles((theme) => ({
   characterUnlock: {
     width: "100%",
   },
+  dubcover: {
+    width: "100%",
+  },
+  pressHeader: {
+    color: "rgb(4,44,159)",
+    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(4,44,159)",
+    fontWeight: 700,
+  },
 }));
 
 export function Home() {
   const styles = useStyles();
+
+  const [open, setOpen] = React.useState(true);
+
+  const handleClose = (value) => {
+    setOpen(false);
+  };
 
   return (
     <Grid container className={styles.gridMainContentWrapper}>
@@ -322,6 +338,27 @@ export function Home() {
           </a>
         </Grid>
       </Grid>
+      <Hidden smUp>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          style={{ width: "100%", textAlign: "center", textDecoration: "none" }}
+        >
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://soundcloud.com/steppersclub/sets/steppers-dubs-1"
+          >
+            <Grid item xs={12}>
+              <img
+                src="/Assets/Images/dubscover.jpg"
+                alt="SOUNDCLOUD"
+                className={styles.dubcover}
+              />
+            </Grid>
+          </a>
+        </Dialog>
+      </Hidden>
     </Grid>
   );
 }

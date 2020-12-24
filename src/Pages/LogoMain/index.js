@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     alignContent: "center",
     justifyItems: "center",
-    marginTop: 10,
+    marginTop: -30,
   },
   gridItemWrapper: {
     marginLeft: "-25%",

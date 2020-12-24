@@ -1,7 +1,9 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import Hidden from "@material-ui/core/Hidden";
 import Grid from "@material-ui/core/Grid";
 import { LogoMain } from "../Pages/LogoMain";
+import Slide from "@material-ui/core/Slide";
 
 const useStyles = makeStyles((theme) => ({
   gridContentWrapper: {
@@ -42,12 +44,68 @@ const useStyles = makeStyles((theme) => ({
       "0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3)",
     opacity: 1,
   },
+  popupWrapper: {
+    position: "absolute",
+    bottom: "20%",
+    right: "5%",
+    zIndex: 1000,
+    transform: "rotate(10deg)",
+    transition: "0.5s",
+    "&:hover": {
+      transform: "scale(1.05) rotate(0deg)",
+    },
+  },
+  popup: {
+    width: 250,
+
+    borderRadius: 10,
+    //borderColor: "black",
+
+    opacity: 1,
+    //border: "5px solid",
+    justifyContent: "center",
+    alignItems: "center",
+    transform: "rotate(20deg)",
+  },
+  pressHeader: {
+    color: "rgb(4,44,159)",
+
+    fontWeight: 700,
+    fontSize: 18,
+  },
+  socialMediaImageSoundcloud: {
+    width: "100%",
+    radius: 10,
+    borderRadius: 10,
+  },
 }));
 
 export const Layout = (props) => {
   const styles = useStyles();
   return (
     <Grid container className={styles.gridContentWrapper}>
+      <Hidden smDown>
+        <div className={styles.popupWrapper}>
+          <Slide direction="left" in={true} timeout={550}>
+            <Grid className={styles.popup}>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://soundcloud.com/steppersclub/sets/steppers-dubs-1"
+              >
+                <Grid item xs={12}>
+                  <img
+                    src="/Assets/Images/dubscover.jpg"
+                    alt="SOUNDCLOUD"
+                    className={styles.socialMediaImageSoundcloud}
+                  />
+                </Grid>
+              </a>
+            </Grid>
+          </Slide>
+        </div>
+      </Hidden>
+
       <Grid item container xs={12} className={styles.staticGrid}></Grid>
       <Grid
         item
