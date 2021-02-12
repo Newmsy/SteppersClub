@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 20,
     boxShadow:
       "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-    marginBottom: 20,
+    marginBottom: 50,
   },
   firstStepsAlbumCover: {
     width: "100%",
@@ -98,6 +98,114 @@ export function Releases() {
     <Grid container className={styles.gridMainContentWrapper}>
       <Grid item xs={12} style={{ textAlign: "center" }}>
         <h1 className={styles.releasesHeader}>Releases</h1>
+      </Grid>
+      <Grid item container xs={12} justify="center">
+        <Grid item container xs={8} sm={4} className={styles.releaseItemGrid}>
+          <img
+            className={styles.firstStepsAlbumCover}
+            src="/Assets/Images/minista-artwork.jpg"
+            alt="First Steps"
+          />
+        </Grid>
+        <Grid item container xs={9} className={styles.subCoverTitle}>
+          STREAM/PURCHASE:
+        </Grid>
+        <Grid item container xs={7} className={styles.subCoverIcons}>
+          <Grid item xs={3} sm={2}>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://soundcloud.com/steppersclub/sets/minista-save-me-ep"
+            >
+              <img
+                src="/Assets/Images/soundcloudIcon.png"
+                alt="SOUNDCLOUD"
+                className={styles.socialMediaImageSoundcloud}
+              />
+            </a>
+          </Grid>
+          <Grid item xs={3} sm={2}>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://open.spotify.com/album/6SbvP6L8fhpfCVH81BBt1o"
+            >
+              <img
+                src="/Assets/Images/spotifyLogo.png"
+                alt="SPOTIFY"
+                className={styles.socialMediaImageSpotify}
+              />
+            </a>
+          </Grid>
+          <Grid item xs={3} sm={2}>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.beatport.com/release/save-me/3259324"
+            >
+              <img
+                src="/Assets/Images/beatportLogo.png"
+                alt="BEATPORT"
+                className={styles.socialMediaImageBeatport}
+              />
+            </a>
+          </Grid>
+          <Grid item xs={3} sm={2}>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.junodownload.com/products/minista-save-me/4923842-02/"
+            >
+              <img
+                src="/Assets/Images/junoReleaseLogo.png"
+                alt="JUNO"
+                className={styles.socialMediaImageBeatport}
+              />
+            </a>
+          </Grid>
+        </Grid>
+        <Grid item xs={12} sm={8} className={styles.soundcloudItem}>
+          <iframe
+            title="soundcloudPlayer"
+            width="100%"
+            height="250"
+            scrolling="no"
+            frameborder="no"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1187760298&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+          ></iframe>
+          <div
+            style={{
+              fontSize: "10px",
+              color: "#cccccc",
+              lineBreak: "anywhere",
+              wordBreak: "normal",
+              overflow: "hidden",
+              whiteSpace: "nowrap",
+              textOverflow: "ellipsis",
+              fontFamily:
+                " Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
+              fontWeight: 100,
+            }}
+          >
+            <a
+              href="https://soundcloud.com/steppersclub"
+              title="Steppers Club"
+              target="_blank"
+              style={{ color: " #cccccc", textDecoration: "none" }}
+            >
+              Steppers Club
+            </a>{" "}
+            ·{" "}
+            <a
+              href="https://soundcloud.com/steppersclub/sets/minista-save-me-ep"
+              title="Minista - Save Me EP"
+              target="_blank"
+              style={{ color: " #cccccc", textDecoration: "none" }}
+            >
+              Minista - Save Me EP
+            </a>
+          </div>
+        </Grid>
       </Grid>
       <Grid item container xs={12} justify="center">
         <Grid item container xs={8} sm={4} className={styles.releaseItemGrid}>

@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     alignContent: "center",
     justifyItems: "center",
-    marginTop: -30,
+    marginTop: 50,
   },
   gridItemWrapper: {
     marginLeft: "-25%",
@@ -89,26 +89,16 @@ export function LogoMain() {
 
   return (
     <Grid item container className={styles.gridMainContentWrapper}>
-      <Grid item xs={6}>
-        <a href="/">
-          <img
-            src="/Assets/Images/Logo.png"
-            alt="Steppers Club Logo"
-            className={styles.logoNameImage}
-          />
-        </a>
-      </Grid>
-      <Grid item xs={4} className={styles.gridItemWrapper}>
+      <Grid item xs={8}>
         <a
           href="/"
-          className={styles.goHomeLink}
           onMouseEnter={() => setShowText(true)}
           onMouseLeave={() => setShowText(false)}
         >
           <img
-            src="/Assets/Images/steppers-logo-blue.png"
-            alt="Steppers Club"
-            className={styles.logoImage}
+            src="/Assets/Images/Banner.png"
+            alt="Steppers Club Logo"
+            className={styles.logoNameImage}
           />
         </a>
         <div

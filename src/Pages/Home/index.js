@@ -175,19 +175,12 @@ export function Home() {
   return (
     <Grid container className={styles.gridMainContentWrapper}>
       <Grid item container xs={10} className={styles.gridLinksWrapper}>
-        <Grid item container xs={12} className={styles.seasonOneWrapper}>
-          <img
-            className={styles.seasonOneImage}
-            alt="Season One"
-            src="/Assets/Images/seasonOne.png"
-          />
-        </Grid>
         <Grid item container xs={12} className={styles.chooseStepperWrapper}>
           <Grid item xs={8}>
             <img
               className={styles.characterUnlock}
               alt="Season One"
-              src="/Assets/Images/characterUnlock2.png"
+              src="/Assets/Images/characterUnlock.png"
             />
           </Grid>
         </Grid>
