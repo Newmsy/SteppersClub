@@ -1,34 +1,67 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
+import React, { useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
 
-const useStyles = makeStyles({
-    gridToolbarWrapper: {
-        height: 100,
-        width: '100%',
-        backgroundColor: 'black',
-        alignItems: 'flex-end'
+const useStyles = makeStyles((theme) => ({
+  gridToolbarWrapper: {
+    width: "100vw",
+    backgroundColor: "white",
+    flexDirection: "row",
+    zIndex: 1,
+    overflow: "auto",
+  },
+  steppersToolbarLogo: {
+    [theme.breakpoints.down("md")]: {
+      width: "100vw",
     },
-    steppersToolbarHeaderLogo: {
-        fontsize: 100,
-        color: 'white'
+    [theme.breakpoints.up("md")]: {
+      width: "50vw",
     },
-    steppersToolbarHeader: {
-        fontsize: 30,
-        color: 'white'
-    }
-});
-  
+  },
+  toolbarLogoDivLR: {
+    width: "100vw",
+    backgroundImage: "url(/Assets/Images/logoLeftToRight.gif)",
+    backgroundRepeat: "repeat-x",
+    backgroundSize: "contain",
+    backgroundPosition: "bottom",
+    height: 40,
+    transition: "1s",
+    [theme.breakpoints.down("md")]: {
+      backgroundSize: "auto 100%",
+      height: 25,
+    },
+  },
+  toolbarLogoDivRL: {
+    width: "100vw",
+    backgroundImage: "url(/Assets/Images/logoRightToLeft.gif)",
+    backgroundRepeat: "repeat-x",
+    backgroundSize: "contain",
+    backgroundPosition: "bottom",
+    height: 40,
+    transition: "1s",
+    [theme.breakpoints.down("md")]: {
+      backgroundSize: "auto 100%",
+      height: 25,
+    },
+  },
+  InvisibleRL: {
+    backgroundImage: "url(/Assets/Images/logoRightToLeft.gif)",
+    visibility: "none",
+  },
+}));
+
 export function Toolbar() {
-    const styles = useStyles();
-    return (
-        <Grid container className={styles.gridToolbarWrapper}>
-            <Grid item xs={9}>
-                <h1 className={styles.steppersToolbarHeaderLogo}>Steppers Club</h1>
-            </Grid>
-            <Grid item xs={3}>
-                <h2 className={styles.steppersToolbarHeader}>Home to all Garaj Paedophiles</h2>
-            </Grid>
-        </Grid>
-    )
-  }
+  const styles = useStyles();
+  const [directionLR, setDirectionLR] = useState(true);
+  return (
+    <Grid container className={styles.gridToolbarWrapper}>
+      <div
+        className={
+          directionLR ? styles.toolbarLogoDivLR : styles.toolbarLogoDivRL
+        }
+        onMouseEnter={() => setDirectionLR(!directionLR)}
+      ></div>
+      <div className={styles.InvisibleRL}></div>
+    </Grid>
+  );
+}
