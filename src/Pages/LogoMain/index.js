@@ -101,12 +101,12 @@ export function LogoMain() {
             className={styles.logoNameImage}
           />
         </a>
-        <div
+        {/* <div
           className={styles.goHomeGrid}
           style={showText ? {} : { visibility: "hidden" }}
         >
           <p className={styles.goHomeText}>Home</p>
-        </div>
+        </div> */}
       </Grid>
     </Grid>
   );
