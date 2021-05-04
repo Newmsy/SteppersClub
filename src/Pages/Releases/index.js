@@ -37,8 +37,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     textAlign: "center",
     fontSize: 30,
-    color: "rgb(4,44,159)",
-    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(4,44,159)",
+    color: "rgb(40,0,122)",
+    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(40,0,122)",
     fontWeight: 700,
     marginTop: 30,
     marginBottom: 15,
@@ -47,8 +47,8 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   releasesHeader: {
-    color: "rgb(4,44,159)",
-    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(4,44,159)",
+    color: "rgb(40,0,122)",
+    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(40,0,122)",
     fontWeight: 700,
   },
   socialMediaImageAppleMusic: {

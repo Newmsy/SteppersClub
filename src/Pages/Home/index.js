@@ -48,8 +48,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   homepageJoinMailing: {
-    color: "rgb(4,44,159)",
-    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(4,44,159)",
+    color: "rgb(40,0,122)",
+    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(40,0,122)",
     fontWeight: 700,
   },
   joinMailingText: {
@@ -86,24 +86,26 @@ const useStyles = makeStyles((theme) => ({
   },
   gridSocialsWrapper: {
     justifyContent: "center",
-    marginTop: 0,
+    marginTop: 40,
     zIndex: 1,
     marginBottom: 10,
   },
   linkGridItem: {
     textAlign: "center",
-
     marginTop: 10,
   },
   gridLinksWrapper: {
     marginTop: 50,
+    marginBottom: 100,
     zIndex: 1,
+    justifyContent: "center",
   },
   gridContactWrapper: {
     justifyContent: "center",
     zIndex: 1,
     textAlign: "center",
     marginBottom: 30,
+    marginTop: 20,
   },
   homepageLinkText: {
     textDecoration: "none",
@@ -117,8 +119,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: 30,
     },
   },
-  homepageLinkImage: {},
-  homepageImageButton: {},
+
   seasonOneImage: {
     width: "60%",
     height: "100%",
@@ -130,31 +131,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       marginTop: 10,
     },
-  },
-  homepageImageButtonSmall: {},
-  gridRightSticker: {
-    position: "absolute",
-    left: "83%",
-    top: "60%",
-  },
-
-  homepageSlash: {
-    position: "relative",
-    left: 20,
-
-    height: 20,
-  },
-  zeferVN: { width: "83%" },
-  chooseStepperWrapper: {
-    justifyContent: "center",
-    alignItems: "flex-end",
-    marginBottom: 10,
-  },
-  characterUnlock: {
-    width: "100%",
-  },
-  dubcover: {
-    width: "100%",
   },
   pressHeader: {
     color: "rgb(4,44,159)",
@@ -172,19 +148,15 @@ export function Home() {
     setOpen(false);
   };
 
+  // get rid of roster, video & press
+  // same colour socials
+  // get rid of icons of everyone
+  //
+
   return (
     <Grid container className={styles.gridMainContentWrapper}>
       <Grid item container xs={10} className={styles.gridLinksWrapper}>
-        <Grid item container xs={12} className={styles.chooseStepperWrapper}>
-          <Grid item xs={8}>
-            <img
-              className={styles.characterUnlock}
-              alt="Season One"
-              src="/Assets/Images/characterUnlock.png"
-            />
-          </Grid>
-        </Grid>
-        <Grid item xs={12} sm={6} md={2} lg={2} className={styles.linkGridItem}>
+        <Grid item xs={12} sm={6} md={3} lg={3} className={styles.linkGridItem}>
           <a href="/releases" className={styles.homepageLinkImage}>
             <img
               className={styles.homepageImageButton}
@@ -193,25 +165,8 @@ export function Home() {
             />
           </a>
         </Grid>
-        <Grid item xs={12} sm={6} md={2} lg={2} className={styles.linkGridItem}>
-          <a href="/press" className={styles.homepageLinkImage}>
-            <img
-              className={styles.homepageImageButton}
-              alt="PRESS"
-              src="/Assets/Images/press.png"
-            />
-          </a>
-        </Grid>
-        <Grid item xs={12} sm={6} md={2} lg={2} className={styles.linkGridItem}>
-          <a href="/videos" className={styles.homepageLinkImage}>
-            <img
-              className={styles.homepageImageButton}
-              alt="VIDEOS"
-              src="/Assets/Images/videos.png"
-            />
-          </a>
-        </Grid>
-        <Grid item xs={12} sm={6} md={2} lg={2} className={styles.linkGridItem}>
+
+        <Grid item xs={12} sm={6} md={3} lg={3} className={styles.linkGridItem}>
           <a href="/events" className={styles.homepageLinkImage}>
             <img
               className={styles.homepageImageButton}
@@ -220,21 +175,12 @@ export function Home() {
             />
           </a>
         </Grid>
-        <Grid item xs={12} sm={6} md={2} lg={2} className={styles.linkGridItem}>
+        <Grid item xs={12} sm={6} md={3} lg={3} className={styles.linkGridItem}>
           <a href="/shop" className={styles.homepageLinkImage}>
             <img
               className={styles.homepageImageButton}
               alt="SHOP"
               src="/Assets/Images/shop.png"
-            />
-          </a>
-        </Grid>
-        <Grid item xs={12} sm={6} md={2} lg={2} className={styles.linkGridItem}>
-          <a href="/roster" className={styles.homepageLinkImage}>
-            <img
-              className={styles.homepageImageButton}
-              alt="ROSTER"
-              src="/Assets/Images/roster.png"
             />
           </a>
         </Grid>
@@ -293,7 +239,7 @@ export function Home() {
             href="https://soundcloud.com/steppersclub"
           >
             <img
-              src="/Assets/Images/soundcloudLogo.png"
+              src="/Assets/Images/soundcloudIcon.png"
               alt="SOUNDCLOUD"
               className={styles.socialMediaImageSoundcloud}
             />
@@ -331,27 +277,6 @@ export function Home() {
           </a>
         </Grid>
       </Grid>
-      <Hidden smUp>
-        <Dialog
-          open={open}
-          onClose={handleClose}
-          style={{ width: "100%", textAlign: "center", textDecoration: "none" }}
-        >
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://soundcloud.com/steppersclub/sets/steppers-dubs-1"
-          >
-            <Grid item xs={12}>
-              <img
-                src="/Assets/Images/dubscover.jpg"
-                alt="SOUNDCLOUD"
-                className={styles.dubcover}
-              />
-            </Grid>
-          </a>
-        </Dialog>
-      </Hidden>
     </Grid>
   );
 }

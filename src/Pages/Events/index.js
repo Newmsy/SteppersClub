@@ -16,16 +16,16 @@ const useStyles = makeStyles((theme) => ({
   },
   gridItemWrapper: {},
   eventsComingSoonText: {
-    color: "rgb(4,44,159)",
-    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(4,44,159)",
+    color: "rgb(40,0,122)",
+    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(40,0,122)",
     fontWeight: 700,
   },
   eventsComingSoonWrapper: {
     textAlign: "center",
   },
   eventsHeader: {
-    color: "rgb(4,44,159)",
-    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(4,44,159)",
+    color: "rgb(40,0,122)",
+    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(40,0,122)",
     fontWeight: 700,
   },
 }));

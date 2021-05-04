@@ -173,10 +173,10 @@ function emailHTMLContent() {
             font-weight: 600;
         }
         ::placeholder {
-            color: rgb(4,44,159);
+            color: rgb(40,0,122);
             opacity: 1; 
             text-align: center;
-            text-shadow: 1px 1px rgb(255,255,255), 2px 2px rgb(4,44,159);
+            text-shadow: 1px 1px rgb(255,255,255), 2px 2px rgb(40,0,122);
             font-size: 20;
             font-weight: 600;
         }
@@ -222,8 +222,8 @@ function emailHTMLContent() {
                 </span>
             </label>
             <div id="cid_3" class="form-input-wide jf-required">
-                <input type="text" id="input_3" name="q3_input3" class="emailtextinput validate[required, Email]" style="color: rgb(4,44,159); outline: none; font-size: 20px; height: 50px; border-style:solid; background-color: white; border-width: 0 0 2px; border-color: rgb(4,44,159);" size="30"  placeholder="EMAIL" data-component="email" aria-labelledby="label_3"  />
-                <button id="input_2" class="submitbutton" type="submit" style="font-size: 25px; color: rgb(4,44,159); font-weight: 900; background-color: white; border: none;" data-component="button" data-content="">
+                <input type="text" id="input_3" name="q3_input3" class="emailtextinput validate[required, Email]" style="color: rgb(40,0,122); text-align:center; outline: none; font-size: 20px; height: 50px; border-style:solid; background-color: white; border-width: 0 0 2px; border-color: rgb(40,0,122);" size="30"  placeholder="EMAIL" data-component="email" aria-labelledby="label_3"  />
+                <button id="input_2" class="submitbutton" type="submit" style="font-size: 25px; color: rgb(40,0,122); font-weight: 900; background-color: white; border: none;" data-component="button" data-content="">
                     >
                 </button>
             </div>

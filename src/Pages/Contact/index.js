@@ -16,15 +16,15 @@ const useStyles = makeStyles((theme) => ({
   },
   gridItemWrapper: {},
   shopComingSoonText: {
-    color: "rgb(4,44,159)",
-    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(4,44,159)",
+    color: "rgb(40,0,122)",
+    textShadow: "1px 1px rgb(255,255,255), 2px 2px rgb(40,0,122)",
     fontWeight: 700,
   },
   contactComingSoonWrapper: {
     textAlign: "center",
   },
   contactEmailLink: {
-    color: "rgb(4,44,159)",
+    color: "rgb(40,0,122)",
     textShadow: "1px 1px rgb(255,255,255)",
     fontWeight: 700,
     fontSize: 30,

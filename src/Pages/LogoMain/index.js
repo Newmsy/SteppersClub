@@ -5,14 +5,14 @@ import Grid from "@material-ui/core/Grid";
 const useStyles = makeStyles((theme) => ({
   gridMainContentWrapper: {
     width: "100%",
-    marginBottom: -50,
+    marginBottom: -100,
     direction: "column",
     flexGrow: "column",
     justifyContent: "center",
     alignItems: "center",
     alignContent: "center",
     justifyItems: "center",
-    marginTop: 50,
+    marginTop: 0,
   },
   gridItemWrapper: {
     marginLeft: "-25%",
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   logoImage: {
     zIndex: 5,
     position: "relative",
-    width: "100%",
+    width: "150%",
     marginLeft: "-20%",
     // [theme.breakpoints.down("sm")]: {
     //   width: "100%",
@@ -76,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   logoNameImage: {
-    width: "100%",
+    width: "140%",
     marginLeft: "-5%",
     marginTop: "-5%",
     zIndex: 100,
@@ -89,16 +89,27 @@ export function LogoMain() {
 
   return (
     <Grid item container className={styles.gridMainContentWrapper}>
-      <Grid item xs={8}>
+      <Grid item xs={8} style={{ display: "flex", flexDirection: "row" }}>
         <a
           href="/"
           onMouseEnter={() => setShowText(true)}
           onMouseLeave={() => setShowText(false)}
         >
           <img
-            src="/Assets/Images/Banner.png"
+            src="/Assets/Images/logoText.png"
             alt="Steppers Club Logo"
             className={styles.logoNameImage}
+          />
+        </a>
+        <a
+          href="/"
+          onMouseEnter={() => setShowText(true)}
+          onMouseLeave={() => setShowText(false)}
+        >
+          <img
+            src="/Assets/Images/logo.png"
+            alt="Steppers Club Logo"
+            className={styles.logoImage}
           />
         </a>
         {/* <div

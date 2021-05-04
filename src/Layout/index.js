@@ -84,28 +84,6 @@ export const Layout = (props) => {
   const styles = useStyles();
   return (
     <Grid container className={styles.gridContentWrapper}>
-      <Hidden smDown>
-        <div className={styles.popupWrapper}>
-          <Slide direction="left" in={true} timeout={550}>
-            <Grid className={styles.popup}>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://soundcloud.com/steppersclub/sets/steppers-dubs-1"
-              >
-                <Grid item xs={12}>
-                  <img
-                    src="/Assets/Images/dubscover.jpg"
-                    alt="SOUNDCLOUD"
-                    className={styles.socialMediaImageSoundcloud}
-                  />
-                </Grid>
-              </a>
-            </Grid>
-          </Slide>
-        </div>
-      </Hidden>
-
       <Grid item container xs={12} className={styles.staticGrid}></Grid>
       <Grid
         item
