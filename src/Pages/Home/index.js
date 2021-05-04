@@ -96,7 +96,7 @@ const useStyles = makeStyles((theme) => ({
   },
   gridLinksWrapper: {
     marginTop: 50,
-    marginBottom: 100,
+    marginBottom: 50,
     zIndex: 1,
     justifyContent: "center",
   },

@@ -20,8 +20,9 @@ const useStyles = makeStyles((theme) => ({
   logoImage: {
     zIndex: 5,
     position: "relative",
-    width: "150%",
-    marginLeft: "-20%",
+    width: "110%",
+    marginLeft: "-26%",
+    marginTop: "20%",
     // [theme.breakpoints.down("sm")]: {
     //   width: "100%",
     // },
@@ -76,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   logoNameImage: {
-    width: "140%",
+    width: "120%",
     marginLeft: "-5%",
     marginTop: "-5%",
     zIndex: 100,
