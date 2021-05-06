@@ -576,7 +576,7 @@ export function Shop() {
             width: "50%",
             marginLeft: "25%",
             marginBottom: -40,
-            marginTop: "-2%",
+            height: "100%",
           }}
         />
       </Grid>
