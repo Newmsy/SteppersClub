@@ -108,7 +108,7 @@ export function LogoMain() {
           onMouseLeave={() => setShowText(false)}
         >
           <img
-            src="/Assets/Images/logo.png"
+            src="/Assets/Images/SteppersLogo.png"
             alt="Steppers Club Logo"
             className={styles.logoImage}
           />
