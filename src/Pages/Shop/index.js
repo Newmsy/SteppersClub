@@ -15,7 +15,7 @@ import PaypalButton from "./paypalbutton";
 const useStyles = makeStyles((theme) => ({
   gridMainContentWrapper: {
     width: "100%",
-    marginTop: 70,
+    marginTop: 60,
     direction: "column",
     flexGrow: "column",
     justifyContent: "center",
@@ -46,12 +46,12 @@ const useStyles = makeStyles((theme) => ({
     marginTop: -50,
   },
   gridShopItemWrapper: {
-    marginBottom: 100,
-    marginTop: 30,
+    marginBottom: 5,
+    marginTop: 10,
   },
   shopItemImage: {
     width: "100%",
-
+    cursor: "pointer",
     position: "relative",
 
     zIndex: 1,
@@ -88,7 +88,6 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 50,
   },
   addBasketButton: {
-    marginLeft: 20,
     backgroundColor: "rgb(4,44,159)",
     color: "white",
     fontWeight: "bold",
@@ -97,12 +96,18 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   addBasketButtonDisabled: {
-    marginLeft: 20,
     fontWeight: "bold",
     backgroundColor: "rgba(4,44,159,0.3)",
   },
   sizeSelect: {
-    width: 80,
+    width: 200,
+    height: 40,
+    backgroundColor: "rgba(110,110,110,0.1)",
+    textAlign: "center",
+    paddingLeft: 15,
+    fontSize: 25,
+    border: "2px solid rgb(4,44,159)",
+    borderRadius: 5,
   },
   removeButton: {
     backgroundColor: "rgb(4,44,159)",
@@ -153,64 +158,120 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export function Shop() {
-  const item1 = {
+  const blacktee = {
     cost: 20.0,
-    id: "steppersTee1",
-    desc: "OG",
-    imageURL: "/Assets/Images/yellowshoptee.jpg",
+    id: "BkT",
+    desc: "Black Steppers Tee",
+    imageURL: "/Assets/Images/Shop/blackfronttee.png",
+    extraImages: {
+      back: "/Assets/Images/Shop/blackbacktee.png",
+      photoFront: "/Assets/Images/Shop/blackfrontphoto.png",
+      photoBack: "/Assets/Images/Shop/blackbackphoto.png",
+    },
   };
-  const item2 = {
+  const whitetee = {
     cost: 20.0,
-    id: "steppersTee2",
-    desc: "VOICENOTES",
-    imageURL: "/Assets/Images/redshoptee.jpg",
+
+    id: "WhT",
+    desc: "White Steppers Tee",
+    imageURL: "/Assets/Images/Shop/whitefronttee.png",
+    extraImages: {
+      back: "/Assets/Images/Shop/whitebacktee.png",
+      photoFront: "/Assets/Images/Shop/whitefrontphoto.png",
+      photoBack: "/Assets/Images/Shop/whitebackphoto.png",
+    },
+  };
+  const yellowtee = {
+    cost: 20.0,
+
+    id: "YeT",
+    desc: "Yellow Steppers Tee",
+    imageURL: "/Assets/Images/Shop/yellowfronttee.png",
+    extraImages: {
+      back: "/Assets/Images/Shop/yellowbacktee.png",
+      photoFront: "/Assets/Images/Shop/yellowfrontphoto.png",
+      photoBack: "/Assets/Images/Shop/yellowbackphoto.png",
+    },
+  };
+  const bluetee = {
+    cost: 20.0,
+
+    id: "BuT",
+    desc: "Blue Steppers Tee",
+    imageURL: "/Assets/Images/Shop/bluefronttee.png",
+    extraImages: {
+      back: "/Assets/Images/Shop/bluebacktee.png",
+      photoFront: "/Assets/Images/Shop/bluefrontphoto.png",
+      photoBack: "/Assets/Images/Shop/bluebackphoto.png",
+    },
+  };
+  const blackhat = {
+    cost: 15,
+    id: "BkH",
+    desc: "Black Steppers Cap",
+    imageURL: "/Assets/Images/Shop/blackhat.png",
+    extraImages: {
+      photo: "/Assets/Images/Shop/hatblackphoto.png",
+    },
+  };
+  const whitehat = {
+    cost: 15,
+    id: "WhH",
+    desc: "White Steppers Cap",
+    imageURL: "/Assets/Images/Shop/whitehat.png",
+    extraImages: {
+      photo: "/Assets/Images/Shop/hatwhitephoto.png",
+    },
   };
 
   const styles = useStyles();
   const [basket, setBasket] = useState([]);
   const [total, setTotal] = useState(0);
-  const [isViewingBasket, setIsViewingBasket] = useState(false);
-  const [shopItem1Size, setShopItem1Size] = useState("");
-  const [shopItem2Size, setShopItem2Size] = useState("");
+  const [view, setView] = useState(null);
+  const [itemSize, setItemSize] = useState("");
+  const [itemQuantity, setItemQuantity] = useState(0);
   const [isCheckingOut, setIsCheckingOut] = useState(false);
   const [discountApplied, setDiscountApplied] = useState(false);
   const [discountCode, setDiscountCode] = useState("");
   const [discountError, setDiscountError] = useState(false);
 
-  function handleAddToBasket(item, cost) {
+  function handleAddToBasket(item, quantity) {
     var currentBasket = basket;
-    switch (item) {
-      case "Y":
-        currentBasket.push([item.toString() + shopItem1Size]);
-        break;
-      case "R":
-        currentBasket.push([item.toString() + shopItem2Size]);
-        break;
 
-      default:
-        return;
+    for (var i = 0; i < quantity; i++) {
+      currentBasket.push(item.id.toString() + itemSize);
     }
-    setTotal(total + cost);
+    setTotal(total + item.cost * quantity);
     setBasket(currentBasket.concat());
+    setItemQuantity(0);
+    setItemSize("");
+    setView(null);
   }
 
   function getShopItemInfo(itemID) {
     switch (itemID) {
-      case "Y":
-        return item1;
-      case "R":
-        return item2;
-
+      case "BkT":
+        return blacktee;
+      case "YeT":
+        return yellowtee;
+      case "WhT":
+        return whitetee;
+      case "BuT":
+        return bluetee;
+      case "BkH":
+        return blackhat;
+      case "WhH":
+        return whitehat;
       default:
         return;
     }
   }
 
   function applyDiscountCode() {
-    if (discountCode === "steppersfam6") {
+    if (discountCode === "deeleydubplate") {
       if (discountApplied === false) {
         setDiscountApplied(true);
-        setTotal(total - 5);
+        setTotal(total - 7 * basket.length);
       }
     } else {
       setDiscountError(true);
@@ -221,25 +282,51 @@ export function Shop() {
     var currentBasket = basket;
     currentBasket.splice(index, 1);
     setBasket(currentBasket);
-    setTotal(total - cost);
+    setTotal(total - cost + (discountApplied ? 7 : 0));
   }
+
+  const storeHeader = (
+    <Grid item container xs={12} justify="space-around">
+      <Grid
+        item
+        container
+        style={{ marginLeft: 20 }}
+        xs={12}
+        sm={4}
+        justify="center"
+      >
+        <Grid item>
+          <h1 className={styles.shopComingSoonText}>
+            Total: £{total >= 0 ? total : 0}
+          </h1>
+        </Grid>
+      </Grid>
+      <Grid item xs={12} sm={4} container justify="center">
+        <Grid item>
+          <Button onClick={() => setView(null)}>
+            <h1 className={styles.shopComingSoonText}>Back to store</h1>
+          </Button>
+        </Grid>
+      </Grid>
+    </Grid>
+  );
 
   var basketItemsGrid = basket.map((IDSize, i) => (
     <Grid item container xs={12} md={10} className={styles.viewBasketGrid}>
       <Grid item xs={3} md={3}>
         <h3 className={styles.shopComingSoonText}>
-          {getShopItemInfo(IDSize.toString().charAt(0)).desc}
+          {getShopItemInfo(IDSize.toString().substring(0, 3))?.desc}
         </h3>
       </Grid>
       <Grid item xs={2}>
         <h2 className={styles.shopComingSoonText2}>
-          {IDSize.toString().substring(1)}
+          {IDSize.toString().substring(3)}
         </h2>
       </Grid>
       <Hidden smDown>
         <Grid item xs={6} md={4} justify="flex-start">
           <img
-            src={getShopItemInfo(IDSize.toString().charAt(0)).imageURL}
+            src={getShopItemInfo(IDSize.toString().substring(0, 3))?.imageURL}
             className={styles.viewBasketItemImage}
             alt="Shop Item"
           />
@@ -247,7 +334,7 @@ export function Shop() {
       </Hidden>
       <Grid item xs={3} md={1}>
         <h3 className={styles.shopComingSoonText}>
-          £{getShopItemInfo(IDSize.toString().charAt(0)).cost}
+          £{getShopItemInfo(IDSize.toString().substring(0, 3))?.cost}
         </h3>
       </Grid>
       <Grid
@@ -261,7 +348,10 @@ export function Shop() {
         <Grid item>
           <Button
             onClick={() =>
-              RemoveItem(i, getShopItemInfo(IDSize.toString().charAt(0)).cost)
+              RemoveItem(
+                i,
+                getShopItemInfo(IDSize.toString().substring(0, 3))?.cost
+              )
             }
             className={styles.removeButton}
           >
@@ -272,7 +362,7 @@ export function Shop() {
       <Hidden smUp>
         <Grid item xs={12} justify="flex-start">
           <img
-            src={getShopItemInfo(IDSize.toString().charAt(0)).imageURL}
+            src={getShopItemInfo(IDSize.toString().substring(0, 3))?.imageURL}
             className={styles.mobileViewBasketItemImage}
             alt="Shop Item"
           />
@@ -282,7 +372,183 @@ export function Shop() {
     </Grid>
   ));
 
-  if (new Date() > new Date(2020, 9, 31, 0, 0, 0, 0))
+  const TeePage = (item) => {
+    const isHat = !!item.extraImages.photo;
+    return (
+      <Grid
+        container
+        xs={12}
+        className={styles.gridShopItemWrapper}
+        style={{ marginBottom: 80, justifyContent: "center" }}
+      >
+        <Hidden smUp>
+          <Grid item xs={10} container style={{ justifyContent: "center" }}>
+            <Grid item xs={6}>
+              <img src={item.imageURL} style={{ width: "100%" }} />
+              {item.extraImages.back && (
+                <img src={item.extraImages.back} style={{ width: "100%" }} />
+              )}
+            </Grid>
+            <Grid item xs={6}>
+              {item.extraImages.photo && (
+                <img src={item.extraImages.photo} style={{ width: "100%" }} />
+              )}
+              {item.extraImages.photoFront && (
+                <img
+                  src={item.extraImages.photoFront}
+                  style={{ width: "100%" }}
+                />
+              )}
+              {item.extraImages.photoBack && (
+                <img
+                  src={item.extraImages.photoBack}
+                  style={{ width: "100%" }}
+                />
+              )}
+            </Grid>
+          </Grid>
+        </Hidden>
+        <Hidden smDown>
+          <Grid item xs={3}>
+            <img src={item.imageURL} style={{ width: "100%" }} />
+            {item.extraImages.back && (
+              <img src={item.extraImages.back} style={{ width: "100%" }} />
+            )}
+          </Grid>
+        </Hidden>
+        <Grid
+          item
+          xs={6}
+          container
+          className={styles.gridShopItemWrapper}
+          style={{
+            alignItems: "center",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <Grid item style={{ marginTop: -40 }}>
+            <h1
+              className={styles.shopComingSoonText}
+              style={{ fontSize: 40, textAlign: "center" }}
+            >
+              {item.desc}
+            </h1>
+          </Grid>
+          <Grid item style={{ marginTop: -40 }}>
+            <h1 className={styles.shopComingSoonText} style={{ fontSize: 30 }}>
+              £{item.cost}
+            </h1>
+          </Grid>
+          {!isHat && (
+            <>
+              <Grid item>
+                <h1
+                  className={styles.shopComingSoonText}
+                  style={{ fontSize: 30 }}
+                >
+                  SIZE
+                </h1>
+              </Grid>
+
+              <Grid item>
+                <Select
+                  name="size"
+                  id="size"
+                  onChange={(e) => setItemSize(e.target.value)}
+                  className={styles.sizeSelect}
+                  placeholder="size"
+                  value={itemSize}
+                >
+                  <MenuItem value="" disabled selected={itemSize === "none"}>
+                    Size
+                  </MenuItem>
+                  <MenuItem value="XL" selected={itemSize === "XL"}>
+                    XL
+                  </MenuItem>
+                  <MenuItem value="L" selected={itemSize === "L"}>
+                    L
+                  </MenuItem>
+                  <MenuItem value="M" selected={itemSize === "M"}>
+                    M
+                  </MenuItem>
+                  <MenuItem value="S" selected={itemSize === "S"}>
+                    S
+                  </MenuItem>
+                </Select>
+              </Grid>
+            </>
+          )}
+          <Grid item>
+            <h1 className={styles.shopComingSoonText} style={{ fontSize: 30 }}>
+              Quantity
+            </h1>
+          </Grid>
+          <Grid item>
+            <Select
+              name="quantity"
+              id="quantity"
+              onChange={(e) => setItemQuantity(e.target.value)}
+              className={styles.sizeSelect}
+              placeholder="quantity"
+              value={itemQuantity}
+            >
+              <MenuItem value="none" disabled selected={itemSize.size === 0}>
+                Quantity
+              </MenuItem>
+              <MenuItem value={1} selected={itemQuantity === 1}>
+                1
+              </MenuItem>
+              <MenuItem value={2} selected={itemQuantity === 2}>
+                2
+              </MenuItem>
+              <MenuItem value={3} selected={itemQuantity === 3}>
+                3
+              </MenuItem>
+              <MenuItem value={4} selected={itemQuantity === 4}>
+                4
+              </MenuItem>
+            </Select>
+          </Grid>
+          <Grid>
+            <div className={styles.shopAddToBasketButtons}>
+              <Button
+                type="submit"
+                onClick={() => handleAddToBasket(item, itemQuantity)}
+                disabled={itemQuantity < 1 || (!isHat && itemSize === "")}
+                className={
+                  itemQuantity < 1 || (!isHat && itemSize === "")
+                    ? styles.addBasketButtonDisabled
+                    : styles.addBasketButton
+                }
+              >
+                Add to basket
+              </Button>
+            </div>
+          </Grid>
+        </Grid>
+        <Hidden smDown>
+          <Grid item xs={3}>
+            {item.extraImages.photo && (
+              <img src={item.extraImages.photo} style={{ width: "100%" }} />
+            )}
+            {item.extraImages.photoFront && (
+              <img
+                src={item.extraImages.photoFront}
+                style={{ width: "100%" }}
+              />
+            )}
+            {item.extraImages.photoBack && (
+              <img src={item.extraImages.photoBack} style={{ width: "100%" }} />
+            )}
+          </Grid>
+        </Hidden>
+      </Grid>
+    );
+  };
+
+  //change below to 7 may instead of 6
+  if (new Date() < new Date(2021, 4, 6, 0, 0, 0, 0))
     return (
       <div style={{ width: "100%", textAlign: "center", marginTop: 100 }}>
         <h1 className={styles.shopComingSoonText}>
@@ -304,47 +570,19 @@ export function Shop() {
       </Modal>
 
       <Grid item container xs={12} className={styles.gridItemWrapper}>
-        <Grid item xs={12} className={styles.shopComingSoonWrapper}>
-          <h1 className={styles.shopComingSoonText}>THE CLUB SHOP</h1>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          justify="center"
-          className={styles.shopComingSoonWrapper}
-        >
-          <h1 className={styles.shopComingSoonText}>
-            Available Oct 23 - Oct 30
-          </h1>
-        </Grid>
+        <img
+          src="/Assets/Images/ShopBlackText.png"
+          style={{
+            width: "50%",
+            marginLeft: "25%",
+            marginBottom: -40,
+            marginTop: "-2%",
+          }}
+        />
       </Grid>
 
-      {isViewingBasket && (
-        <Grid item container xs={12} justify="space-around">
-          <Grid
-            item
-            container
-            style={{ marginLeft: 20 }}
-            xs={12}
-            sm={4}
-            justify="center"
-          >
-            <Grid item>
-              <h1 className={styles.shopComingSoonText}>
-                Total: £{total >= 0 ? total : 0}
-              </h1>
-            </Grid>
-          </Grid>
-          <Grid item xs={12} sm={4} container justify="center">
-            <Grid item>
-              <Button onClick={() => setIsViewingBasket(!isViewingBasket)}>
-                <h1 className={styles.shopComingSoonText}>Back to store</h1>
-              </Button>
-            </Grid>
-          </Grid>
-        </Grid>
-      )}
-      {isViewingBasket && (
+      {(view === "basket" || !!view) && storeHeader}
+      {view === "basket" && (
         <Grid item container xs={12} className={styles.viewBasketWrapper}>
           <Grid
             item
@@ -421,7 +659,9 @@ export function Shop() {
                     </Button>
                   )}
                   {discountApplied === true && (
-                    <h2 className={styles.shopComingSoonText}>- £5</h2>
+                    <h2 className={styles.shopComingSoonText}>
+                      - £{basket.length * 7}
+                    </h2>
                   )}
                 </Grid>
                 {discountError && (
@@ -442,7 +682,7 @@ export function Shop() {
                   <h2 className={styles.shopComingSoonText}>Shipping: </h2>
                 </Grid>
                 <Grid item xs={2}>
-                  <h2 className={styles.shopComingSoonText}>£3.50</h2>
+                  <h2 className={styles.shopComingSoonText}>£4</h2>
                 </Grid>
                 <Grid item xs={3}></Grid>
                 <Grid item xs={1} sm={3}></Grid>
@@ -450,7 +690,7 @@ export function Shop() {
                   <h2 className={styles.shopComingSoonText}>TOTAL: </h2>
                 </Grid>
                 <Grid item xs={2}>
-                  <h2 className={styles.shopComingSoonText}>£{total + 3.5}</h2>
+                  <h2 className={styles.shopComingSoonText}>£{total + 4}</h2>
                 </Grid>
               </>
             )}
@@ -462,7 +702,7 @@ export function Shop() {
             justify="flex-end"
             style={{ height: 100, backgroundColor: "white" }}
           >
-            {total > 0 && total < 100 && (
+            {total > 0 && (
               <Grid item xs={3} style={{ marginRight: 50 }}>
                 <Button
                   onClick={() => setIsCheckingOut(true)}
@@ -475,7 +715,7 @@ export function Shop() {
           </Grid>
         </Grid>
       )}
-      {!isViewingBasket && (
+      {!view && (
         <Grid item container xs={12} justify="space-around">
           <Grid
             item
@@ -493,118 +733,111 @@ export function Shop() {
           </Grid>
           <Grid item xs={12} sm={4} container justify="center">
             <Grid item>
-              <Button onClick={() => setIsViewingBasket(!isViewingBasket)}>
+              <Button onClick={() => setView("basket")}>
                 <h1 className={styles.shopComingSoonText}>View Basket</h1>
               </Button>
             </Grid>
           </Grid>
         </Grid>
       )}
-      {!isViewingBasket && (
-        <Grid
-          item
-          container
-          xs={12}
-          spacing={3}
-          className={styles.gridShopItemWrapper}
-        >
-          <Grid item xs={12} sm={6} style={{ textAlign: "center" }}>
-            <img
-              src={item1.imageURL}
-              alt={item1.desc}
-              className={styles.shopItemImage}
-            ></img>
-            <h1 className={styles.shopComingSoonText}>
-              {item1.desc} £{item1.cost}
-            </h1>
-            <div className={styles.shopAddToBasketButtons}>
-              <Select
-                name="size"
-                id="size"
-                onChange={(e) => setShopItem1Size(e.target.value)}
-                className={styles.sizeSelect}
-                placeholder="size"
-                value={shopItem1Size}
+      {!view && (
+        <>
+          <Grid
+            item
+            container
+            xs={12}
+            spacing={3}
+            className={styles.gridShopItemWrapper}
+            style={{ justifyContent: "center" }}
+          >
+            <Grid item xs={12}>
+              <h1
+                className={styles.shopComingSoonText}
+                style={{
+                  fontSize: 40,
+                  textAlign: "center",
+                  marginTop: -20,
+                  marginBottom: -20,
+                }}
               >
-                <MenuItem value="none" disabled selected={shopItem1Size === ""}>
-                  Size
-                </MenuItem>
-                <MenuItem value="XL" selected={shopItem1Size === "XL"}>
-                  XL
-                </MenuItem>
-                <MenuItem value="L" selected={shopItem1Size === "L"}>
-                  L
-                </MenuItem>
-                <MenuItem value="M" selected={shopItem1Size === "M"}>
-                  M
-                </MenuItem>
-                <MenuItem value="S" selected={shopItem1Size === "S"}>
-                  S
-                </MenuItem>
-              </Select>
-              <Button
-                type="submit"
-                onClick={() => handleAddToBasket("Y", item1.cost)}
-                disabled={shopItem1Size === ""}
-                className={
-                  shopItem1Size === ""
-                    ? styles.addBasketButtonDisabled
-                    : styles.addBasketButton
-                }
-              >
-                Add to basket
-              </Button>
-            </div>
+                TEES
+              </h1>
+            </Grid>
+            <Grid item xs={8} sm={3}>
+              <img
+                src={whitetee.imageURL}
+                alt={whitetee.desc}
+                className={styles.shopItemImage}
+                onClick={() => setView(whitetee)}
+              ></img>{" "}
+            </Grid>
+            <Grid item xs={8} sm={3}>
+              <img
+                src={yellowtee.imageURL}
+                alt={yellowtee.desc}
+                className={styles.shopItemImage}
+                onClick={() => setView(yellowtee)}
+              ></img>{" "}
+            </Grid>
+            <Grid item xs={8} sm={3}>
+              <img
+                src={bluetee.imageURL}
+                alt={bluetee.desc}
+                className={styles.shopItemImage}
+                onClick={() => setView(bluetee)}
+              ></img>{" "}
+            </Grid>
+            <Grid item xs={8} sm={3}>
+              <img
+                src={blacktee.imageURL}
+                alt={blacktee.desc}
+                className={styles.shopItemImage}
+                onClick={() => setView(blacktee)}
+              ></img>{" "}
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={6} style={{ textAlign: "center" }}>
-            <img
-              src={item2.imageURL}
-              alt={item2.desc}
-              className={styles.shopItemImage}
-            ></img>
-            <h1 className={styles.shopComingSoonText3}>
-              {item2.desc} £{item2.cost}
-            </h1>
-            <div className={styles.shopAddToBasketButtons}>
-              <Select
-                name="size"
-                id="size"
-                onChange={(e) => setShopItem2Size(e.target.value)}
-                className={styles.sizeSelect}
-                value={shopItem2Size}
+          <Grid
+            item
+            container
+            xs={12}
+            sm={6}
+            spacing={3}
+            className={styles.gridShopItemWrapper}
+            style={{ marginBottom: 100, justifyContent: "center" }}
+          >
+            <Grid item xs={12}>
+              <h1
+                className={styles.shopComingSoonText}
+                style={{
+                  fontSize: 40,
+                  textAlign: "center",
+                  marginTop: -20,
+                  marginBottom: -20,
+                }}
               >
-                <MenuItem value="none" disabled selected={shopItem2Size === ""}>
-                  Size
-                </MenuItem>
-                <MenuItem value="XL" selected={shopItem2Size === "XL"}>
-                  XL
-                </MenuItem>
-                <MenuItem value="L" selected={shopItem2Size === "L"}>
-                  L
-                </MenuItem>
-                <MenuItem value="M" selected={shopItem2Size === "M"}>
-                  M
-                </MenuItem>
-                <MenuItem value="S" selected={shopItem2Size === "S"}>
-                  S
-                </MenuItem>
-              </Select>
-              <Button
-                type="submit"
-                onClick={() => handleAddToBasket("R", item2.cost)}
-                disabled={shopItem2Size === ""}
-                className={
-                  shopItem2Size === ""
-                    ? styles.addBasketButtonDisabled
-                    : styles.addBasketButton
-                }
-              >
-                Add to basket
-              </Button>
-            </div>
+                HATS
+              </h1>
+            </Grid>
+            <Grid item xs={8} sm={6}>
+              <img
+                src={blackhat.imageURL}
+                alt={blackhat.desc}
+                className={styles.shopItemImage}
+                onClick={() => setView(blackhat)}
+              ></img>{" "}
+            </Grid>
+            <Grid item xs={8} sm={6}>
+              <img
+                src={whitehat.imageURL}
+                alt={whitehat.desc}
+                className={styles.shopItemImage}
+                onClick={() => setView(whitehat)}
+              ></img>{" "}
+            </Grid>
           </Grid>
-        </Grid>
+        </>
       )}
+      {view && view !== "basket" && TeePage(view)}
     </Grid>
   );
 }
