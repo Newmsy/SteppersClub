@@ -217,7 +217,7 @@ export function Shop() {
   const whitehat = {
     cost: 15,
     id: "WhH",
-    desc: "White Steppers Cap",
+    desc: "Grey Steppers Cap",
     imageURL: "/Assets/Images/Shop/whitehat.png",
     extraImages: {
       photo: "/Assets/Images/Shop/hatwhitephoto.png",
