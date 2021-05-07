@@ -12,7 +12,7 @@ export default function PaypalButton(basket) {
               amount: {
                 value: (basket.amount + 4).toString(),
               },
-              description: `Steppers Tshirt ${basket.items.join(" ")}`,
+              description: `Steppers Shop ${basket.items.join(" ")}`,
               custom: basket.items.join(" ").toString(),
             },
           ],
