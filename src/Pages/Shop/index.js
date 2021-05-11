@@ -548,7 +548,7 @@ export function Shop() {
   };
 
   //change below to 7 may instead of 6
-  if (new Date() < new Date(2021, 4, 7, 0, 0, 0, 0))
+  if (new Date() > new Date(2021, 4, 11, 0, 0, 0, 0))
     return (
       <div style={{ width: "100%", textAlign: "center", marginTop: 100 }}>
         <h1 className={styles.shopComingSoonText}>
