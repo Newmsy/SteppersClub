@@ -26,7 +26,6 @@ export default function App() {
   const styles = useStyles();
   return (
     <div className={styles.appWrapper}>
-      <Toolbar />
       <Layout>
         <Router>
           <Switch>
@@ -57,7 +56,6 @@ export default function App() {
           </Switch>
         </Router>
       </Layout>
-      <Footer />
     </div>
   );
 }

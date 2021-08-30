@@ -1,9 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Hidden from "@material-ui/core/Hidden";
 import Grid from "@material-ui/core/Grid";
 import { LogoMain } from "../Pages/LogoMain";
-import Slide from "@material-ui/core/Slide";
 
 const useStyles = makeStyles((theme) => ({
   gridContentWrapper: {
@@ -12,22 +10,20 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "white",
     justifyContent: "center",
     alignItems: "center",
-    background:
-      "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(220,220,220,1) 50%, rgba(255,255,255,1) 100%)",
-    minHeight: "Calc(100vh - 80px)",
-    [theme.breakpoints.down("md")]: {
-      minHeight: "Calc(100vh - 50px)",
-    },
+    background: "linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(220,220,220,1) 50%, rgba(255,255,255,1) 100%)",
+    minHeight: "100vh",
     marginBottom: -100,
+    backgroundImage: "url(/Assets/Images/bg.png)",
+    backgroundSize: "100vw",
+    backgroundRepeat: "repeat-y",
   },
   staticGrid: {
-    backgroundImage: "url(/Assets/Images/static.jpg)",
-    opacity: 0.05,
     position: "absolute",
-    width: "100%",
-    height: "100%",
-    justifyContent: "center",
-    alignItems: "center",
+    opacity: 0.8,
+    width: "100vw",
+    height: "100vh",
+    objectFit: "cover",
+    top: 0,
   },
   steppersToolbarHeader: {
     fontsize: 30,
@@ -35,13 +31,9 @@ const useStyles = makeStyles((theme) => ({
   },
   gridMiniContentWrapper: {
     backgroundColor: "white",
-    minHeight: "Calc(100vh - 80px)",
-    [theme.breakpoints.down("md")]: {
-      minHeight: "Calc(100vh - 50px)",
-    },
+    minHeight: "100vh",
     zIndex: 1,
-    boxShadow:
-      "0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3)",
+    boxShadow: "0 4px 80px 0 rgba(0, 0, 0, 0.3), 0 6px 200px 0 rgba(0, 0, 0, 0.3)",
     opacity: 1,
   },
   popupWrapper: {
@@ -84,15 +76,7 @@ export const Layout = (props) => {
   const styles = useStyles();
   return (
     <Grid container className={styles.gridContentWrapper}>
-      <Grid item container xs={12} className={styles.staticGrid}></Grid>
-      <Grid
-        item
-        xs={12}
-        sm={10}
-        md={8}
-        lg={6}
-        className={styles.gridMiniContentWrapper}
-      >
+      <Grid item xs={12} sm={10} md={8} lg={6} className={styles.gridMiniContentWrapper}>
         <LogoMain />
         {props.children}
       </Grid>

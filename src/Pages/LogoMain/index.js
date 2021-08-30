@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 const useStyles = makeStyles((theme) => ({
   gridMainContentWrapper: {
     width: "100%",
-    marginBottom: -100,
+    marginBottom: 0,
     direction: "column",
     flexGrow: "column",
     justifyContent: "center",
@@ -48,8 +48,7 @@ const useStyles = makeStyles((theme) => ({
     borderStyle: "solid",
     borderColor: "rgb(4,44,159)",
     textAlign: "center",
-    boxShadow:
-      "0 4px 8px 0 rgba(4,44,159, 0.2), 0 6px 20px 0 rgba(4,44,159, 0.19)",
+    boxShadow: "0 4px 8px 0 rgba(4,44,159, 0.2), 0 6px 20px 0 rgba(4,44,159, 0.19)",
     zIndex: 0,
     [theme.breakpoints.down("md")]: {
       visibility: "hidden",
@@ -82,43 +81,57 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "-5%",
     zIndex: 100,
   },
+  gridLinksWrapper: {
+    zIndex: 2,
+    justifyContent: "center",
+
+    [theme.breakpoints.up("md")]: {
+      marginTop: -70,
+    },
+    marginBottom: 50,
+  },
+  linkGridItem: {
+    textAlign: "center",
+    marginBottom: 10,
+  },
 }));
 
 export function LogoMain() {
   const styles = useStyles();
-  const [showText, setShowText] = useState(false);
 
   return (
     <Grid item container className={styles.gridMainContentWrapper}>
       <Grid item xs={8} style={{ display: "flex", flexDirection: "row" }}>
-        <a
-          href="/"
-          onMouseEnter={() => setShowText(true)}
-          onMouseLeave={() => setShowText(false)}
-        >
-          <img
-            src="/Assets/Images/logoText.png"
-            alt="Steppers Club Logo"
-            className={styles.logoNameImage}
-          />
+        <a href="/">
+          <img src="/Assets/Images/logoText.png" alt="Steppers Club Logo" className={styles.logoNameImage} />
         </a>
-        <a
-          href="/"
-          onMouseEnter={() => setShowText(true)}
-          onMouseLeave={() => setShowText(false)}
-        >
-          <img
-            src="/Assets/Images/SteppersLogo.png"
-            alt="Steppers Club Logo"
-            className={styles.logoImage}
-          />
+        <a href="/">
+          <img src="/Assets/Images/SteppersLogo.png" alt="Steppers Club Logo" className={styles.logoImage} />
         </a>
-        {/* <div
-          className={styles.goHomeGrid}
-          style={showText ? {} : { visibility: "hidden" }}
-        >
-          <p className={styles.goHomeText}>Home</p>
-        </div> */}
+      </Grid>
+      <Grid item container xs={10} className={styles.gridLinksWrapper}>
+        <Grid item xs={12} sm={6} md={3} lg={3} className={styles.linkGridItem}>
+          <a href="/releases" className={styles.homepageLinkImage}>
+            <img className={styles.homepageImageButton} alt="RELEASES" src="/Assets/Images/releases.png" />
+          </a>
+        </Grid>
+
+        <Grid item xs={12} sm={6} md={3} lg={3} className={styles.linkGridItem}>
+          <a
+            href="https://www.facebook.com/steppersclub/events"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.homepageLinkImage}
+          >
+            <img className={styles.homepageImageButton} alt="EVENTS" src="/Assets/Images/events.png" />
+          </a>
+        </Grid>
+
+        <Grid item xs={12} sm={6} md={3} lg={3} className={styles.linkGridItem}>
+          <a href="/shop" className={styles.homepageLinkImage}>
+            <img className={styles.homepageImageButton} alt="SHOP" src="/Assets/Images/shop.png" />
+          </a>
+        </Grid>
       </Grid>
     </Grid>
   );

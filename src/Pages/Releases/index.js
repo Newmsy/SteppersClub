@@ -1,18 +1,17 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core";
+import { makeStyles, Divider } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
   gridMainContentWrapper: {
     width: "100%",
-    marginTop: 50,
+    marginTop: 10,
     direction: "column",
     flexGrow: "column",
     justifyContent: "center",
     alignItems: "center",
     alignContent: "center",
     justifyItems: "center",
-    marginBottom: 50,
   },
   gridItemWrapper: {},
   releaseItemGrid: {
@@ -22,15 +21,13 @@ const useStyles = makeStyles((theme) => ({
   },
   soundcloudItem: {
     marginTop: 20,
-    boxShadow:
-      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+    boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
     marginBottom: 50,
   },
   firstStepsAlbumCover: {
     width: "100%",
     height: "100%",
-    boxShadow:
-      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+    boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
     position: "relative",
   },
   subCoverTitle: {
@@ -89,6 +86,10 @@ const useStyles = makeStyles((theme) => ({
       transform: "scale(1.05) rotate(20deg)",
     },
   },
+  releaseItem: {
+    paddingTop: 20,
+    boxShadow: "0px 8px 8px rgba(0, 0, 0, 0.3),0px 8px 8px  rgba(0, 0, 0, 0.3)",
+  },
 }));
 
 export function Releases() {
@@ -96,19 +97,26 @@ export function Releases() {
 
   return (
     <Grid container className={styles.gridMainContentWrapper}>
-      <Grid item xs={12} style={{ textAlign: "center" }}>
+      <Grid
+        item
+        xs={12}
+        style={{ textAlign: "center", paddingBottom: 30, boxShadow: "0px 8px 8px rgba(0, 0, 0, 0.3),0px 8px 8px  rgba(0, 0, 0, 0.3)" }}
+      >
         <h1 className={styles.releasesHeader}>Releases</h1>
       </Grid>
-      <Grid item container xs={12} justify="center">
+      <Grid
+        item
+        container
+        xs={12}
+        justify="center"
+        className={styles.releaseItem}
+        style={{ background: "linear-gradient(0deg,rgba(40,140,190,0) 0%,  rgba(224,195,64,0.3) 100%)" }}
+      >
         <Grid item container xs={8} sm={4} className={styles.releaseItemGrid}>
-          <img
-            className={styles.firstStepsAlbumCover}
-            src="/Assets/Images/realSoonArt.jpg"
-            alt="First Steps"
-          />
+          <img className={styles.firstStepsAlbumCover} src="/Assets/Images/realSoonArt.jpg" alt="First Steps" />
         </Grid>
         <Grid item container xs={9} className={styles.subCoverTitle}>
-          STREAM/PURCHASE:
+          <img src="/Assets/Images/stream.png" alt="stream" style={{ marginBottom: 10, maxWidth: "100%" }} />
         </Grid>
         <Grid item container xs={7} className={styles.subCoverIcons}>
           <Grid item xs={3} sm={2}>
@@ -117,50 +125,22 @@ export function Releases() {
               rel="noopener noreferrer"
               href="https://soundcloud.com/steppersclub/minista-x-oppidan-x-sam-deeley-x-sensa-x-zefer-real-soon"
             >
-              <img
-                src="/Assets/Images/soundcloudIcon.png"
-                alt="SOUNDCLOUD"
-                className={styles.socialMediaImageSoundcloud}
-              />
+              <img src="/Assets/Images/soundcloudIcon.png" alt="SOUNDCLOUD" className={styles.socialMediaImageSoundcloud} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://open.spotify.com/track/7uHHr2BtvsNgHpwenCUHha"
-            >
-              <img
-                src="/Assets/Images/spotifyLogo.png"
-                alt="SPOTIFY"
-                className={styles.socialMediaImageSpotify}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/track/7uHHr2BtvsNgHpwenCUHha">
+              <img src="/Assets/Images/spotifyLogo.png" alt="SPOTIFY" className={styles.socialMediaImageSpotify} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.beatport.com/release/real-soon/3359055"
-            >
-              <img
-                src="/Assets/Images/beatportLogo.png"
-                alt="BEATPORT"
-                className={styles.socialMediaImageBeatport}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://www.beatport.com/release/real-soon/3359055">
+              <img src="/Assets/Images/beatportLogo.png" alt="BEATPORT" className={styles.socialMediaImageBeatport} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.junodownload.com/products/real-soon/5051842-02/"
-            >
-              <img
-                src="/Assets/Images/junoReleaseLogo.png"
-                alt="JUNO"
-                className={styles.socialMediaImageBeatport}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://www.junodownload.com/products/real-soon/5051842-02/">
+              <img src="/Assets/Images/junoReleaseLogo.png" alt="JUNO" className={styles.socialMediaImageBeatport} />
             </a>
           </Grid>
         </Grid>
@@ -183,8 +163,7 @@ export function Releases() {
               overflow: "hidden",
               whiteSpace: "nowrap",
               textOverflow: "ellipsis",
-              fontFamily:
-                " Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
+              fontFamily: " Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
               fontWeight: 100,
             }}
           >
@@ -208,55 +187,35 @@ export function Releases() {
           </div>
         </Grid>
       </Grid>
-      <Grid item container xs={12} justify="center">
+
+      <Grid
+        item
+        container
+        xs={12}
+        justify="center"
+        className={styles.releaseItem}
+        style={{ background: "linear-gradient(0deg,rgba(40,140,190,0) 0%,  rgba(206,64,156,0.3) 100%)" }}
+      >
         <Grid item container xs={8} sm={4} className={styles.releaseItemGrid}>
-          <img
-            className={styles.firstStepsAlbumCover}
-            src="/Assets/Images/deeleyRelease.jpg"
-            alt="First Steps"
-          />
+          <img className={styles.firstStepsAlbumCover} src="/Assets/Images/deeleyRelease.jpg" alt="First Steps" />
         </Grid>
         <Grid item container xs={9} className={styles.subCoverTitle}>
-          STREAM/PURCHASE:
+          <img src="/Assets/Images/stream.png" alt="stream" style={{ marginBottom: 10, maxWidth: "100%" }} />
         </Grid>
         <Grid item container xs={7} className={styles.subCoverIcons}>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://soundcloud.com/steppersclub/sets/sam-deeley-never-too-late-ep"
-            >
-              <img
-                src="/Assets/Images/soundcloudIcon.png"
-                alt="SOUNDCLOUD"
-                className={styles.socialMediaImageSoundcloud}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://soundcloud.com/steppersclub/sets/sam-deeley-never-too-late-ep">
+              <img src="/Assets/Images/soundcloudIcon.png" alt="SOUNDCLOUD" className={styles.socialMediaImageSoundcloud} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://open.spotify.com/album/5oAk28MOXGKvi1oXYM8BD7"
-            >
-              <img
-                src="/Assets/Images/spotifyLogo.png"
-                alt="SPOTIFY"
-                className={styles.socialMediaImageSpotify}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/album/5oAk28MOXGKvi1oXYM8BD7">
+              <img src="/Assets/Images/spotifyLogo.png" alt="SPOTIFY" className={styles.socialMediaImageSpotify} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.beatport.com/release/never-too-late/3313020"
-            >
-              <img
-                src="/Assets/Images/beatportLogo.png"
-                alt="BEATPORT"
-                className={styles.socialMediaImageBeatport}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://www.beatport.com/release/never-too-late/3313020">
+              <img src="/Assets/Images/beatportLogo.png" alt="BEATPORT" className={styles.socialMediaImageBeatport} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
@@ -265,11 +224,7 @@ export function Releases() {
               rel="noopener noreferrer"
               href="https://www.junodownload.com/products/sam-deeley-caesar-sydney-never-too-late/5004158-02/"
             >
-              <img
-                src="/Assets/Images/junoReleaseLogo.png"
-                alt="JUNO"
-                className={styles.socialMediaImageBeatport}
-              />
+              <img src="/Assets/Images/junoReleaseLogo.png" alt="JUNO" className={styles.socialMediaImageBeatport} />
             </a>
           </Grid>
         </Grid>
@@ -292,8 +247,7 @@ export function Releases() {
               overflow: "hidden",
               whiteSpace: "nowrap",
               textOverflow: "ellipsis",
-              fontFamily:
-                " Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
+              fontFamily: " Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
               fontWeight: 100,
             }}
           >
@@ -317,68 +271,39 @@ export function Releases() {
           </div>
         </Grid>
       </Grid>
-      <Grid item container xs={12} justify="center">
+      <Grid
+        item
+        container
+        xs={12}
+        justify="center"
+        className={styles.releaseItem}
+        style={{ background: "linear-gradient(0deg,rgba(40,140,190,0) 0%,  rgba(200,237,215,0.5) 100%)" }}
+      >
         <Grid item container xs={8} sm={4} className={styles.releaseItemGrid}>
-          <img
-            className={styles.firstStepsAlbumCover}
-            src="/Assets/Images/DejaVuArtwork.png"
-            alt="First Steps"
-          />
+          <img className={styles.firstStepsAlbumCover} src="/Assets/Images/DejaVuArtwork.png" alt="First Steps" />
         </Grid>
         <Grid item container xs={9} className={styles.subCoverTitle}>
-          STREAM/PURCHASE:
+          <img src="/Assets/Images/stream.png" alt="stream" style={{ marginBottom: 10, maxWidth: "100%" }} />
         </Grid>
         <Grid item container xs={7} className={styles.subCoverIcons}>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://soundcloud.com/steppersclub/sets/sensa-deja-vu-ep"
-            >
-              <img
-                src="/Assets/Images/soundcloudIcon.png"
-                alt="SOUNDCLOUD"
-                className={styles.socialMediaImageSoundcloud}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://soundcloud.com/steppersclub/sets/sensa-deja-vu-ep">
+              <img src="/Assets/Images/soundcloudIcon.png" alt="SOUNDCLOUD" className={styles.socialMediaImageSoundcloud} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://open.spotify.com/album/6ONFuQkS1pgJzi4ybS1QGL"
-            >
-              <img
-                src="/Assets/Images/spotifyLogo.png"
-                alt="SPOTIFY"
-                className={styles.socialMediaImageSpotify}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/album/6ONFuQkS1pgJzi4ybS1QGL">
+              <img src="/Assets/Images/spotifyLogo.png" alt="SPOTIFY" className={styles.socialMediaImageSpotify} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.beatport.com/release/deja-vu/3281791"
-            >
-              <img
-                src="/Assets/Images/beatportLogo.png"
-                alt="BEATPORT"
-                className={styles.socialMediaImageBeatport}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://www.beatport.com/release/deja-vu/3281791">
+              <img src="/Assets/Images/beatportLogo.png" alt="BEATPORT" className={styles.socialMediaImageBeatport} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.junodownload.com/products/sensa-deja-vu/4962978-02/"
-            >
-              <img
-                src="/Assets/Images/junoReleaseLogo.png"
-                alt="JUNO"
-                className={styles.socialMediaImageBeatport}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://www.junodownload.com/products/sensa-deja-vu/4962978-02/">
+              <img src="/Assets/Images/junoReleaseLogo.png" alt="JUNO" className={styles.socialMediaImageBeatport} />
             </a>
           </Grid>
         </Grid>
@@ -401,8 +326,7 @@ export function Releases() {
               overflow: "hidden",
               whiteSpace: "nowrap",
               textOverflow: "ellipsis",
-              fontFamily:
-                " Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
+              fontFamily: " Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
               fontWeight: 100,
             }}
           >
@@ -426,68 +350,39 @@ export function Releases() {
           </div>
         </Grid>
       </Grid>
-      <Grid item container xs={12} justify="center">
+      <Grid
+        item
+        container
+        xs={12}
+        justify="center"
+        className={styles.releaseItem}
+        style={{ background: "linear-gradient(0deg,rgba(40,140,190,0) 0%,  rgba(225,20,17,0.3) 100%)" }}
+      >
         <Grid item container xs={8} sm={4} className={styles.releaseItemGrid}>
-          <img
-            className={styles.firstStepsAlbumCover}
-            src="/Assets/Images/minista-artwork.jpg"
-            alt="First Steps"
-          />
+          <img className={styles.firstStepsAlbumCover} src="/Assets/Images/minista-artwork.jpg" alt="First Steps" />
         </Grid>
         <Grid item container xs={9} className={styles.subCoverTitle}>
-          STREAM/PURCHASE:
+          <img src="/Assets/Images/stream.png" alt="stream" style={{ marginBottom: 10, maxWidth: "100%" }} />
         </Grid>
         <Grid item container xs={7} className={styles.subCoverIcons}>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://soundcloud.com/steppersclub/sets/minista-save-me-ep"
-            >
-              <img
-                src="/Assets/Images/soundcloudIcon.png"
-                alt="SOUNDCLOUD"
-                className={styles.socialMediaImageSoundcloud}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://soundcloud.com/steppersclub/sets/minista-save-me-ep">
+              <img src="/Assets/Images/soundcloudIcon.png" alt="SOUNDCLOUD" className={styles.socialMediaImageSoundcloud} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://open.spotify.com/album/6SbvP6L8fhpfCVH81BBt1o"
-            >
-              <img
-                src="/Assets/Images/spotifyLogo.png"
-                alt="SPOTIFY"
-                className={styles.socialMediaImageSpotify}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/album/6SbvP6L8fhpfCVH81BBt1o">
+              <img src="/Assets/Images/spotifyLogo.png" alt="SPOTIFY" className={styles.socialMediaImageSpotify} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.beatport.com/release/save-me/3259324"
-            >
-              <img
-                src="/Assets/Images/beatportLogo.png"
-                alt="BEATPORT"
-                className={styles.socialMediaImageBeatport}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://www.beatport.com/release/save-me/3259324">
+              <img src="/Assets/Images/beatportLogo.png" alt="BEATPORT" className={styles.socialMediaImageBeatport} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.junodownload.com/products/minista-save-me/4923842-02/"
-            >
-              <img
-                src="/Assets/Images/junoReleaseLogo.png"
-                alt="JUNO"
-                className={styles.socialMediaImageBeatport}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://www.junodownload.com/products/minista-save-me/4923842-02/">
+              <img src="/Assets/Images/junoReleaseLogo.png" alt="JUNO" className={styles.socialMediaImageBeatport} />
             </a>
           </Grid>
         </Grid>
@@ -509,8 +404,7 @@ export function Releases() {
               overflow: "hidden",
               whiteSpace: "nowrap",
               textOverflow: "ellipsis",
-              fontFamily:
-                " Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
+              fontFamily: " Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
               fontWeight: 100,
             }}
           >
@@ -534,29 +428,24 @@ export function Releases() {
           </div>
         </Grid>
       </Grid>
-      <Grid item container xs={12} justify="center">
+      <Grid
+        item
+        container
+        xs={12}
+        justify="center"
+        className={styles.releaseItem}
+        style={{ background: "linear-gradient(0deg,rgba(40,140,190,0) 0%,  rgba(139,204,222, 0.5) 100%)" }}
+      >
         <Grid item container xs={8} sm={4} className={styles.releaseItemGrid}>
-          <img
-            className={styles.firstStepsAlbumCover}
-            src="/Assets/Images/oppidan-release.jpg"
-            alt="First Steps"
-          />
+          <img className={styles.firstStepsAlbumCover} src="/Assets/Images/oppidan-release.jpg" alt="First Steps" />
         </Grid>
         <Grid item container xs={9} className={styles.subCoverTitle}>
-          STREAM/PURCHASE:
+          <img src="/Assets/Images/stream.png" alt="stream" style={{ marginBottom: 10, maxWidth: "100%" }} />
         </Grid>
         <Grid item container xs={7} className={styles.subCoverIcons}>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://soundcloud.com/steppersclub/sets/oppidan-0117-ep"
-            >
-              <img
-                src="/Assets/Images/soundcloudIcon.png"
-                alt="SOUNDCLOUD"
-                className={styles.socialMediaImageSoundcloud}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://soundcloud.com/steppersclub/sets/oppidan-0117-ep">
+              <img src="/Assets/Images/soundcloudIcon.png" alt="SOUNDCLOUD" className={styles.socialMediaImageSoundcloud} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
@@ -565,37 +454,17 @@ export function Releases() {
               rel="noopener noreferrer"
               href="https://open.spotify.com/album/3t8vvn145Ylr4bYS974DVL?si=k7mTEcz9TuO9mhVSTzqheA"
             >
-              <img
-                src="/Assets/Images/spotifyLogo.png"
-                alt="SPOTIFY"
-                className={styles.socialMediaImageSpotify}
-              />
+              <img src="/Assets/Images/spotifyLogo.png" alt="SPOTIFY" className={styles.socialMediaImageSpotify} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.beatport.com/release/0117/3171667"
-            >
-              <img
-                src="/Assets/Images/beatportLogo.png"
-                alt="BEATPORT"
-                className={styles.socialMediaImageBeatport}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://www.beatport.com/release/0117/3171667">
+              <img src="/Assets/Images/beatportLogo.png" alt="BEATPORT" className={styles.socialMediaImageBeatport} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.junodownload.com/products/oppidan-0117/4815251-02/"
-            >
-              <img
-                src="/Assets/Images/junoReleaseLogo.png"
-                alt="JUNO"
-                className={styles.socialMediaImageBeatport}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://www.junodownload.com/products/oppidan-0117/4815251-02/">
+              <img src="/Assets/Images/junoReleaseLogo.png" alt="JUNO" className={styles.socialMediaImageBeatport} />
             </a>
           </Grid>
         </Grid>
@@ -617,8 +486,7 @@ export function Releases() {
               overflow: "hidden",
               whiteSpace: "nowrap",
               textOverflow: "ellipsis",
-              fontFamily:
-                " Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
+              fontFamily: " Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
               fontWeight: 100,
             }}
           >
@@ -642,29 +510,24 @@ export function Releases() {
           </div>
         </Grid>
       </Grid>
-      <Grid item container xs={12} justify="center">
+      <Grid
+        item
+        container
+        xs={12}
+        justify="center"
+        className={styles.releaseItem}
+        style={{ background: "linear-gradient(0deg,rgba(40,140,190,0) 0%,  rgba(0,22,188, 0.3) 100%)" }}
+      >
         <Grid item container xs={8} sm={4} className={styles.releaseItemGrid}>
-          <img
-            className={styles.firstStepsAlbumCover}
-            src="/Assets/Images/voicenotes.jpg"
-            alt="First Steps"
-          />
+          <img className={styles.firstStepsAlbumCover} src="/Assets/Images/voicenotes.jpg" alt="First Steps" />
         </Grid>
         <Grid item container xs={9} className={styles.subCoverTitle}>
-          STREAM/PURCHASE:
+          <img src="/Assets/Images/stream.png" alt="stream" style={{ marginBottom: 10, maxWidth: "100%" }} />
         </Grid>
         <Grid item container xs={7} className={styles.subCoverIcons}>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://soundcloud.com/steppersclub/sets/zefer-voicenotes-ep"
-            >
-              <img
-                src="/Assets/Images/soundcloudIcon.png"
-                alt="SOUNDCLOUD"
-                className={styles.socialMediaImageSoundcloud}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://soundcloud.com/steppersclub/sets/zefer-voicenotes-ep">
+              <img src="/Assets/Images/soundcloudIcon.png" alt="SOUNDCLOUD" className={styles.socialMediaImageSoundcloud} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
@@ -673,37 +536,17 @@ export function Releases() {
               rel="noopener noreferrer"
               href="https://open.spotify.com/album/5UwuLWvqfWPDRQvrEykvTS?si=zmZYBoqiRGitT05AzRmKZg"
             >
-              <img
-                src="/Assets/Images/spotifyLogo.png"
-                alt="SPOTIFY"
-                className={styles.socialMediaImageSpotify}
-              />
+              <img src="/Assets/Images/spotifyLogo.png" alt="SPOTIFY" className={styles.socialMediaImageSpotify} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.beatport.com/release/voicenotes/3142977"
-            >
-              <img
-                src="/Assets/Images/beatportLogo.png"
-                alt="BEATPORT"
-                className={styles.socialMediaImageBeatport}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://www.beatport.com/release/voicenotes/3142977">
+              <img src="/Assets/Images/beatportLogo.png" alt="BEATPORT" className={styles.socialMediaImageBeatport} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.junodownload.com/products/zefer-voicenotes/4780937-02/"
-            >
-              <img
-                src="/Assets/Images/junoReleaseLogo.png"
-                alt="JUNO"
-                className={styles.socialMediaImageBeatport}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://www.junodownload.com/products/zefer-voicenotes/4780937-02/">
+              <img src="/Assets/Images/junoReleaseLogo.png" alt="JUNO" className={styles.socialMediaImageBeatport} />
             </a>
           </Grid>
         </Grid>
@@ -725,8 +568,7 @@ export function Releases() {
               overflow: "hidden",
               whiteSpace: "nowrap",
               textOverflow: "ellipsis",
-              fontFamily:
-                " Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
+              fontFamily: " Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
               fontWeight: 100,
             }}
           >
@@ -752,29 +594,24 @@ export function Releases() {
           </div>
         </Grid>
       </Grid>
-      <Grid item container xs={12} justify="center">
+      <Grid
+        item
+        container
+        xs={12}
+        justify="center"
+        className={styles.releaseItem}
+        style={{ background: "linear-gradient(0deg,rgba(40,140,190,0) 0%,  rgba(42,0,141, 0.3) 100%)" }}
+      >
         <Grid item container xs={8} sm={4} className={styles.releaseItemGrid}>
-          <img
-            className={styles.firstStepsAlbumCover}
-            src="/Assets/Images/first_steps_cover.jpg"
-            alt="First Steps"
-          />
+          <img className={styles.firstStepsAlbumCover} src="/Assets/Images/first_steps_cover.jpg" alt="First Steps" />
         </Grid>
         <Grid item container xs={9} className={styles.subCoverTitle}>
-          STREAM/PURCHASE:
+          <img src="/Assets/Images/stream.png" alt="stream" style={{ marginBottom: 10, maxWidth: "100%" }} />
         </Grid>
         <Grid item container xs={7} className={styles.subCoverIcons}>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://soundcloud.com/steppersclub/sets/first-steps"
-            >
-              <img
-                src="/Assets/Images/soundcloudIcon.png"
-                alt="SOUNDCLOUD"
-                className={styles.socialMediaImageSoundcloud}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://soundcloud.com/steppersclub/sets/first-steps">
+              <img src="/Assets/Images/soundcloudIcon.png" alt="SOUNDCLOUD" className={styles.socialMediaImageSoundcloud} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
@@ -783,24 +620,12 @@ export function Releases() {
               rel="noopener noreferrer"
               href="https://open.spotify.com/album/0z784xdIMOxYL9K7Y59hIL?si=h-VG7soORbWUE2m6WQtJEw"
             >
-              <img
-                src="/Assets/Images/spotifyLogo.png"
-                alt="SPOTIFY"
-                className={styles.socialMediaImageSpotify}
-              />
+              <img src="/Assets/Images/spotifyLogo.png" alt="SPOTIFY" className={styles.socialMediaImageSpotify} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://www.beatport.com/label/steppers-club/88536"
-            >
-              <img
-                src="/Assets/Images/beatportLogo.png"
-                alt="BEATPORT"
-                className={styles.socialMediaImageBeatport}
-              />
+            <a target="_blank" rel="noopener noreferrer" href="https://www.beatport.com/label/steppers-club/88536">
+              <img src="/Assets/Images/beatportLogo.png" alt="BEATPORT" className={styles.socialMediaImageBeatport} />
             </a>
           </Grid>
           <Grid item xs={3} sm={2}>
@@ -809,11 +634,7 @@ export function Releases() {
               rel="noopener noreferrer"
               href="https://www.junodownload.com/products/sensa-zefer-t-ay-o-first-steps/4695115-02/"
             >
-              <img
-                src="/Assets/Images/junoReleaseLogo.png"
-                alt="JUNO"
-                className={styles.socialMediaImageBeatport}
-              />
+              <img src="/Assets/Images/junoReleaseLogo.png" alt="JUNO" className={styles.socialMediaImageBeatport} />
             </a>
           </Grid>
         </Grid>
@@ -835,8 +656,7 @@ export function Releases() {
               overflow: "hidden",
               whiteSpace: "nowrap",
               textOverflow: "ellipsis",
-              fontFamily:
-                " Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
+              fontFamily: " Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
               fontWeight: 100,
             }}
           >

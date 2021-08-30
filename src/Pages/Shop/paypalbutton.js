@@ -2,7 +2,6 @@ import React from "react";
 import { PayPalButton } from "react-paypal-button-v2";
 
 export default function PaypalButton(basket) {
-  console.log(basket);
   return (
     <PayPalButton
       createOrder={(data, actions) => {
@@ -38,8 +37,7 @@ export default function PaypalButton(basket) {
         });
       }}
       options={{
-        clientId:
-          "Adao2Hld2gTLYffH5cf4aRwMoYYINN7RlTQVil4jLiVTZeA6b65PxMl5NKLGNgERc3Hgrk38lWtV7nNW",
+        clientId: "Adao2Hld2gTLYffH5cf4aRwMoYYINN7RlTQVil4jLiVTZeA6b65PxMl5NKLGNgERc3Hgrk38lWtV7nNW",
         currency: "GBP",
       }}
     />

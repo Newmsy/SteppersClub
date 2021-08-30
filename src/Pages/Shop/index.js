@@ -1,14 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import {
-  Button,
-  Select,
-  MenuItem,
-  Modal,
-  Paper,
-  Input,
-} from "@material-ui/core";
+import { Button, Select, MenuItem, Modal, Paper, Input } from "@material-ui/core";
 import Hidden from "@material-ui/core/Hidden";
 import PaypalButton from "./paypalbutton";
 
@@ -94,6 +87,37 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "rgba(4,44,159, 0.7)",
     },
+  },
+  socialMediaImageFacebook: {
+    marginLeft: "12%",
+    width: "75%",
+    minWidth: 40,
+  },
+  socialMediaImageYoutube: {
+    width: "80%",
+    marginLeft: "5%",
+    minWidth: 40,
+  },
+  socialMediaImageSoundcloud: {
+    width: "70%",
+    position: "relative",
+    top: "2.25%",
+    marginLeft: "13%",
+    minWidth: 40,
+  },
+  socialMediaImageInstagram: {
+    width: "66%",
+    marginLeft: "17%",
+    position: "relative",
+    top: "4%",
+    minWidth: 40,
+    left: "6%",
+  },
+  gridSocialsWrapper: {
+    justifyContent: "center",
+    marginTop: 40,
+    zIndex: 1,
+    marginBottom: 10,
   },
   addBasketButtonDisabled: {
     fontWeight: "bold",
@@ -287,18 +311,9 @@ export function Shop() {
 
   const storeHeader = (
     <Grid item container xs={12} justify="space-around">
-      <Grid
-        item
-        container
-        style={{ marginLeft: 20 }}
-        xs={12}
-        sm={4}
-        justify="center"
-      >
+      <Grid item container style={{ marginLeft: 20 }} xs={12} sm={4} justify="center">
         <Grid item>
-          <h1 className={styles.shopComingSoonText}>
-            Total: £{total >= 0 ? total : 0}
-          </h1>
+          <h1 className={styles.shopComingSoonText}>Total: £{total >= 0 ? total : 0}</h1>
         </Grid>
       </Grid>
       <Grid item xs={12} sm={4} container justify="center">
@@ -314,47 +329,22 @@ export function Shop() {
   var basketItemsGrid = basket.map((IDSize, i) => (
     <Grid item container xs={12} md={10} className={styles.viewBasketGrid}>
       <Grid item xs={3} md={3}>
-        <h3 className={styles.shopComingSoonText}>
-          {getShopItemInfo(IDSize.toString().substring(0, 3))?.desc}
-        </h3>
+        <h3 className={styles.shopComingSoonText}>{getShopItemInfo(IDSize.toString().substring(0, 3))?.desc}</h3>
       </Grid>
       <Grid item xs={2}>
-        <h2 className={styles.shopComingSoonText2}>
-          {IDSize.toString().substring(3)}
-        </h2>
+        <h2 className={styles.shopComingSoonText2}>{IDSize.toString().substring(3)}</h2>
       </Grid>
       <Hidden smDown>
         <Grid item xs={6} md={4} justify="flex-start">
-          <img
-            src={getShopItemInfo(IDSize.toString().substring(0, 3))?.imageURL}
-            className={styles.viewBasketItemImage}
-            alt="Shop Item"
-          />
+          <img src={getShopItemInfo(IDSize.toString().substring(0, 3))?.imageURL} className={styles.viewBasketItemImage} alt="Shop Item" />
         </Grid>
       </Hidden>
       <Grid item xs={3} md={1}>
-        <h3 className={styles.shopComingSoonText}>
-          £{getShopItemInfo(IDSize.toString().substring(0, 3))?.cost}
-        </h3>
+        <h3 className={styles.shopComingSoonText}>£{getShopItemInfo(IDSize.toString().substring(0, 3))?.cost}</h3>
       </Grid>
-      <Grid
-        item
-        container
-        xs={3}
-        md={2}
-        justify="flex-end"
-        style={{ marginBottom: 30 }}
-      >
+      <Grid item container xs={3} md={2} justify="flex-end" style={{ marginBottom: 30 }}>
         <Grid item>
-          <Button
-            onClick={() =>
-              RemoveItem(
-                i,
-                getShopItemInfo(IDSize.toString().substring(0, 3))?.cost
-              )
-            }
-            className={styles.removeButton}
-          >
+          <Button onClick={() => RemoveItem(i, getShopItemInfo(IDSize.toString().substring(0, 3))?.cost)} className={styles.removeButton}>
             REMOVE
           </Button>
         </Grid>
@@ -375,45 +365,24 @@ export function Shop() {
   const TeePage = (item) => {
     const isHat = !!item.extraImages.photo;
     return (
-      <Grid
-        container
-        xs={12}
-        className={styles.gridShopItemWrapper}
-        style={{ marginBottom: 80, justifyContent: "center" }}
-      >
+      <Grid container xs={12} className={styles.gridShopItemWrapper} style={{ marginBottom: 80, justifyContent: "center" }}>
         <Hidden smUp>
           <Grid item xs={10} container style={{ justifyContent: "center" }}>
             <Grid item xs={6}>
               <img src={item.imageURL} style={{ width: "100%" }} />
-              {item.extraImages.back && (
-                <img src={item.extraImages.back} style={{ width: "100%" }} />
-              )}
+              {item.extraImages.back && <img src={item.extraImages.back} style={{ width: "100%" }} />}
             </Grid>
             <Grid item xs={6}>
-              {item.extraImages.photo && (
-                <img src={item.extraImages.photo} style={{ width: "100%" }} />
-              )}
-              {item.extraImages.photoFront && (
-                <img
-                  src={item.extraImages.photoFront}
-                  style={{ width: "100%" }}
-                />
-              )}
-              {item.extraImages.photoBack && (
-                <img
-                  src={item.extraImages.photoBack}
-                  style={{ width: "100%" }}
-                />
-              )}
+              {item.extraImages.photo && <img src={item.extraImages.photo} style={{ width: "100%" }} />}
+              {item.extraImages.photoFront && <img src={item.extraImages.photoFront} style={{ width: "100%" }} />}
+              {item.extraImages.photoBack && <img src={item.extraImages.photoBack} style={{ width: "100%" }} />}
             </Grid>
           </Grid>
         </Hidden>
         <Hidden smDown>
           <Grid item xs={3}>
             <img src={item.imageURL} style={{ width: "100%" }} />
-            {item.extraImages.back && (
-              <img src={item.extraImages.back} style={{ width: "100%" }} />
-            )}
+            {item.extraImages.back && <img src={item.extraImages.back} style={{ width: "100%" }} />}
           </Grid>
         </Hidden>
         <Grid
@@ -428,10 +397,7 @@ export function Shop() {
           }}
         >
           <Grid item style={{ marginTop: -40 }}>
-            <h1
-              className={styles.shopComingSoonText}
-              style={{ fontSize: 40, textAlign: "center" }}
-            >
+            <h1 className={styles.shopComingSoonText} style={{ fontSize: 40, textAlign: "center" }}>
               {item.desc}
             </h1>
           </Grid>
@@ -443,10 +409,7 @@ export function Shop() {
           {!isHat && (
             <>
               <Grid item>
-                <h1
-                  className={styles.shopComingSoonText}
-                  style={{ fontSize: 30 }}
-                >
+                <h1 className={styles.shopComingSoonText} style={{ fontSize: 30 }}>
                   SIZE
                 </h1>
               </Grid>
@@ -516,11 +479,7 @@ export function Shop() {
                 type="submit"
                 onClick={() => handleAddToBasket(item, itemQuantity)}
                 disabled={itemQuantity < 1 || (!isHat && itemSize === "")}
-                className={
-                  itemQuantity < 1 || (!isHat && itemSize === "")
-                    ? styles.addBasketButtonDisabled
-                    : styles.addBasketButton
-                }
+                className={itemQuantity < 1 || (!isHat && itemSize === "") ? styles.addBasketButtonDisabled : styles.addBasketButton}
               >
                 Add to basket
               </Button>
@@ -529,18 +488,9 @@ export function Shop() {
         </Grid>
         <Hidden smDown>
           <Grid item xs={3}>
-            {item.extraImages.photo && (
-              <img src={item.extraImages.photo} style={{ width: "100%" }} />
-            )}
-            {item.extraImages.photoFront && (
-              <img
-                src={item.extraImages.photoFront}
-                style={{ width: "100%" }}
-              />
-            )}
-            {item.extraImages.photoBack && (
-              <img src={item.extraImages.photoBack} style={{ width: "100%" }} />
-            )}
+            {item.extraImages.photo && <img src={item.extraImages.photo} style={{ width: "100%" }} />}
+            {item.extraImages.photoFront && <img src={item.extraImages.photoFront} style={{ width: "100%" }} />}
+            {item.extraImages.photoBack && <img src={item.extraImages.photoBack} style={{ width: "100%" }} />}
           </Grid>
         </Hidden>
       </Grid>
@@ -551,19 +501,45 @@ export function Shop() {
   if (new Date() > new Date(2021, 4, 11, 0, 0, 0, 0))
     return (
       <div style={{ width: "100%", textAlign: "center", marginTop: 100 }}>
-        <h1 className={styles.shopComingSoonText}>
-          Shop closed - next release coming soon
-        </h1>
+        <img src="/Assets/Images/shopClosed.png" alt="shop closed" style={{ marginBottom: 30, maxWidth: "50%" }} />
+        <Grid container xs={12} style={{ justifyContent: "center" }}>
+          <Grid item container xs={8} sm={8} spacing={2} className={styles.gridSocialsWrapper}>
+            <Grid item xs={3} sm={2}>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.facebook.com/steppersclub/?__tn__=%2Cd%2CP-R&eid=ARDXn9RqkkPteWYgjOKLRrpdacbClosDVzoLDJUeXfWFVqT96vg1kiHco-9zT0PJE-kVRxsXjQEhj_XO"
+              >
+                <img src="/Assets/Images/facebook.png" alt="FACEBOOK" className={styles.socialMediaImageFacebook} />
+              </a>
+            </Grid>
+            <Grid item xs={3} sm={2}>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/steppersclub_/">
+                <img src="/Assets/Images/instagram.png" alt="INSTAGRAM" className={styles.socialMediaImageInstagram} />
+              </a>
+            </Grid>
+            <Grid item xs={3} sm={2}>
+              <a target="_blank" rel="noopener noreferrer" href="https://soundcloud.com/steppersclub">
+                <img src="/Assets/Images/soundcloudIcon.png" alt="SOUNDCLOUD" className={styles.socialMediaImageSoundcloud} />
+              </a>
+            </Grid>
+            <Grid item xs={3} sm={2}>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.youtube.com/channel/UCmmzif8Hf1zQ6AhPbeJv86w?fbclid=IwAR2944u6hogl83Jv0Kg2GwZgXb7S5SniTogcLqKSDwqrYtSTllQJ2a-nl0s"
+              >
+                <img src="/Assets/Images/youtubeIcon.png" alt="YOUTUBE" className={styles.socialMediaImageYoutube} />
+              </a>
+            </Grid>
+          </Grid>
+        </Grid>
       </div>
     );
 
   return (
     <Grid container className={styles.gridMainContentWrapper}>
-      <Modal
-        open={isCheckingOut}
-        onClose={() => setIsCheckingOut(false)}
-        className={styles.paymentModal}
-      >
+      <Modal open={isCheckingOut} onClose={() => setIsCheckingOut(false)} className={styles.paymentModal}>
         <Paper className={styles.checkoutWrapper}>
           <PaypalButton amount={total} items={basket} />
         </Paper>
@@ -584,13 +560,7 @@ export function Shop() {
       {(view === "basket" || !!view) && storeHeader}
       {view === "basket" && (
         <Grid item container xs={12} className={styles.viewBasketWrapper}>
-          <Grid
-            item
-            container
-            xs={12}
-            md={10}
-            className={styles.viewBasketTitlesGrid}
-          >
+          <Grid item container xs={12} md={10} className={styles.viewBasketTitlesGrid}>
             <Grid item xs={3} md={3}>
               <h3 className={styles.shopComingSoonText}>ITEM</h3>
             </Grid>
@@ -606,13 +576,7 @@ export function Shop() {
             <Grid item xs={12} className={styles.basketBreakLine}></Grid>
           </Grid>
           {basketItemsGrid}
-          <Grid
-            item
-            container
-            xs={12}
-            md={12}
-            className={styles.viewBasketTotalGrid}
-          >
+          <Grid item container xs={12} md={12} className={styles.viewBasketTotalGrid}>
             {total > 0 && (
               <>
                 <Grid item xs={1} sm={3}></Grid>
@@ -643,35 +607,22 @@ export function Shop() {
                       ></Input>
                     </div>
                   )}
-                  {discountApplied === true && (
-                    <h2 className={styles.shopComingSoonText}>
-                      Discount Applied
-                    </h2>
-                  )}
+                  {discountApplied === true && <h2 className={styles.shopComingSoonText}>Discount Applied</h2>}
                 </Grid>
                 <Grid item xs={3} sm={2}>
                   {discountApplied === false && (
-                    <Button
-                      onClick={() => applyDiscountCode(discountCode)}
-                      className={styles.discountButton}
-                    >
+                    <Button onClick={() => applyDiscountCode(discountCode)} className={styles.discountButton}>
                       Apply
                     </Button>
                   )}
-                  {discountApplied === true && (
-                    <h2 className={styles.shopComingSoonText}>
-                      - £{basket.length * 7}
-                    </h2>
-                  )}
+                  {discountApplied === true && <h2 className={styles.shopComingSoonText}>- £{basket.length * 7}</h2>}
                 </Grid>
                 {discountError && (
                   <Grid item container xs={12}>
                     <Grid item xs={3}></Grid>
 
                     <Grid item xs={7}>
-                      <h2 className={styles.shopComingSoonText}>
-                        Discount code not recognised!
-                      </h2>
+                      <h2 className={styles.shopComingSoonText}>Discount code not recognised!</h2>
                     </Grid>
                     <Grid item xs={2}></Grid>
                   </Grid>
@@ -695,19 +646,10 @@ export function Shop() {
               </>
             )}
           </Grid>
-          <Grid
-            item
-            container
-            xs={12}
-            justify="flex-end"
-            style={{ height: 100, backgroundColor: "white" }}
-          >
+          <Grid item container xs={12} justify="flex-end" style={{ height: 100, backgroundColor: "white" }}>
             {total > 0 && (
               <Grid item xs={3} style={{ marginRight: 50 }}>
-                <Button
-                  onClick={() => setIsCheckingOut(true)}
-                  className={styles.checkoutButton}
-                >
+                <Button onClick={() => setIsCheckingOut(true)} className={styles.checkoutButton}>
                   Checkout
                 </Button>
               </Grid>
@@ -717,18 +659,9 @@ export function Shop() {
       )}
       {!view && (
         <Grid item container xs={12} justify="space-around">
-          <Grid
-            item
-            container
-            style={{ marginLeft: 20 }}
-            xs={12}
-            sm={4}
-            justify="center"
-          >
+          <Grid item container style={{ marginLeft: 20 }} xs={12} sm={4} justify="center">
             <Grid item>
-              <h1 className={styles.shopComingSoonText}>
-                Total: £{total >= 0 ? total : 0}
-              </h1>
+              <h1 className={styles.shopComingSoonText}>Total: £{total >= 0 ? total : 0}</h1>
             </Grid>
           </Grid>
           <Grid item xs={12} sm={4} container justify="center">
@@ -742,14 +675,7 @@ export function Shop() {
       )}
       {!view && (
         <>
-          <Grid
-            item
-            container
-            xs={12}
-            spacing={3}
-            className={styles.gridShopItemWrapper}
-            style={{ justifyContent: "center" }}
-          >
+          <Grid item container xs={12} spacing={3} className={styles.gridShopItemWrapper} style={{ justifyContent: "center" }}>
             <Grid item xs={12}>
               <h1
                 className={styles.shopComingSoonText}
@@ -764,36 +690,16 @@ export function Shop() {
               </h1>
             </Grid>
             <Grid item xs={8} sm={3}>
-              <img
-                src={whitetee.imageURL}
-                alt={whitetee.desc}
-                className={styles.shopItemImage}
-                onClick={() => setView(whitetee)}
-              ></img>{" "}
+              <img src={whitetee.imageURL} alt={whitetee.desc} className={styles.shopItemImage} onClick={() => setView(whitetee)}></img>{" "}
             </Grid>
             <Grid item xs={8} sm={3}>
-              <img
-                src={yellowtee.imageURL}
-                alt={yellowtee.desc}
-                className={styles.shopItemImage}
-                onClick={() => setView(yellowtee)}
-              ></img>{" "}
+              <img src={yellowtee.imageURL} alt={yellowtee.desc} className={styles.shopItemImage} onClick={() => setView(yellowtee)}></img>{" "}
             </Grid>
             <Grid item xs={8} sm={3}>
-              <img
-                src={bluetee.imageURL}
-                alt={bluetee.desc}
-                className={styles.shopItemImage}
-                onClick={() => setView(bluetee)}
-              ></img>{" "}
+              <img src={bluetee.imageURL} alt={bluetee.desc} className={styles.shopItemImage} onClick={() => setView(bluetee)}></img>{" "}
             </Grid>
             <Grid item xs={8} sm={3}>
-              <img
-                src={blacktee.imageURL}
-                alt={blacktee.desc}
-                className={styles.shopItemImage}
-                onClick={() => setView(blacktee)}
-              ></img>{" "}
+              <img src={blacktee.imageURL} alt={blacktee.desc} className={styles.shopItemImage} onClick={() => setView(blacktee)}></img>{" "}
             </Grid>
           </Grid>
           <Grid
@@ -819,20 +725,10 @@ export function Shop() {
               </h1>
             </Grid>
             <Grid item xs={8} sm={6}>
-              <img
-                src={blackhat.imageURL}
-                alt={blackhat.desc}
-                className={styles.shopItemImage}
-                onClick={() => setView(blackhat)}
-              ></img>{" "}
+              <img src={blackhat.imageURL} alt={blackhat.desc} className={styles.shopItemImage} onClick={() => setView(blackhat)}></img>{" "}
             </Grid>
             <Grid item xs={8} sm={6}>
-              <img
-                src={whitehat.imageURL}
-                alt={whitehat.desc}
-                className={styles.shopItemImage}
-                onClick={() => setView(whitehat)}
-              ></img>{" "}
+              <img src={whitehat.imageURL} alt={whitehat.desc} className={styles.shopItemImage} onClick={() => setView(whitehat)}></img>{" "}
             </Grid>
           </Grid>
         </>
