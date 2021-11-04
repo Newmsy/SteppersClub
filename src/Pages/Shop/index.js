@@ -586,6 +586,7 @@ export function Shop() {
       </Grid>
     );
   };
+  console.log(new Date(2021, 10, 5, 17, 0, 0, 0));
 
   if (new Date() > new Date(2021, 10, 5, 17, 0, 0, 0))
     return (
@@ -636,7 +637,7 @@ export function Shop() {
 
       <Grid item container xs={12} className={styles.gridItemWrapper}>
         <img
-          src="/Assets/Images/shop/store pic.png"
+          src="/Assets/Images/Shop/storepic.png"
           style={{
             width: "80%",
             marginLeft: "10%",
