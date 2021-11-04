@@ -9,8 +9,7 @@ import { Events } from "./Pages/Events";
 import { Press } from "./Pages/Press";
 import { Contact } from "./Pages/Contact";
 import { Roster } from "./Pages/Roster";
-import { Toolbar } from "./Toolbar";
-import { Footer } from "./Footer";
+import { Lookbook } from "./Pages/Lookbook";
 import { Layout } from "./Layout";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -41,8 +40,11 @@ export default function App() {
             <Route path="/contact">
               <Contact />
             </Route>
-            <Route path="/shop">
+            <Route path="/shop" exact>
               <Shop />
+            </Route>
+            <Route path="/shop/lookbook">
+              <Lookbook />
             </Route>
             <Route path="/videos">
               <Videos />
