@@ -97,12 +97,8 @@ export function Releases() {
 
   return (
     <Grid container className={styles.gridMainContentWrapper}>
-      <Grid
-        item
-        xs={12}
-        style={{ textAlign: "center", paddingBottom: 30, boxShadow: "0px 8px 8px rgba(0, 0, 0, 0.3),0px 8px 8px  rgba(0, 0, 0, 0.3)" }}
-      >
-        <h1 className={styles.releasesHeader}>Releases</h1>
+      <Grid item xs={6} style={{ textAlign: "center", paddingBottom: 30, marginTop: 30 }}>
+        <img alt="RELEASES" src="/Assets/Images/releases.png" />
       </Grid>
       <Grid
         item

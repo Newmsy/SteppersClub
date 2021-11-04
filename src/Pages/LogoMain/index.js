@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
+import { Grid, Divider } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   gridMainContentWrapper: {
@@ -132,6 +132,9 @@ export function LogoMain() {
             <img className={styles.homepageImageButton} alt="SHOP" src="/Assets/Images/shop.png" />
           </a>
         </Grid>
+      </Grid>
+      <Grid xs={6}>
+        <Divider style={{ height: 3, marginBottom: 40, marginTop: -30 }} />
       </Grid>
     </Grid>
   );
