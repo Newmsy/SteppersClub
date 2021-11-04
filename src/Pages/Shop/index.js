@@ -587,7 +587,7 @@ export function Shop() {
     );
   };
 
-  if (new Date() > new Date(2021, 11, 11, 0, 0, 0, 0))
+  if (new Date() > new Date(2021, 10, 5, 17, 0, 0, 0))
     return (
       <div style={{ width: "100%", textAlign: "center", marginTop: 100 }}>
         <img src="/Assets/Images/shopClosed.png" alt="shop closed" style={{ marginBottom: 30, maxWidth: "50%" }} />
@@ -760,9 +760,11 @@ export function Shop() {
               <h1 className={styles.shopComingSoonText}>TOTAL: £{total >= 0 ? total : 0}</h1>
             </Grid>
           </Grid>
-          <Grid item xs={6}>
-            <Divider style={{ height: 4 }} />
-          </Grid>
+          <Hidden smUp>
+            <Grid item xs={6}>
+              <Divider style={{ height: 4 }} />
+            </Grid>
+          </Hidden>
           <Grid item xs={12} sm={4} container justify="center">
             <Grid item>
               <Button onClick={() => setView("basket")}>
@@ -775,7 +777,9 @@ export function Shop() {
       {!view && (
         <>
           <Grid item xs={12}>
-            <Divider style={{ height: 4, marginTop: -20, marginBottom: 20 }} />
+            <Hidden smUp>
+              <Divider style={{ height: 4, marginTop: -20, marginBottom: 20 }} />
+            </Hidden>
           </Grid>
           <Grid item container xs={10} spacing={3} className={styles.gridShopItemWrapper} style={{ justifyContent: "center" }}>
             <Grid item xs={12}>
@@ -815,7 +819,9 @@ export function Shop() {
             </Grid>
           </Grid>
           <Grid item xs={12}>
-            <Divider style={{ height: 4, marginTop: -20, marginBottom: 20 }} />
+            <Hidden smUp>
+              <Divider style={{ height: 4, marginTop: -20, marginBottom: 20 }} />
+            </Hidden>
           </Grid>
           <Grid item container xs={10} sm={10} spacing={3} className={styles.gridShopItemWrapper} style={{ justifyContent: "center" }}>
             <Grid item xs={12}>
@@ -841,7 +847,9 @@ export function Shop() {
             </Grid>
           </Grid>
           <Grid item xs={12}>
-            <Divider style={{ height: 4, marginTop: -20, marginBottom: 20 }} />
+            <Hidden smUp>
+              <Divider style={{ height: 4, marginTop: -20, marginBottom: 20 }} />
+            </Hidden>
           </Grid>
           <Grid item container xs={10} sm={10} spacing={3} className={styles.gridShopItemWrapper} style={{ justifyContent: "center" }}>
             <Grid item xs={12}>
@@ -873,7 +881,9 @@ export function Shop() {
             </Grid>
           </Grid>
           <Grid item xs={12}>
-            <Divider style={{ height: 4, marginTop: -20, marginBottom: 20 }} />
+            <Hidden smUp>
+              <Divider style={{ height: 4, marginTop: -20, marginBottom: 20 }} />
+            </Hidden>
           </Grid>
           <Grid
             item
