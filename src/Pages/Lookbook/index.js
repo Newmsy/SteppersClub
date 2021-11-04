@@ -42,7 +42,7 @@ export function Lookbook() {
     <Grid container className={styles.gridMainContentWrapper}>
       <Grid item xs={12} style={{ textAlign: "center" }}>
         <img
-          src="/Assets/Images/shop/store pic.png"
+          src="/Assets/Images/shop/storepic.png"
           alt="lookbook"
           className={styles.lookbookHeader}
           style={{
@@ -69,7 +69,7 @@ export function Lookbook() {
         <Grid item xs={4} className={styles.headerWrapper}>
           <Grid xs={12}>
             <a href="/shop">
-              <img src="/Assets/Images/shop/back to store.png" style={{ width: "100%" }} />
+              <img src="/Assets/Images/shop/backtostore.png" style={{ width: "100%" }} />
             </a>
           </Grid>
         </Grid>
