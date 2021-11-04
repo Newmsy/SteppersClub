@@ -2,6 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import { LogoMain } from "../Pages/LogoMain";
+import Hidden from "@material-ui/core/Hidden";
+import Slide from "@material-ui/core/Slide";
 
 const useStyles = makeStyles((theme) => ({
   gridContentWrapper: {
@@ -39,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   popupWrapper: {
     position: "absolute",
     bottom: "20%",
-    right: "5%",
+    right: "25%",
     zIndex: 1000,
     transform: "rotate(10deg)",
     transition: "0.5s",
@@ -48,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   popup: {
-    width: 250,
+    width: 170,
 
     borderRadius: 10,
     //borderColor: "black",
@@ -76,6 +78,25 @@ export const Layout = (props) => {
   const styles = useStyles();
   return (
     <Grid container className={styles.gridContentWrapper}>
+      <Hidden smDown>
+        {new Date() < new Date(2021, 10, 5, 17, 0, 0, 0) && (
+          <div className={styles.popupWrapper}>
+            <Slide direction="left" in={true} timeout={550}>
+              <Grid className={styles.popup}>
+                <a target="_blank" rel="noopener noreferrer" href="/shop">
+                  <Grid item xs={12}>
+                    <img src="/Assets/Images/lookbook/WHITE LONG.png" alt="SOUNDCLOUD" className={styles.socialMediaImageSoundcloud} />
+                    <img
+                      src="/Assets/Images/Shop/open for business.png"
+                      style={{ marginLeft: "-30%", width: "160%", marginTop: -50, zIndex: 6 }}
+                    />
+                  </Grid>
+                </a>
+              </Grid>
+            </Slide>
+          </div>
+        )}
+      </Hidden>
       <Grid item xs={12} sm={10} md={8} lg={6} className={styles.gridMiniContentWrapper}>
         <LogoMain />
         {props.children}
