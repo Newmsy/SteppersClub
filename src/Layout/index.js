@@ -79,7 +79,7 @@ export const Layout = (props) => {
   return (
     <Grid container className={styles.gridContentWrapper}>
       <Hidden smDown>
-        {new Date() < new Date(2021, 10, 5, 17, 0, 0, 0) && (
+        {new Date() > new Date(2021, 10, 5, 17, 0, 0, 0) && (
           <div className={styles.popupWrapper}>
             <Slide direction="left" in={true} timeout={550}>
               <Grid className={styles.popup}>

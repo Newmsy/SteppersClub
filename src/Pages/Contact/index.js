@@ -41,16 +41,11 @@ export function Contact() {
     <Grid container className={styles.gridMainContentWrapper}>
       <Grid item container xs={12} className={styles.gridItemWrapper}>
         <Grid item xs={12} className={styles.contactComingSoonWrapper}>
-          <h1 className={styles.shopComingSoonText}>
-            FOR ALL ENQUIRIES AND SUBMISSIONS
-          </h1>
+          <h1 className={styles.shopComingSoonText}>FOR ALL ENQUIRIES AND SUBMISSIONS</h1>
         </Grid>
         <Grid item xs={12} className={styles.contactComingSoonWrapper}>
-          <a
-            href="mailto:steppersclubuk@gmail.com"
-            className={styles.contactEmailLink}
-          >
-            steppersclubuk@gmail.com
+          <a href="mailto:steppersclubuk@gmail.com" className={styles.contactEmailLink}>
+            info@steppersclub.co.uk
           </a>
         </Grid>
       </Grid>
