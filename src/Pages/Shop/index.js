@@ -587,7 +587,7 @@ export function Shop() {
     );
   };
 
-  if (new Date() < new Date(2021, 10, 5, 17, 0, 0, 0))
+  if (new Date() > new Date(2021, 10, 5, 17, 0, 0, 0))
     return (
       <div style={{ width: "100%", textAlign: "center", marginTop: 100 }}>
         <img src="/Assets/Images/shopClosed.png" alt="shop closed" style={{ marginBottom: 30, maxWidth: "50%" }} />

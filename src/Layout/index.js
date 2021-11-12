@@ -78,25 +78,6 @@ export const Layout = (props) => {
   const styles = useStyles();
   return (
     <Grid container className={styles.gridContentWrapper}>
-      <Hidden smDown>
-        {new Date() > new Date(2021, 10, 5, 17, 0, 0, 0) && (
-          <div className={styles.popupWrapper}>
-            <Slide direction="left" in={true} timeout={550}>
-              <Grid className={styles.popup}>
-                <a target="_blank" rel="noopener noreferrer" href="/shop">
-                  <Grid item xs={12}>
-                    <img src="/Assets/Images/lookbook/WHITE LONG.png" alt="SOUNDCLOUD" className={styles.socialMediaImageSoundcloud} />
-                    <img
-                      src="/Assets/Images/Shop/open for business.png"
-                      style={{ marginLeft: "-30%", width: "160%", marginTop: -50, zIndex: 6 }}
-                    />
-                  </Grid>
-                </a>
-              </Grid>
-            </Slide>
-          </div>
-        )}
-      </Hidden>
       <Grid item xs={12} sm={10} md={8} lg={6} className={styles.gridMiniContentWrapper}>
         <LogoMain />
         {props.children}
