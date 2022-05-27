@@ -102,12 +102,12 @@ export function LogoMain() {
   return (
     <Grid item container className={styles.gridMainContentWrapper}>
       <Grid item xs={8} style={{ display: "flex", flexDirection: "row" }}>
-        <a href="/">
+        <p>
           <img src="/Assets/Images/logoText.png" alt="Steppers Club Logo" className={styles.logoNameImage} />
-        </a>
-        <a href="/">
+        </p>
+        <p>
           <img src="/Assets/Images/SteppersLogo.png" alt="Steppers Club Logo" className={styles.logoImage} />
-        </a>
+        </p>
       </Grid>
       <Grid item container xs={10} className={styles.gridLinksWrapper}>
         <Grid item xs={12} sm={6} md={3} lg={3} className={styles.linkGridItem}>

@@ -42,11 +42,11 @@ export function Lookbook() {
     <Grid container className={styles.gridMainContentWrapper}>
       <Grid item xs={12} style={{ textAlign: "center" }}>
         <img
-          src="/Assets/Images/Shop/storepic.png"
+          src="/Assets/Images/ShopLogo.png"
           alt="lookbook"
           className={styles.lookbookHeader}
           style={{
-            width: "80%",
+            width: "40%",
             marginLeft: "0",
             marginBottom: 30,
             height: "100%",

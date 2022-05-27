@@ -1,335 +1,15 @@
 import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import { Divider } from "@material-ui/core";
-import { Button, Select, MenuItem, Modal, Paper, Input } from "@material-ui/core";
+import { Button, Select, MenuItem, Modal, Paper, Input, Radio, RadioGroup } from "@material-ui/core";
 import Hidden from "@material-ui/core/Hidden";
 import PaypalButton from "./paypalbutton";
 import { Lookbook, LookbookCarousel } from "./carousel";
-
-const useStyles = makeStyles((theme) => ({
-  gridMainContentWrapper: {
-    width: "100%",
-    marginTop: -30,
-    direction: "column",
-    flexGrow: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    alignContent: "center",
-    justifyItems: "center",
-  },
-  gridItemWrapper: {},
-  shopComingSoonText: {
-    color: "rgb(4,44,159)",
-    textShadow: "2px 2px rgb(255,209,76)",
-    fontWeight: 700,
-  },
-  shopComingSoonTextDesc: {
-    color: "rgb(4,44,159)",
-
-    fontWeight: 700,
-  },
-  shopComingSoonText2: {
-    color: "rgb(4,44,159)",
-    textShadow: "2px 2px rgb(255,209,76)",
-    fontWeight: 700,
-    marginTop: 15,
-    marginLeft: 5,
-  },
-  shopComingSoonText3: {
-    color: "rgb(4,44,159)",
-    textShadow: "2px 2px rgba(255,42,44, 0.5)",
-    fontWeight: 700,
-  },
-  shopComingSoonWrapper: {
-    textAlign: "center",
-    marginTop: -50,
-  },
-  gridShopItemWrapper: {
-    marginBottom: 5,
-    marginTop: 10,
-  },
-  shopItemImage: {
-    width: "100%",
-    cursor: "pointer",
-    position: "relative",
-
-    zIndex: 1,
-  },
-  shopAddToBasketButtons: {
-    zIndex: 0,
-    transition: "1s",
-    position: "relative",
-    marginTop: 20,
-  },
-  viewBasketGrid: {
-    justifyContent: "center",
-  },
-  viewBasketItemImage: {
-    height: 100,
-    marginBottom: 10,
-  },
-  mobileViewBasketItemImage: {
-    width: "100%",
-    marginBottom: 10,
-  },
-  viewBasketWrapper: {
-    justifyContent: "center",
-    marginTop: 50,
-    marginBottom: 100,
-  },
-  basketBreakLine: {
-    width: "100%",
-    height: 2,
-    backgroundColor: "black",
-  },
-  viewBasketTitlesGrid: {},
-  viewBasketTotalGrid: {
-    marginBottom: 50,
-  },
-  addBasketButton: {
-    backgroundColor: "rgb(4,44,159)",
-    color: "white",
-    fontWeight: "bold",
-    "&:hover": {
-      backgroundColor: "rgba(4,44,159, 0.7)",
-    },
-  },
-  socialMediaImageFacebook: {
-    marginLeft: "12%",
-    width: "75%",
-    minWidth: 40,
-  },
-  socialMediaImageYoutube: {
-    width: "80%",
-    marginLeft: "5%",
-    minWidth: 40,
-  },
-  socialMediaImageSoundcloud: {
-    width: "70%",
-    position: "relative",
-    top: "2.25%",
-    marginLeft: "13%",
-    minWidth: 40,
-  },
-  socialMediaImageInstagram: {
-    width: "66%",
-    marginLeft: "17%",
-    position: "relative",
-    top: "4%",
-    minWidth: 40,
-    left: "6%",
-  },
-  gridSocialsWrapper: {
-    justifyContent: "center",
-    marginTop: 40,
-    zIndex: 1,
-    marginBottom: 10,
-  },
-  addBasketButtonDisabled: {
-    fontWeight: "bold",
-    backgroundColor: "rgba(4,44,159,0.3)",
-  },
-  sizeSelect: {
-    width: 200,
-    height: 40,
-    backgroundColor: "rgba(110,110,110,0.1)",
-    textAlign: "center",
-    paddingLeft: 15,
-    fontSize: 25,
-    border: "2px solid rgb(4,44,159)",
-    borderRadius: 5,
-  },
-  removeButton: {
-    backgroundColor: "rgb(4,44,159)",
-    marginTop: "10%",
-    color: "white",
-    fontWeight: "bold",
-    "&:hover": {
-      backgroundColor: "rgba(4,44,159, 0.7)",
-    },
-  },
-  checkoutWrapper: {
-    position: "absolute",
-    width: 400,
-    maxWidth: "100vw",
-    top: "5%",
-    left: "calc(50vw - 220px)",
-    [theme.breakpoints.down("sm")]: {
-      left: "2%",
-      width: "80vw",
-    },
-    backgroundColor: "white",
-    overflow: "scroll",
-    maxHeight: "80vh",
-    padding: theme.spacing(2, 4, 3),
-  },
-  checkoutButton: {
-    backgroundColor: "rgb(4,44,159)",
-    marginTop: "10%",
-    marginRight: 50,
-    color: "white",
-    fontWeight: "bold",
-    "&:hover": {
-      backgroundColor: "rgba(4,44,159, 0.7)",
-    },
-    discountCodeInput: {
-      padding: 3,
-    },
-  },
-  discountButton: {
-    marginTop: 20,
-    backgroundColor: "rgb(4,44,159)",
-    color: "white",
-    fontWeight: "bold",
-    "&:hover": {
-      backgroundColor: "rgba(4,44,159, 0.7)",
-    },
-  },
-}));
+import { useStyles } from "./shopStyles";
+import { TeePage } from "./TeePage";
+import { shopItems } from "./shopItems";
 
 export function Shop() {
-  const whiteteelong = {
-    cost: 25.0,
-    id: "WTL",
-    hasSize: true,
-    desc: "White Steppers Long Sleve Tee".toUpperCase(),
-    imageURL: "/Assets/Images/Shop/white long.png",
-    extradesc:
-      "A long sleeve take on our OG t-shirt template, the basis of our previous two drops. Complete with Steppers Club insignia on front and back, the tee’s drop in Pink and White for AW/21.",
-    extraImages: {
-      back: "",
-      photoFront: "",
-      photoBack: "",
-    },
-  };
-  const whitetee = {
-    cost: 20.0,
-    id: "WhT",
-    hasSize: true,
-    desc: "WHITE STEPPERS TEE".toUpperCase(),
-    imageURL: "/Assets/Images/Shop/whiteshort.png",
-    extradesc:
-      "An ever present of our clothing drops, the short sleeve White tee returns alongside a Pink version of the design, brand new for AW/21.",
-    extraImages: {
-      back: "",
-      photoFront: "",
-      photoBack: "",
-    },
-  };
-  const pinktee = {
-    cost: 20.0,
-    id: "PiT",
-    hasSize: true,
-    desc: "Pink Steppers Tee".toUpperCase(),
-    extradesc:
-      "An ever present of our clothing drops, the short sleeve White tee returns alongside a Pink version of the design, brand new for AW/21.",
-    imageURL: "/Assets/Images/Shop/pink tshirt.png",
-    extraImages: {
-      back: "",
-      photoFront: "",
-      photoBack: "",
-    },
-  };
-  const pinkteelong = {
-    cost: 25.0,
-    id: "PTL",
-    hasSize: true,
-    extradesc:
-      "A long sleeve take on our OG t-shirt template, the basis of our previous two drops. Complete with Steppers Club insignia on front and back, the tee’s drop in Pink and White for AW/21.",
-    desc: "Pink Steppers Long sleeve tee".toUpperCase(),
-    imageURL: "/Assets/Images/Shop/pink long.png",
-    extraImages: {
-      back: "",
-      photoFront: "",
-      photoBack: "",
-    },
-  };
-  const blackhat = {
-    cost: 15,
-    id: "BkH",
-    hasSize: false,
-    desc: "Black Suede Steppers Cap".toUpperCase(),
-    extradesc:
-      "After significant demand, we’ve decided to bring back our suede caps for AW/21. Purchasable in Black and Grey, each unit has high quality embroidery of the Steppers Club text logo on the front centre of the cap.",
-    imageURL: "/Assets/Images/Shop/black cap.png",
-    extraImages: {
-      photo: "",
-    },
-  };
-  const greyhat = {
-    cost: 15,
-    id: "GrH",
-    hasSize: false,
-    extradesc:
-      "After significant demand, we’ve decided to bring back our suede caps for AW/21. Purchasable in Black and Grey, each unit has high quality embroidery of the Steppers Club text logo on the front centre of the cap.",
-    desc: "Grey Suede Steppers Cap".toUpperCase(),
-    imageURL: "/Assets/Images/Shop/grey cap.png",
-    extraImages: {
-      photo: "",
-    },
-  };
-  const blackhoodie = {
-    cost: 45,
-    id: "BHd",
-    hasSize: true,
-    extradesc:
-      "Heavy blend embroidered hoodie with high quality embroidery of the Steppers Club text and cassette logos, placed on the front and back of the garment. The hoodie is perfect for winter conditions with a soft inside and durable exterior.",
-    desc: "Black Steppers Hoodie".toUpperCase(),
-    imageURL: "/Assets/Images/Shop/blackhoodie.png",
-    extraImages: {
-      photo: "",
-    },
-  };
-  const blackbeanie = {
-    cost: 15,
-    id: "BBn",
-    hasSize: false,
-    extradesc:
-      "Warm, wooly and classic in design, our new beanies are perfect for repping the label throughout the winter. Each unit has high quality embroidery of the Steppers Club text logo in the front centre of the beanie. ",
-    desc: "Black Steppers Beanie".toUpperCase(),
-    imageURL: "/Assets/Images/Shop/beanie.png",
-    extraImages: {
-      photo: "",
-    },
-  };
-  const blackbag = {
-    cost: 20,
-    id: "BkB",
-    hasSize: false,
-    extradesc:
-      "Whether you’re making a quick trip to the shops or heading out to the rave, our new waist bags are a perfect solution for bringing the essentials with you. Each bag is durable and possesses good storage space, with the Steppers Club text logo embroidered on the front.",
-    desc: "Black Steppers Waist Bag".toUpperCase(),
-    imageURL: "/Assets/Images/Shop/black bum bag.png",
-    extraImages: {
-      photo: "",
-    },
-  };
-  const redbag = {
-    cost: 20,
-    id: "ReB",
-    hasSize: false,
-    extradesc:
-      "Whether you’re making a quick trip to the shops or heading out to the rave, our new waist bags are a perfect solution for bringing the essentials with you. Each bag is durable and possesses good storage space, with the Steppers Club text logo embroidered on the front.",
-    desc: "Red Steppers Waist Bag".toUpperCase(),
-    imageURL: "/Assets/Images/Shop/red bum bag.png",
-    extraImages: {
-      photo: "",
-    },
-  };
-  const bluebag = {
-    cost: 20,
-    id: "BuB",
-    hasSize: false,
-    extradesc:
-      "Whether you’re making a quick trip to the shops or heading out to the rave, our new waist bags are a perfect solution for bringing the essentials with you. Each bag is durable and possesses good storage space, with the Steppers Club text logo embroidered on the front.",
-    desc: "Blue Steppers Waist Bag".toUpperCase(),
-    imageURL: "/Assets/Images/Shop/blue bum bag.png",
-    extraImages: {
-      photo: "",
-    },
-  };
-
   const styles = useStyles();
   const [basket, setBasket] = useState([]);
   const [total, setTotal] = useState(0);
@@ -340,6 +20,12 @@ export function Shop() {
   const [discountApplied, setDiscountApplied] = useState(false);
   const [discountCode, setDiscountCode] = useState("");
   const [discountError, setDiscountError] = useState(false);
+  const [international, setInternational] = useState(false);
+
+  const setBagView = React.useCallback((item) => {
+    setView(item);
+    window.scrollTo(0, 0);
+  }, []);
 
   function handleAddToBasket(item, quantity) {
     var currentBasket = basket;
@@ -353,31 +39,50 @@ export function Shop() {
     setItemSize("");
     setView(null);
   }
+  const {
+    greytee,
+    bluetee,
+    browntee,
+    bluehat,
+    brownhat,
+    greybuckethat,
+    bluebuckethat,
+    bluehoodie,
+    bluejoggers,
+    shorts,
+    bluebag,
+    greybag,
+    beachbag,
+  } = shopItems;
 
   function getShopItemInfo(itemID) {
     switch (itemID) {
-      case "WTL":
-        return whiteteelong;
-      case "PiT":
-        return pinktee;
-      case "WhT":
-        return whitetee;
-      case "PTL":
-        return pinkteelong;
-      case "BkH":
-        return blackhat;
-      case "GrH":
-        return greyhat;
+      case "GrT":
+        return shopItems.greytee;
+      case "BlT":
+        return shopItems.bluetee;
+      case "BrT":
+        return shopItems.browntee;
+      case "BlH":
+        return shopItems.bluehat;
+      case "BrH":
+        return shopItems.brownhat;
+      case "GBH":
+        return shopItems.greybuckethat;
+      case "BBH":
+        return shopItems.bluebuckethat;
       case "BHd":
-        return blackhoodie;
-      case "BBn":
-        return blackbeanie;
-      case "BkB":
-        return blackbag;
-      case "ReB":
-        return redbag;
-      case "BuB":
-        return bluebag;
+        return shopItems.bluehoodie;
+      case "BJg":
+        return shopItems.bluejoggers;
+      case "Srt":
+        return shopItems.shorts;
+      case "BlB":
+        return shopItems.bluebag;
+      case "GrB":
+        return shopItems.greybag;
+      case "BcB":
+        return shopItems.beachbag;
       default:
         return;
     }
@@ -454,140 +159,7 @@ export function Shop() {
     </Grid>
   ));
 
-  const TeePage = (item) => {
-    const hasSize = !!item.hasSize;
-    return (
-      <Grid container xs={12} className={styles.gridShopItemWrapper} style={{ marginBottom: 80, justifyContent: "center" }}>
-        <Hidden smUp>
-          <Grid item xs={10} container style={{ justifyContent: "center" }}>
-            <Grid item xs={12}>
-              <img src={item.imageURL} style={{ width: "100%" }} />
-            </Grid>
-          </Grid>
-        </Hidden>
-        <Hidden smDown>
-          <Grid container item xs={12} style={{ justifyContent: "center" }}>
-            <Grid xs={6}>
-              <img src={item.imageURL} style={{ width: "100%" }} />
-            </Grid>
-          </Grid>
-        </Hidden>
-        <Grid
-          item
-          xs={8}
-          container
-          className={styles.gridShopItemWrapper}
-          style={{
-            alignItems: "center",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <Grid item style={{ marginTop: -40 }}>
-            <h1 className={styles.shopComingSoonText} style={{ fontSize: 40, textAlign: "center" }}>
-              {item.desc}
-            </h1>
-          </Grid>
-          <Grid item style={{ marginTop: -20, marginBottom: 20 }}>
-            <h1 className={styles.shopComingSoonTextDesc} style={{ fontSize: 16, textTransform: "uppercase", textAlign: "center" }}>
-              {item.extradesc}
-            </h1>
-          </Grid>
-          <Grid item style={{ marginTop: -40 }}>
-            <h1 className={styles.shopComingSoonText} style={{ fontSize: 30 }}>
-              £{item.cost}
-            </h1>
-          </Grid>
-          {hasSize && (
-            <>
-              <Grid item>
-                <h1 className={styles.shopComingSoonText} style={{ fontSize: 30 }}>
-                  SIZE
-                </h1>
-              </Grid>
-
-              <Grid item>
-                <Select
-                  name="size"
-                  id="size"
-                  onChange={(e) => setItemSize(e.target.value)}
-                  className={styles.sizeSelect}
-                  placeholder="size"
-                  value={itemSize}
-                >
-                  <MenuItem value="" disabled selected={itemSize === "none"}>
-                    SIZE
-                  </MenuItem>
-                  <MenuItem value="XL" selected={itemSize === "XL"}>
-                    XL
-                  </MenuItem>
-                  <MenuItem value="L" selected={itemSize === "L"}>
-                    L
-                  </MenuItem>
-                  <MenuItem value="M" selected={itemSize === "M"}>
-                    M
-                  </MenuItem>
-                  <MenuItem value="S" selected={itemSize === "S"}>
-                    S
-                  </MenuItem>
-                </Select>
-              </Grid>
-            </>
-          )}
-          <Grid item>
-            <h1 className={styles.shopComingSoonText} style={{ fontSize: 30 }}>
-              QUANTITY
-            </h1>
-          </Grid>
-          <Grid item>
-            <Select
-              name="quantity"
-              id="quantity"
-              onChange={(e) => setItemQuantity(e.target.value)}
-              className={styles.sizeSelect}
-              placeholder="quantity"
-              value={itemQuantity}
-            >
-              <MenuItem value="none" disabled selected={itemSize.size === 0}>
-                QUANTITY
-              </MenuItem>
-              <MenuItem value={1} selected={itemQuantity === 1}>
-                1
-              </MenuItem>
-              <MenuItem value={2} selected={itemQuantity === 2}>
-                2
-              </MenuItem>
-              <MenuItem value={3} selected={itemQuantity === 3}>
-                3
-              </MenuItem>
-              <MenuItem value={4} selected={itemQuantity === 4}>
-                4
-              </MenuItem>
-            </Select>
-          </Grid>
-          <Grid>
-            <div className={styles.shopAddToBasketButtons}>
-              <Button
-                type="submit"
-                onClick={() => handleAddToBasket(item, itemQuantity)}
-                disabled={itemQuantity < 1 || (hasSize && itemSize === "")}
-                className={itemQuantity < 1 || (hasSize && itemSize === "") ? styles.addBasketButtonDisabled : styles.addBasketButton}
-              >
-                Add to basket
-              </Button>
-            </div>
-          </Grid>
-        </Grid>
-        <Grid item container xs={12} className={styles.headerWrapper} style={{ justifyContent: "center" }}>
-          <Grid xs={7} item>
-            <LookbookCarousel />
-          </Grid>
-        </Grid>
-      </Grid>
-    );
-  };
-
-  if (new Date() > new Date(2021, 10, 5, 17, 0, 0, 0))
+  if (new Date() < new Date(2021, 10, 5, 17, 0, 0, 0))
     return (
       <div style={{ width: "100%", textAlign: "center", marginTop: 100 }}>
         <img src="/Assets/Images/shopClosed.png" alt="shop closed" style={{ marginBottom: 30, maxWidth: "50%" }} />
@@ -630,16 +202,16 @@ export function Shop() {
     <Grid container className={styles.gridMainContentWrapper}>
       <Modal open={isCheckingOut} onClose={() => setIsCheckingOut(false)} className={styles.paymentModal}>
         <Paper className={styles.checkoutWrapper}>
-          <PaypalButton amount={total} items={basket} />
+          <PaypalButton amount={total + (international ? 20 : 5)} items={basket} />
         </Paper>
       </Modal>
 
       <Grid item container xs={12} className={styles.gridItemWrapper}>
         <img
-          src="/Assets/Images/Shop/storepic.png"
+          src="/Assets/Images/ShopLogo.png"
           style={{
-            width: "80%",
-            marginLeft: "10%",
+            width: "40%",
+            marginLeft: "30%",
             marginBottom: 30,
             height: "100%",
           }}
@@ -675,61 +247,25 @@ export function Shop() {
           <Grid item container xs={12} md={12} className={styles.viewBasketTotalGrid}>
             {total > 0 && (
               <>
-                <Grid item xs={1} sm={3}></Grid>
-
-                <Grid item xs={3} sm={3}>
-                  {discountApplied === false && (
-                    <h2
-                      className={styles.shopComingSoonText}
-                      style={{
-                        textAlign: "center",
-                        position: "relative",
-                        right: 20,
-                      }}
-                    >
-                      DISCOUNT CODE:
-                    </h2>
-                  )}
+                <Grid item xs={1} sm={1}></Grid>
+                <Grid item xs={11} sm={4}>
+                  <h2 className={styles.shopComingSoonText}>
+                    <Radio onChange={(event) => setInternational(false)} checked={!international} style={{ color: "#2A008C" }} />
+                    NATIONAL (UK)
+                  </h2>
+                  <h2 className={styles.shopComingSoonText}>
+                    <Radio onChange={(event) => setInternational(true)} checked={international} style={{ color: "#2A008C" }} />
+                    INTERNATIONAL
+                  </h2>
                 </Grid>
-                <Grid item container xs={4} alignItems="center">
-                  {discountApplied === false && (
-                    <div className={styles.discountCodeInput}>
-                      <Input
-                        onChange={(e) => {
-                          setDiscountCode(e.target.value);
-                          setDiscountError(false);
-                        }}
-                        value={discountCode}
-                      ></Input>
-                    </div>
-                  )}
-                  {discountApplied === true && <h2 className={styles.shopComingSoonText}>DISCOUNT APPLIED</h2>}
-                </Grid>
-                <Grid item xs={3} sm={2}>
-                  {discountApplied === false && (
-                    <Button onClick={() => applyDiscountCode(discountCode)} className={styles.discountButton}>
-                      APPLY
-                    </Button>
-                  )}
-                  {discountApplied === true && <h2 className={styles.shopComingSoonText}>- £{basket.length * 7}</h2>}
-                </Grid>
-                {discountError && (
-                  <Grid item container xs={12}>
-                    <Grid item xs={3}></Grid>
-
-                    <Grid item xs={7}>
-                      <h2 className={styles.shopComingSoonText}>Discount code not recognised!</h2>
-                    </Grid>
-                    <Grid item xs={2}></Grid>
-                  </Grid>
-                )}
-                <Grid item xs={3}></Grid>
-                <Grid item xs={1} sm={3}></Grid>
+                <Grid item xs={1} sm={1}></Grid>
                 <Grid item xs={6} sm={4}>
                   <h2 className={styles.shopComingSoonText}>SHIPPING: </h2>
                 </Grid>
+
                 <Grid item xs={2}>
-                  <h2 className={styles.shopComingSoonText}>£5</h2>
+                  <h2 className={styles.shopComingSoonText}>{!international && "£5"}</h2>
+                  <h2 className={styles.shopComingSoonText}>{international && "£20"}</h2>
                 </Grid>
                 <Grid item xs={3}></Grid>
                 <Grid item xs={1} sm={3}></Grid>
@@ -737,7 +273,7 @@ export function Shop() {
                   <h2 className={styles.shopComingSoonText}>TOTAL: </h2>
                 </Grid>
                 <Grid item xs={2}>
-                  <h2 className={styles.shopComingSoonText}>£{total + 5}</h2>
+                  <h2 className={styles.shopComingSoonText}>£{total + (international ? 20 : 5)}</h2>
                 </Grid>
               </>
             )}
@@ -813,58 +349,36 @@ export function Shop() {
                   marginBottom: -20,
                 }}
               >
-                TEES
+                CLOTHES
               </h1>
             </Grid>
-            <Grid item xs={8} sm={3}>
-              <img src={whitetee.imageURL} alt={whitetee.desc} className={styles.shopItemImage} onClick={() => setView(whitetee)}></img>{" "}
+            <Grid item xs={8} sm={4}>
+              <img src={greytee.imageURL} alt={greytee.desc} className={styles.shopItemImage} onClick={() => setBagView(greytee)}></img>{" "}
             </Grid>
-            <Grid item xs={8} sm={3}>
+            <Grid item xs={8} sm={4}>
+              <img src={bluetee.imageURL} alt={bluetee.desc} className={styles.shopItemImage} onClick={() => setBagView(bluetee)}></img>{" "}
+            </Grid>
+            <Grid item xs={8} sm={4}>
+              <img src={browntee.imageURL} alt={browntee.desc} className={styles.shopItemImage} onClick={() => setBagView(browntee)}></img>{" "}
+            </Grid>
+            <Grid item xs={8} sm={4}>
               <img
-                src={whiteteelong.imageURL}
-                alt={whiteteelong.desc}
+                src={bluehoodie.imageURL}
+                alt={bluehoodie.desc}
                 className={styles.shopItemImage}
-                onClick={() => setView(whiteteelong)}
-              ></img>{" "}
+                onClick={() => setBagView(bluehoodie)}
+              />
             </Grid>
-            <Grid item xs={8} sm={3}>
-              <img src={pinktee.imageURL} alt={pinktee.desc} className={styles.shopItemImage} onClick={() => setView(pinktee)}></img>{" "}
-            </Grid>
-            <Grid item xs={8} sm={3}>
+            <Grid item xs={8} sm={4}>
               <img
-                src={pinkteelong.imageURL}
-                alt={pinkteelong.desc}
+                src={bluejoggers.imageURL}
+                alt={bluejoggers.desc}
                 className={styles.shopItemImage}
-                onClick={() => setView(pinkteelong)}
-              ></img>{" "}
+                onClick={() => setBagView(bluejoggers)}
+              ></img>
             </Grid>
-          </Grid>
-          <Grid item xs={12}>
-            <Hidden smUp>
-              <Divider style={{ height: 4, marginTop: -20, marginBottom: 20 }} />
-            </Hidden>
-          </Grid>
-          <Grid item container xs={10} sm={10} spacing={3} className={styles.gridShopItemWrapper} style={{ justifyContent: "center" }}>
-            <Grid item xs={12}>
-              <h1
-                className={styles.shopComingSoonText}
-                style={{
-                  fontSize: 40,
-                  textAlign: "center",
-                  marginTop: -20,
-                  marginBottom: -20,
-                }}
-              >
-                HOODIES
-              </h1>
-            </Grid>
-            <Grid item xs={8} sm={3}>
-              <img
-                src={blackhoodie.imageURL}
-                alt={blackhoodie.desc}
-                className={styles.shopItemImage}
-                onClick={() => setView(blackhoodie)}
-              ></img>{" "}
+            <Grid item xs={8} sm={4}>
+              <img src={shorts.imageURL} alt={shorts.desc} className={styles.shopItemImage} onClick={() => setBagView(shorts)}></img>
             </Grid>
           </Grid>
           <Grid item xs={12}>
@@ -887,17 +401,25 @@ export function Shop() {
               </h1>
             </Grid>
             <Grid item xs={8} sm={3}>
-              <img src={blackhat.imageURL} alt={blackhat.desc} className={styles.shopItemImage} onClick={() => setView(blackhat)}></img>{" "}
+              <img src={bluehat.imageURL} alt={bluehat.desc} className={styles.shopItemImage} onClick={() => setBagView(bluehat)}></img>{" "}
             </Grid>
             <Grid item xs={8} sm={3}>
-              <img src={greyhat.imageURL} alt={greyhat.desc} className={styles.shopItemImage} onClick={() => setView(greyhat)}></img>{" "}
+              <img src={brownhat.imageURL} alt={brownhat.desc} className={styles.shopItemImage} onClick={() => setBagView(brownhat)}></img>{" "}
             </Grid>
             <Grid item xs={8} sm={3}>
               <img
-                src={blackbeanie.imageURL}
-                alt={blackbeanie.desc}
+                src={bluebuckethat.imageURL}
+                alt={bluebuckethat.desc}
                 className={styles.shopItemImage}
-                onClick={() => setView(blackbeanie)}
+                onClick={() => setBagView(bluebuckethat)}
+              ></img>{" "}
+            </Grid>
+            <Grid item xs={8} sm={3}>
+              <img
+                src={greybuckethat.imageURL}
+                alt={greybuckethat.desc}
+                className={styles.shopItemImage}
+                onClick={() => setBagView(greybuckethat)}
               ></img>{" "}
             </Grid>
           </Grid>
@@ -906,15 +428,7 @@ export function Shop() {
               <Divider style={{ height: 4, marginTop: -20, marginBottom: 20 }} />
             </Hidden>
           </Grid>
-          <Grid
-            item
-            container
-            xs={10}
-            sm={10}
-            spacing={3}
-            className={styles.gridShopItemWrapper}
-            style={{ marginBottom: 100, justifyContent: "center" }}
-          >
+          <Grid item container xs={10} sm={10} spacing={3} className={styles.gridShopItemWrapper} style={{ justifyContent: "center" }}>
             <Grid item xs={12}>
               <h1
                 className={styles.shopComingSoonText}
@@ -928,19 +442,33 @@ export function Shop() {
                 BAGS
               </h1>
             </Grid>
-            <Grid item xs={8} sm={3}>
-              <img src={blackbag.imageURL} alt={blackbag.desc} className={styles.shopItemImage} onClick={() => setView(blackbag)}></img>{" "}
+            <Grid item xs={8} sm={4}>
+              <img src={bluebag.imageURL} alt={bluebag.desc} className={styles.shopItemImage} onClick={() => setBagView(bluebag)}></img>{" "}
             </Grid>
-            <Grid item xs={8} sm={3}>
-              <img src={redbag.imageURL} alt={redbag.desc} className={styles.shopItemImage} onClick={() => setView(redbag)}></img>{" "}
+            <Grid item xs={8} sm={4}>
+              <img src={greybag.imageURL} alt={greybag.desc} className={styles.shopItemImage} onClick={() => setBagView(greybag)}></img>{" "}
             </Grid>
-            <Grid item xs={8} sm={3}>
-              <img src={bluebag.imageURL} alt={bluebag.desc} className={styles.shopItemImage} onClick={() => setView(bluebag)}></img>{" "}
+            <Grid item xs={8} sm={4}>
+              <img src={beachbag.imageURL} alt={beachbag.desc} className={styles.shopItemImage} onClick={() => setBagView(beachbag)}></img>{" "}
             </Grid>
+          </Grid>
+          <Grid item xs={12}>
+            <Hidden smUp>
+              <Divider style={{ height: 4, marginTop: -20, marginBottom: 20 }} />
+            </Hidden>
           </Grid>
         </>
       )}
-      {view && view !== "basket" && TeePage(view)}
+      {view && view !== "basket" && (
+        <TeePage
+          item={view}
+          setItemQuantity={setItemQuantity}
+          itemQuantity={itemQuantity}
+          itemSize={itemSize}
+          setItemSize={setItemSize}
+          handleAddToBasket={handleAddToBasket}
+        />
+      )}
     </Grid>
   );
 }
